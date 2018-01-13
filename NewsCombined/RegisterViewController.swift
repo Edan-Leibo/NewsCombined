@@ -35,7 +35,7 @@ class RegisterViewController: UIViewController {
     @IBAction func registerPressed(_ sender: AnyObject) {
         
 
-        var check : String = (FBunit?.RegisterUser(Email: emailTextfield.text!, Password: passwordTextfield.text!))!
+        let check : String = (FBunit?.RegisterUser(Email: emailTextfield.text!, Password: passwordTextfield.text!))!
         
         if check == "Email/Password error" {
                 self.errorTextLabelRegister.text = check

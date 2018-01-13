@@ -33,7 +33,7 @@ class LogInViewController: UIViewController {
         
         //TODO: Log in the user
         
-        var check : String = (FBunit?.LogInUser(Email: emailTextfield.text!, Password: passwordTextfield.text!))!
+        let check : String = (FBunit?.LogInUser(Email: emailTextfield.text!, Password: passwordTextfield.text!))!
         
         if check == "Email/Password error" {
             self.errorTextLabelLogIn.text = check
