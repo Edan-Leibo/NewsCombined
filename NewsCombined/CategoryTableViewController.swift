@@ -11,8 +11,8 @@ import UIKit
 class CategoryTableViewController: UITableViewController {
     
     var type : String?
-    var arynewsCluster : [NewsCluster] = [NewsCluster]()
-    
+    var arrayNewsCluster : [NewsCluster] = [NewsCluster]()
+    var chosenRow:Int?
     //var sample = ""
     
     override func viewDidLoad() {
@@ -22,8 +22,8 @@ class CategoryTableViewController: UITableViewController {
         
         navigationItem.title = self.type
         self.tableView.tableFooterView = UIView()
-        arynewsCluster.append(NewsCluster(title: "BCC Headlines", commentcount: 5,logo:#imageLiteral(resourceName: "bcc")))
-        arynewsCluster.append(NewsCluster(title: "CNN Healines", commentcount: 10, logo: #imageLiteral(resourceName: "cnn")))
+        arrayNewsCluster.append(NewsCluster(title: "BCC Headlines", commentcount: 5,logo:#imageLiteral(resourceName: "bcc")))
+        arrayNewsCluster.append(NewsCluster(title: "CNN Healines", commentcount: 10, logo: #imageLiteral(resourceName: "cnn")))
         
         //print("/(type)")
         
@@ -48,7 +48,7 @@ class CategoryTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return arynewsCluster.count
+        return arrayNewsCluster.count
     }
 
     
@@ -56,10 +56,10 @@ class CategoryTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsArticleTableViewCell", for: indexPath) as! NewsArticleTableViewCell
 
         // Configure the cell...
-        cell.newsHeadline.text = arynewsCluster[indexPath.row].title
-        cell.newsImage.image = arynewsCluster[indexPath.row].logo
+        cell.newsHeadline.text = arrayNewsCluster[indexPath.row].title
+        cell.newsImage.image = arrayNewsCluster[indexPath.row].logo
         cell.newsDescription.numberOfLines = 0
-        cell.newsDescription.text = "\(arynewsCluster[indexPath.row].commentcount)"
+        cell.newsDescription.text = "\(arrayNewsCluster[indexPath.row].commentcount)"
         cell.newsDescription.sizeToFit()
         return cell
     }
@@ -71,11 +71,13 @@ class CategoryTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ArticleTVC") as! ArticleTVC
-        vc.type = arynewsCluster[indexPath.row].title
-        vc.tappedRow = indexPath.row
-        self.navigationController?.pushViewController(vc, animated: true)
+        chosenRow=indexPath.row
+        performSegue(withIdentifier: "moveToSpecificClusterSegue", sender: self)
+    
+        //let vc = self.storyboard?.instantiateViewController(withIdentifier: "ArticleTVC") as! ArticleTVC
+        //vc.type = arynewsCluster[indexPath.row].title
+        //vc.tappedRow = indexPath.row
+        //self.navigationController?.pushViewController(vc, animated: true)
         
     }
     
@@ -108,20 +110,26 @@ class CategoryTableViewController: UITableViewController {
 
     /*
     // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+    override func tableView(_ tableVizbew: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+     
+        if (segue.identifier=="moveToSpecificClusterSegue"){
+            let vc = segue.destination as! ArticleTVC
+            vc.type = arrayNewsCluster[chosenRow!].title
+            vc.tappedRow = chosenRow!
+        }
     }
-    */
+    
 
 }
