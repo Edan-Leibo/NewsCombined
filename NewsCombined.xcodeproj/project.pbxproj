@@ -132,15 +132,15 @@
 				8407D46C200A19AD000B0277 /* NewsClustersViewController.swift */,
 				78A443D02006824900C4CC31 /* CategoryListBaseViewController.swift */,
 				78A443D2200682FC00C4CC31 /* CategoryTableViewController.swift */,
+				F645CCD4200B4C9300F45904 /* ArticleTVC.swift */,
+				F645CCD2200B31F200F45904 /* NewsVC.swift */,
+				F645CCD6200B4D0000F45904 /* Articlecell.swift */,
 				8469305C200AC0F0003EA04C /* NewsArticleTableViewCell.swift */,
 				63E28B2A1B9A337600FBF6E0 /* AppDelegate.swift */,
 				63E28B2B1B9A337600FBF6E0 /* NewsViewController.swift */,
 				63E28B2C1B9A337600FBF6E0 /* LogInViewController.swift */,
 				63E28B2D1B9A337600FBF6E0 /* RegisterViewController.swift */,
 				63E28B2E1B9A337600FBF6E0 /* WelcomeViewController.swift */,
-				F645CCD2200B31F200F45904 /* NewsVC.swift */,
-				F645CCD4200B4C9300F45904 /* ArticleTVC.swift */,
-				F645CCD6200B4D0000F45904 /* Articlecell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

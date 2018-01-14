@@ -11,12 +11,12 @@ import UIKit
 class NewsVC: UIViewController {
 
     var titlestr = ""
-    var tappedRow : Int = 0
+    //var chosenRow : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(tappedRow)
+        //print(chosenRow)
        self.title = titlestr
         
     }

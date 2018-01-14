@@ -127,7 +127,7 @@ class CategoryTableViewController: UITableViewController {
         if (segue.identifier=="moveToSpecificClusterSegue"){
             let vc = segue.destination as! ArticleTVC
             vc.type = arrayNewsCluster[chosenRow!].title
-            vc.tappedRow = chosenRow!
+            vc.chosenRow = chosenRow!
         }
     }
     

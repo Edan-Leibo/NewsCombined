@@ -11,18 +11,18 @@ import UIKit
 class ArticleTVC: UITableViewController {
 
     var type : String?
-    var tappedRow : Int = 0
-    var arynewsArticle : [NewsArticle] = [NewsArticle]()
+    var chosenRow : Int = 0
+    var arrayNewsArticle : [NewsArticle] = [NewsArticle]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.title = self.type
         self.tableView.tableFooterView = UIView()
-        arynewsArticle.append(NewsArticle(title: "BCC Headlines1", description: "BCC Article 1",logo:#imageLiteral(resourceName: "bcc")))
-        arynewsArticle.append(NewsArticle(title: "BCC Headlines2", description: "BCC Article 2", logo: #imageLiteral(resourceName: "cnn")))
+        arrayNewsArticle.append(NewsArticle(title: "BCC Headlines1", description: "BCC Article 1",logo:#imageLiteral(resourceName: "bcc")))
+        arrayNewsArticle.append(NewsArticle(title: "BCC Headlines2", description: "BCC Article 2", logo: #imageLiteral(resourceName: "cnn")))
         
-         print(tappedRow)
+         //print(chosenRow)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -44,7 +44,7 @@ class ArticleTVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return arynewsArticle.count
+        return arrayNewsArticle.count
     }
 
     
@@ -53,10 +53,10 @@ class ArticleTVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Articlecell", for: indexPath) as! Articlecell
         
         // Configure the cell...
-        cell.article_title.text = arynewsArticle[indexPath.row].title
-        cell.logo.image = arynewsArticle[indexPath.row].logo
+        cell.article_title.text = arrayNewsArticle[indexPath.row].title
+        cell.logo.image = arrayNewsArticle[indexPath.row].logo
         cell.article_description.numberOfLines = 0
-        cell.article_description.text = "\(arynewsArticle[indexPath.row].description)"
+        cell.article_description.text = "\(arrayNewsArticle[indexPath.row].description)"
         cell.article_description.sizeToFit()
         return cell
     }
@@ -68,10 +68,10 @@ class ArticleTVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "NewsVC") as! NewsVC
-        vc.titlestr = arynewsArticle[indexPath.row].title
-        vc.tappedRow = indexPath.row
-        self.navigationController?.pushViewController(vc, animated: true)
+        chosenRow = indexPath.row
+        //let vc = self.storyboard?.instantiateViewController(withIdentifier: "NewsVC") as! NewsVC
+        performSegue(withIdentifier: "moveToSpecificArticleSegue", sender: self)
+        //self.navigationController?.pushViewController(vc, animated: true)
         
     }
 
@@ -110,14 +110,19 @@ class ArticleTVC: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if (segue.identifier=="moveToSpecificArticleSegue"){
+            let vc = segue.destination as! NewsVC
+            vc.titlestr = arrayNewsArticle[chosenRow].title
+            //vc.chosenRow = chosenRow
+        }
     }
-    */
+    
 
 }
