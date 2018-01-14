@@ -10,7 +10,7 @@ import UIKit
 
 let NUM_OF_CATEGORIES=8
 let CATEGORIES = ["general","sport", "business", "entertainment", "science", "tech", "music", "gaming"]
-var selected_Catedories = 0
+//var selected_Catedories = 0
 class NewsClustersViewController: UIViewController {
 
     @IBOutlet weak var viewContainer: UIView!
@@ -51,43 +51,43 @@ class NewsClustersViewController: UIViewController {
     
     @IBAction func generalButtonPressed(_ sender: UIButton) {
         
-       selected_Catedories = 0
+       //selected_Catedories = 0
        viewContainer.addSubview((childControllers[0].view)!)
         
     }
     
     @IBAction func sportButtonPressed(_ sender: UIButton) {
-        selected_Catedories = 1
+        //selected_Catedories = 1
         viewContainer.addSubview((childControllers[1].view)!)
     }
     
     @IBAction func businessButtonPressed(_ sender: UIButton) {
-        selected_Catedories = 2
+        //selected_Catedories = 2
         viewContainer.addSubview((childControllers[2].view)!)
     }
     
     @IBAction func entertainmentButtonPressed(_ sender: UIButton) {
-        selected_Catedories = 3
+        //selected_Catedories = 3
         viewContainer.addSubview((childControllers[3].view)!)
     }
     
     @IBAction func scienceButtonPressed(_ sender: UIButton) {
-        selected_Catedories = 4
+        //selected_Catedories = 4
         viewContainer.addSubview((childControllers[4].view)!)
     }
     
     @IBAction func techButtonPressed(_ sender: UIButton) {
-        selected_Catedories = 5
+        //selected_Catedories = 5
         viewContainer.addSubview((childControllers[5].view)!)
     }
     
     @IBAction func musicButtonPressed(_ sender: UIButton) {
-        selected_Catedories = 6
+        //selected_Catedories = 6
         viewContainer.addSubview((childControllers[6].view)!)
     }
     
     @IBAction func gamingButtonPressed(_ sender: UIButton) {
-        selected_Catedories = 7
+        //selected_Catedories = 7
         viewContainer.addSubview((childControllers[7].view)!)
     }
     

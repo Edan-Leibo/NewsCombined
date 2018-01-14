@@ -7,8 +7,32 @@
 //
 
 import Foundation
+import UIKit
 
 class NewsCluster {
+   
     var title : String = ""
-    var source : String = ""
+    var commentcount : Int = 0
+    var logo : UIImage!
+    
+    init(title:String,commentcount:Int,logo:UIImage) {
+        
+        self.title = title
+        self.commentcount = commentcount
+        self.logo = logo
+    }
+}
+
+class NewsArticle {
+    
+    var title : String = ""
+    var description : String = ""
+    var logo : UIImage!
+    
+    init(title:String,description:String,logo:UIImage) {
+        
+        self.title = title
+        self.description = description
+        self.logo = logo
+    }
 }

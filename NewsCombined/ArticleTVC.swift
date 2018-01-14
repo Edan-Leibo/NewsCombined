@@ -1,32 +1,28 @@
 //
-//  CategoryTableViewController.swift
+//  ArticleTVC.swift
 //  NewsCombined
 //
-//  Created by Adam Yablonka on 10/01/2018.
+//  Created by Himani Patel on 1/14/18.
 //  Copyright © 2018 London App Brewery. All rights reserved.
 //
 
 import UIKit
 
-class CategoryTableViewController: UITableViewController {
-    
+class ArticleTVC: UITableViewController {
+
     var type : String?
-    var arynewsCluster : [NewsCluster] = [NewsCluster]()
-    
-    //var sample = ""
+    var tappedRow : Int = 0
+    var arynewsArticle : [NewsArticle] = [NewsArticle]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //self.type = CATEGORIES[selected_Catedories]
-        
         navigationItem.title = self.type
         self.tableView.tableFooterView = UIView()
-        arynewsCluster.append(NewsCluster(title: "BCC Headlines", commentcount: 5,logo:#imageLiteral(resourceName: "bcc")))
-        arynewsCluster.append(NewsCluster(title: "CNN Healines", commentcount: 10, logo: #imageLiteral(resourceName: "cnn")))
+        arynewsArticle.append(NewsArticle(title: "BCC Headlines1", description: "BCC Article 1",logo:#imageLiteral(resourceName: "bcc")))
+        arynewsArticle.append(NewsArticle(title: "BCC Headlines2", description: "BCC Article 2", logo: #imageLiteral(resourceName: "cnn")))
         
-        //print("/(type)")
-        
+         print(tappedRow)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -42,29 +38,29 @@ class CategoryTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
+        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        return arynewsCluster.count
+        // #warning Incomplete implementation, return the number of rows
+        return arynewsArticle.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsArticleTableViewCell", for: indexPath) as! NewsArticleTableViewCell
-
+       
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Articlecell", for: indexPath) as! Articlecell
+        
         // Configure the cell...
-        cell.newsHeadline.text = arynewsCluster[indexPath.row].title
-        cell.newsImage.image = arynewsCluster[indexPath.row].logo
-        cell.newsDescription.numberOfLines = 0
-        cell.newsDescription.text = "\(arynewsCluster[indexPath.row].commentcount)"
-        cell.newsDescription.sizeToFit()
+        cell.article_title.text = arynewsArticle[indexPath.row].title
+        cell.logo.image = arynewsArticle[indexPath.row].logo
+        cell.article_description.numberOfLines = 0
+        cell.article_description.text = "\(arynewsArticle[indexPath.row].description)"
+        cell.article_description.sizeToFit()
         return cell
     }
     
-
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return 107
@@ -72,13 +68,13 @@ class CategoryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ArticleTVC") as! ArticleTVC
-        vc.type = arynewsCluster[indexPath.row].title
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "NewsVC") as! NewsVC
+        vc.titlestr = arynewsArticle[indexPath.row].title
         vc.tappedRow = indexPath.row
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
-    
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
