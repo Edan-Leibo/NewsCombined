@@ -13,7 +13,7 @@ class NewsViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     // Declare instance variables here
 
-    
+    //TESTING COMMIT
     // We've pre-linked the IBOutlets
     @IBOutlet var heightConstraint: NSLayoutConstraint!
     @IBOutlet var sendButton: UIButton!
