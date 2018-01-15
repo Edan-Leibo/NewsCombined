@@ -50,7 +50,7 @@ class ArticlesInClusAndCatViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Articlecell", for: indexPath) as! Articlecell
         
         // Configure the cell...
         cell.article_title.text = arrayNewsArticle[indexPath.row].title
