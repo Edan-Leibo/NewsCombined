@@ -11,7 +11,7 @@ import UIKit
 let NUM_OF_CATEGORIES=8
 let CATEGORIES = ["general","sport", "business", "entertainment", "science", "tech", "music", "gaming"]
 //var selected_Catedories = 0
-class NewsClustersViewController: UIViewController {
+class BaseScreenViewController: UIViewController {
 
     @IBOutlet weak var viewContainer: UIView!
     
@@ -24,7 +24,7 @@ class NewsClustersViewController: UIViewController {
     @IBOutlet weak var musicButton: UIButton!
     @IBOutlet weak var gamingButton: UIButton!
     
-    var childControllers = [CategoryListBaseViewController]()
+    var childControllers = [BaseNavigationViewController]()
     
     
     
@@ -33,7 +33,7 @@ class NewsClustersViewController: UIViewController {
         
         //Instansiate all view controllers
         for i in 0...CATEGORIES.count-1{
-            let navViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CategoryListBaseViewController") as! CategoryListBaseViewController
+            let navViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CategoryListBaseViewController") as! BaseNavigationViewController
                 navViewController.type = CATEGORIES[i]
             navViewController.view.frame = viewContainer.frame
             navViewController.view.frame.origin = CGPoint(x:0, y:0)

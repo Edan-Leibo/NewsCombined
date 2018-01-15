@@ -1,32 +1,28 @@
 //
-//  CategoryTableViewController.swift
+//  ArticleTVC.swift
 //  NewsCombined
 //
-//  Created by Adam Yablonka on 10/01/2018.
+//  Created by Himani Patel on 1/14/18.
 //  Copyright © 2018 London App Brewery. All rights reserved.
 //
 
 import UIKit
 
-class CategoryTableViewController: UITableViewController {
-    
+class ArticlesInClusAndCatViewController: UITableViewController {
+
     var type : String?
-    var arrayNewsCluster : [NewsCluster] = [NewsCluster]()
-    var chosenRow:Int?
-    //var sample = ""
+    var chosenRow : Int = 0
+    var arrayNewsArticle : [NewsArticle] = [NewsArticle]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //self.type = CATEGORIES[selected_Catedories]
-        
         navigationItem.title = self.type
         self.tableView.tableFooterView = UIView()
-        arrayNewsCluster.append(NewsCluster(title: "BCC Headlines", commentcount: 5,logo:#imageLiteral(resourceName: "bcc")))
-        arrayNewsCluster.append(NewsCluster(title: "CNN Healines", commentcount: 10, logo: #imageLiteral(resourceName: "cnn")))
+        arrayNewsArticle.append(NewsArticle(title: "BCC Headlines1", description: "BCC Article 1",logo:#imageLiteral(resourceName: "bcc")))
+        arrayNewsArticle.append(NewsArticle(title: "BCC Headlines2", description: "BCC Article 2", logo: #imageLiteral(resourceName: "cnn")))
         
-        //print("/(type)")
-        
+         //print(chosenRow)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -42,45 +38,43 @@ class CategoryTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
+        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        return arrayNewsCluster.count
+        // #warning Incomplete implementation, return the number of rows
+        return arrayNewsArticle.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsArticleTableViewCell", for: indexPath) as! NewsArticleTableViewCell
-
+       
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
+        
         // Configure the cell...
-        cell.newsHeadline.text = arrayNewsCluster[indexPath.row].title
-        cell.newsImage.image = arrayNewsCluster[indexPath.row].logo
-        cell.newsDescription.numberOfLines = 0
-        cell.newsDescription.text = "\(arrayNewsCluster[indexPath.row].commentcount)"
-        cell.newsDescription.sizeToFit()
+        cell.article_title.text = arrayNewsArticle[indexPath.row].title
+        cell.logo.image = arrayNewsArticle[indexPath.row].logo
+        cell.article_description.numberOfLines = 0
+        cell.article_description.text = "\(arrayNewsArticle[indexPath.row].description)"
+        cell.article_description.sizeToFit()
         return cell
     }
     
-
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return 107
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        chosenRow=indexPath.row
-        performSegue(withIdentifier: "moveToSpecificClusterSegue", sender: self)
-    
-        //let vc = self.storyboard?.instantiateViewController(withIdentifier: "ArticleTVC") as! ArticleTVC
-        //vc.type = arynewsCluster[indexPath.row].title
-        //vc.tappedRow = indexPath.row
+        
+        chosenRow = indexPath.row
+        //let vc = self.storyboard?.instantiateViewController(withIdentifier: "NewsVC") as! NewsVC
+        performSegue(withIdentifier: "moveToSpecificArticleSegue", sender: self)
         //self.navigationController?.pushViewController(vc, animated: true)
         
     }
-    
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -110,7 +104,7 @@ class CategoryTableViewController: UITableViewController {
 
     /*
     // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableVizbew: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
     }
@@ -123,11 +117,10 @@ class CategoryTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-     
-        if (segue.identifier=="moveToSpecificClusterSegue"){
-            let vc = segue.destination as! ArticleTVC
-            vc.type = arrayNewsCluster[chosenRow!].title
-            vc.chosenRow = chosenRow!
+        if (segue.identifier=="moveToSpecificArticleSegue"){
+            let vc = segue.destination as! SpecificArticleViewController
+            vc.titlestr = arrayNewsArticle[chosenRow].title
+            //vc.chosenRow = chosenRow
         }
     }
     

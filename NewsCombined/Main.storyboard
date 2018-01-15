@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Avl-5A-q5Y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="MG6-7U-P31">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -277,13 +277,13 @@
         <!--General News-->
         <scene sceneID="joE-FH-rNV">
             <objects>
-                <tableViewController storyboardIdentifier="CategoryTableViewController" id="Gzf-zL-XuH" customClass="CategoryTableViewController" customModule="NewsCombined" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CategoryTableViewController" id="Gzf-zL-XuH" customClass="ClustersPerCategoryTableViewController" customModule="NewsCombined" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VeF-Fc-49E">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="NewsArticleTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsArticleTableViewCell" rowHeight="107" id="r8S-Yh-c9U" customClass="NewsArticleTableViewCell" customModule="NewsCombined" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="NewsArticleTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsArticleTableViewCell" rowHeight="107" id="r8S-Yh-c9U" customClass="ClusterTableViewCell" customModule="NewsCombined" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="107"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r8S-Yh-c9U" id="udZ-VM-6o3">
@@ -352,7 +352,7 @@
         <!--Article-->
         <scene sceneID="WAR-2j-ylR">
             <objects>
-                <viewController storyboardIdentifier="NewsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bcc-g2-U3L" customClass="NewsVC" customModule="NewsCombined" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bcc-g2-U3L" customClass="SpecificArticleViewController" customModule="NewsCombined" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mb9-Mx-lxB"/>
                         <viewControllerLayoutGuide type="bottom" id="Ggq-pP-3Oe"/>
@@ -395,10 +395,10 @@
             </objects>
             <point key="canvasLocation" x="3266" y="-52"/>
         </scene>
-        <!--Category List Base View Controller-->
+        <!--Base Navigation View Controller-->
         <scene sceneID="mmU-3t-i7h">
             <objects>
-                <navigationController storyboardIdentifier="CategoryListBaseViewController" id="cRp-NL-5Wk" customClass="CategoryListBaseViewController" customModule="NewsCombined" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CategoryListBaseViewController" id="cRp-NL-5Wk" customClass="BaseNavigationViewController" customModule="NewsCombined" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jhF-Ov-b3n">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -411,10 +411,10 @@
             </objects>
             <point key="canvasLocation" x="1866" y="-50"/>
         </scene>
-        <!--News Clusters View Controller-->
+        <!--Base Screen View Controller-->
         <scene sceneID="YaZ-2i-qE0">
             <objects>
-                <viewController storyboardIdentifier="NewsClustersViewController" id="MG6-7U-P31" customClass="NewsClustersViewController" customModule="NewsCombined" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewsClustersViewController" id="MG6-7U-P31" customClass="BaseScreenViewController" customModule="NewsCombined" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7pc-QG-hAi"/>
                         <viewControllerLayoutGuide type="bottom" id="cxA-DT-TNc"/>
@@ -524,16 +524,16 @@
             </objects>
             <point key="canvasLocation" x="1359.5" y="-51.5"/>
         </scene>
-        <!--ArticleTVC-->
+        <!--Articles In Clus And Cat View Controller-->
         <scene sceneID="7Aa-u1-Ekn">
             <objects>
-                <tableViewController storyboardIdentifier="ArticleTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UVw-YW-baa" customClass="ArticleTVC" customModule="NewsCombined" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ArticleTVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UVw-YW-baa" customClass="ArticlesInClusAndCatViewController" customModule="NewsCombined" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9pK-S9-kmZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Articlecell" rowHeight="107" id="EGZ-FT-8r7" customClass="Articlecell" customModule="NewsCombined" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Articlecell" rowHeight="107" id="EGZ-FT-8r7" customClass="ArticleCell" customModule="NewsCombined" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="107"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EGZ-FT-8r7" id="IZn-c7-TQ5">

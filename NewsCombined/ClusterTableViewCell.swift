@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewsArticleTableViewCell: UITableViewCell {
+class ClusterTableViewCell: UITableViewCell {
 
     @IBOutlet weak var newsImage: UIImageView!
     @IBOutlet weak var newsHeadline: UILabel!

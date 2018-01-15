@@ -21,9 +21,6 @@ import Firebase
 import FirebaseDatabase
 
 
-
-
-
 class NewsFirebase{
     let ref:DatabaseReference?
     var databaseHandle : DatabaseHandle?
@@ -37,11 +34,9 @@ class NewsFirebase{
         FirebaseApp.configure()
         
         ref = Database.database().reference()
-        
-        
-        
-        
+
     }
+    
     
     //TO GET SINGLE ARTICLE!
     func getArticle(byId:String, callback: @escaping (Article?)->Void){
@@ -55,6 +50,7 @@ class NewsFirebase{
             }
         })
     }
+    
     
     //TO GET ALL CLUSTERS IN A CATEGORY
     func getAllClustersInCategory(byCategory:String,callback:@escaping ([Cluster]?)->Void){
@@ -73,9 +69,8 @@ class NewsFirebase{
         })
     }
     
+    
     //TO GET ALL ARTICLES FROM CLUSTER
-    
-    
     func getAllArticlesInCluster(byCluster: Cluster ,callback:@escaping ([Article]?)->Void){
         let profileRef = ref?.child("Articles")
         // profileRef?.queryOrdered(byChild: "clusterKey").queryEqual(toValue: "politics_11")
