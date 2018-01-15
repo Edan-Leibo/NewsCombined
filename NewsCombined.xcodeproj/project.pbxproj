@@ -31,7 +31,7 @@
 		A89EBBE254C326B220DD7C05 /* Pods_NewsCombined.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFB125442B07F31AA333E42 /* Pods_NewsCombined.framework */; };
 		F645CCD3200B31F200F45904 /* SpecificArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F645CCD2200B31F200F45904 /* SpecificArticleViewController.swift */; };
 		F645CCD5200B4C9300F45904 /* ArticlesInClusAndCatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F645CCD4200B4C9300F45904 /* ArticlesInClusAndCatViewController.swift */; };
-		F645CCD7200B4D0000F45904 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F645CCD6200B4D0000F45904 /* ArticleCell.swift */; };
+		F645CCD7200B4D0000F45904 /* Articlecell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F645CCD6200B4D0000F45904 /* Articlecell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +63,7 @@
 		BE08285C871AD8A47D3BBDA4 /* Pods-NewsCombined.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsCombined.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewsCombined/Pods-NewsCombined.release.xcconfig"; sourceTree = "<group>"; };
 		F645CCD2200B31F200F45904 /* SpecificArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificArticleViewController.swift; sourceTree = "<group>"; };
 		F645CCD4200B4C9300F45904 /* ArticlesInClusAndCatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesInClusAndCatViewController.swift; sourceTree = "<group>"; };
-		F645CCD6200B4D0000F45904 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
+		F645CCD6200B4D0000F45904 /* Articlecell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Articlecell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +143,7 @@
 				F645CCD4200B4C9300F45904 /* ArticlesInClusAndCatViewController.swift */,
 				F645CCD2200B31F200F45904 /* SpecificArticleViewController.swift */,
 				8469305C200AC0F0003EA04C /* ClusterTableViewCell.swift */,
-				F645CCD6200B4D0000F45904 /* ArticleCell.swift */,
+				F645CCD6200B4D0000F45904 /* Articlecell.swift */,
 				63E28B2A1B9A337600FBF6E0 /* AppDelegate.swift */,
 				63E28B2B1B9A337600FBF6E0 /* NewsViewController.swift */,
 				63E28B2C1B9A337600FBF6E0 /* LogInViewController.swift */,
@@ -331,7 +331,7 @@
 				63E28B331B9A337600FBF6E0 /* WelcomeViewController.swift in Sources */,
 				84A6A409200D0C8B00EFF828 /* NewsFirebase.swift in Sources */,
 				8469305D200AC0F0003EA04C /* ClusterTableViewCell.swift in Sources */,
-				F645CCD7200B4D0000F45904 /* ArticleCell.swift in Sources */,
+				F645CCD7200B4D0000F45904 /* Articlecell.swift in Sources */,
 				6321A9E21B94EBE70053D2E7 /* CustomCell.swift in Sources */,
 				847E58812000234800E2CDF8 /* NewsCluster.swift in Sources */,
 				63E28B321B9A337600FBF6E0 /* RegisterViewController.swift in Sources */,
