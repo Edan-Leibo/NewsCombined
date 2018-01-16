@@ -11,19 +11,25 @@ import UIKit
 class ClustersPerCategoryTableViewController: UITableViewController {
     
     var type : String?
-    var arrayNewsCluster : [NewsCluster] = [NewsCluster]()
+    var arrayNewsCluster : [Cluster] = [Cluster]()
     var chosenRow:Int?
-    //var sample = ""
+    var model:NewsFirebase?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        model=NewsFirebase.instance
         //self.type = CATEGORIES[selected_Catedories]
         
         navigationItem.title = self.type
         self.tableView.tableFooterView = UIView()
-        arrayNewsCluster.append(NewsCluster(title: "BCC Headlines", commentcount: 5,logo:#imageLiteral(resourceName: "bcc")))
-        arrayNewsCluster.append(NewsCluster(title: "CNN Healines", commentcount: 10, logo: #imageLiteral(resourceName: "cnn")))
+        model!.getAllClustersInCategory(byCategory: type!, callback: { (allClusters) in
+            if let clusterArr = allClusters{
+                self.arrayNewsCluster = clusterArr
+            }
+        })
+        //tableView.reloadData()
+        //arrayNewsCluster.append(NewsCluster(title: "BCC Headlines", commentcount: 5,logo:#imageLiteral(resourceName: "bcc")))
+        //arrayNewsCluster.append(NewsCluster(title: "CNN Healines", commentcount: 10, logo: #imageLiteral(resourceName: "cnn")))
         
         //print("/(type)")
         
@@ -54,12 +60,33 @@ class ClustersPerCategoryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsArticleTableViewCell", for: indexPath) as! ClusterTableViewCell
-
+        /*
+        //Getting the image
+        //set the image URL
+        let imageUrl = URL(string: arrayNewsCluster[indexPath.row].clusterimgurl)!
+        //create a URL Session, this time a shared one since its a simple app
+        let session = URLSession.shared
+        //then create a URL data task since we are getting simple data
+        let task = session.dataTask(with:imageUrl) { (data, response, error) in
+            if error == nil {
+                //incase of success, get the data and pass it to the UIImage class
+                let downloadedImage = UIImage(data: data!)
+                //then we run the UI updating on the main thread.
+                DispatchQueue.main.async {
+                    //cell.newsImage.image = downloadedImage
+                }
+            }
+        }
+        //then start the task or resume it
+        task.resume()
+        
+*/
+        
         // Configure the cell...
-        cell.newsHeadline.text = arrayNewsCluster[indexPath.row].title
-        cell.newsImage.image = arrayNewsCluster[indexPath.row].logo
+        cell.newsHeadline.text = arrayNewsCluster[indexPath.row].clustertitle
         cell.newsDescription.numberOfLines = 0
-        cell.newsDescription.text = "\(arrayNewsCluster[indexPath.row].commentcount)"
+        cell.newsImage.image=#imageLiteral(resourceName: "NewsCombinedLogo")
+        cell.newsDescription.text = "2"//"\(arrayNewsCluster[indexPath.row].commentcount)"
         cell.newsDescription.sizeToFit()
         return cell
     }
@@ -126,9 +153,13 @@ class ClustersPerCategoryTableViewController: UITableViewController {
      
         if (segue.identifier=="moveToSpecificClusterSegue"){
             let vc = segue.destination as! ArticlesInClusAndCatViewController
-            vc.type = arrayNewsCluster[chosenRow!].title
+            vc.type = self.title
             vc.chosenRow = chosenRow!
         }
+    }
+    
+    func downloadImage(url: URL) {
+        
     }
     
 

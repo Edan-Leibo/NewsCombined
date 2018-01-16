@@ -26,6 +26,7 @@ class NewsFirebase{
     var databaseHandle : DatabaseHandle?
     var Data : [Article] = [Article] ()
     var results : String = ""
+    static let instance = NewsFirebase()
     
     
     
