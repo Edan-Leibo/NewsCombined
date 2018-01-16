@@ -1,5 +1,5 @@
 //
-//  ClusterTableViewCell.swift
+//  ArticleTableViewCell.swift
 //  NewsCombined
 //
 //  Created by admin on 16/01/2018.
@@ -8,12 +8,11 @@
 
 import UIKit
 
-class ClusterTableViewCell: UITableViewCell {
+class ArticleTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var clusterImage: UIImageView!
-    @IBOutlet weak var clusterTitle: UILabel!
-    @IBOutlet weak var clusterCommentCounter: UILabel!
-    
+    @IBOutlet weak var articleImage: UIImageView!
+    @IBOutlet weak var articleTitle: UILabel!
+    @IBOutlet weak var articleDescription: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

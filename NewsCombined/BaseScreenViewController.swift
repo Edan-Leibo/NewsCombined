@@ -9,7 +9,7 @@
 import UIKit
 
 let NUM_OF_CATEGORIES=8
-let CATEGORIES = ["general","sport", "business", "entertainment", "science", "tech", "music", "gaming"]
+let CATEGORIES = ["general","sport", "business", "entertainment", "science", "tech", "politics", "gaming"]
 //var selected_Catedories = 0
 class BaseScreenViewController: UIViewController {
 
@@ -39,6 +39,7 @@ class BaseScreenViewController: UIViewController {
             navViewController.view.frame.origin = CGPoint(x:0, y:0)
             addChildViewController(navViewController)
             childControllers.append(navViewController)
+            politicsButtonPressed()
 
         }
     
@@ -49,48 +50,40 @@ class BaseScreenViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func generalButtonPressed(_ sender: UIButton) {
-        
-       //selected_Catedories = 0
+    /*@IBAction func generalButtonPressed(_ sender: UIButton) {
        viewContainer.addSubview((childControllers[0].view)!)
         
     }
     
     @IBAction func sportButtonPressed(_ sender: UIButton) {
-        //selected_Catedories = 1
         viewContainer.addSubview((childControllers[1].view)!)
     }
     
     @IBAction func businessButtonPressed(_ sender: UIButton) {
-        //selected_Catedories = 2
         viewContainer.addSubview((childControllers[2].view)!)
     }
     
     @IBAction func entertainmentButtonPressed(_ sender: UIButton) {
-        //selected_Catedories = 3
         viewContainer.addSubview((childControllers[3].view)!)
     }
     
     @IBAction func scienceButtonPressed(_ sender: UIButton) {
-        //selected_Catedories = 4
         viewContainer.addSubview((childControllers[4].view)!)
     }
     
     @IBAction func techButtonPressed(_ sender: UIButton) {
-        //selected_Catedories = 5
         viewContainer.addSubview((childControllers[5].view)!)
     }
-    
-    @IBAction func musicButtonPressed(_ sender: UIButton) {
-        //selected_Catedories = 6
+     
+    @IBAction*func politicsButtonPressed(_ sender: UIButton) {*/
+    func politicsButtonPressed(){
         viewContainer.addSubview((childControllers[6].view)!)
     }
-    
+    /*
     @IBAction func gamingButtonPressed(_ sender: UIButton) {
-        //selected_Catedories = 7
         viewContainer.addSubview((childControllers[7].view)!)
     }
-    
+    */
     /*
     // MARK: - Navigation
 

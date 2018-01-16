@@ -10,14 +10,12 @@ import UIKit
 
 class SpecificArticleViewController: UIViewController {
 
-    var titlestr = ""
+    var article:Article?
     //var chosenRow : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //print(chosenRow)
-       self.title = titlestr
         
     }
 

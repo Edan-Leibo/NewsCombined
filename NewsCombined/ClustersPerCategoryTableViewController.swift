@@ -10,36 +10,51 @@ import UIKit
 
 class ClustersPerCategoryTableViewController: UITableViewController {
     
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    @IBOutlet weak var alertButton: UIBarButtonItem!
+    
     var type : String?
-    var arrayNewsCluster : [Cluster] = [Cluster]()
-    var chosenRow:Int?
+    var clusterArray : [Cluster] = [Cluster]()
+    var chosenRow:Int=0
     var model:NewsFirebase?
+    var cellHeight : CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        model=NewsFirebase.instance
-        //self.type = CATEGORIES[selected_Catedories]
+        sideMenus()
         
-        navigationItem.title = self.type
-        self.tableView.tableFooterView = UIView()
-        model!.getAllClustersInCategory(byCategory: type!, callback: { (allClusters) in
+        model=NewsFirebase.instance
+
+        navigationItem.title = "Politics"
+        //self.tableView.tableFooterView = UIView()
+        model!.getAllClustersInCategory(byCategory: "politics", callback: { (allClusters) in
             if let clusterArr = allClusters{
-                self.arrayNewsCluster = clusterArr
+                //print(clusterArr)
+                self.clusterArray = clusterArr
+                self.tableView.reloadData()
             }
         })
-        //tableView.reloadData()
-        //arrayNewsCluster.append(NewsCluster(title: "BCC Headlines", commentcount: 5,logo:#imageLiteral(resourceName: "bcc")))
-        //arrayNewsCluster.append(NewsCluster(title: "CNN Healines", commentcount: 10, logo: #imageLiteral(resourceName: "cnn")))
         
-        //print("/(type)")
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
+    func sideMenus(){
+        if revealViewController() != nil {
+            
+            menuButton.target = revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            revealViewController().rearViewRevealWidth = 275
+            revealViewController().rightViewRevealWidth = 160
+            alertButton.target = revealViewController()
+            alertButton.action = #selector (SWRevealViewController.rightRevealToggle(_:))
+            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -48,18 +63,16 @@ class ClustersPerCategoryTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        return arrayNewsCluster.count
+        return clusterArray.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsArticleTableViewCell", for: indexPath) as! ClusterTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ClusterTableViewCell", for: indexPath) as! ClusterTableViewCell
         /*
         //Getting the image
         //set the image URL
@@ -82,30 +95,27 @@ class ClustersPerCategoryTableViewController: UITableViewController {
         
 */
         
+        
         // Configure the cell...
-        cell.newsHeadline.text = arrayNewsCluster[indexPath.row].clustertitle
-        cell.newsDescription.numberOfLines = 0
-        cell.newsImage.image=#imageLiteral(resourceName: "NewsCombinedLogo")
-        cell.newsDescription.text = "2"//"\(arrayNewsCluster[indexPath.row].commentcount)"
-        cell.newsDescription.sizeToFit()
+        //cell.newsHeadline.numberOfLines = 0
+        cell.clusterTitle.text = clusterArray[indexPath.row].clustertitle
+        //cell.clusterTitle.sizeToFit()
+        cell.clusterImage.image=#imageLiteral(resourceName: "NewsCombinedLogo")
+        cell.clusterCommentCounter.text = "21"
+        
+        //cellHeight = cell.newsDescription.frame.size.height + cell.newsDescription.frame.origin.y + 50
+      
         return cell
     }
-    
-
+/*
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 107
+        return cellHeight
     }
-    
+*/
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         chosenRow=indexPath.row
         performSegue(withIdentifier: "moveToSpecificClusterSegue", sender: self)
-    
-        //let vc = self.storyboard?.instantiateViewController(withIdentifier: "ArticleTVC") as! ArticleTVC
-        //vc.type = arynewsCluster[indexPath.row].title
-        //vc.tappedRow = indexPath.row
-        //self.navigationController?.pushViewController(vc, animated: true)
-        
     }
     
     /*
@@ -153,14 +163,11 @@ class ClustersPerCategoryTableViewController: UITableViewController {
      
         if (segue.identifier=="moveToSpecificClusterSegue"){
             let vc = segue.destination as! ArticlesInClusAndCatViewController
-            vc.type = self.title
-            vc.chosenRow = chosenRow!
+            vc.chosenCluster = clusterArray[chosenRow]
         }
     }
     
-    func downloadImage(url: URL) {
-        
-    }
+
     
 
 }
