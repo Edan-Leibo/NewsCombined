@@ -12,17 +12,21 @@ class ClustersPerCategoryTableViewController: UITableViewController {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var alertButton: UIBarButtonItem!
+    @IBOutlet var messageTableView: UITableView!
     
     var type : String?
     var clusterArray : [Cluster] = [Cluster]()
     var chosenRow:Int=0
     var model:NewsFirebase?
-    var cellHeight : CGFloat = 0
+   // var cellHeight : CGFloat = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         sideMenus()
+        messageTableView.register(UINib(nibName: "BlockCell", bundle: nil), forCellReuseIdentifier: "customCell")
+       configureTableView()
         
+        messageTableView.separatorStyle = .none
         model=NewsFirebase.instance
 
         navigationItem.title = "Politics"
@@ -55,6 +59,12 @@ class ClustersPerCategoryTableViewController: UITableViewController {
         }
     }
     
+    func configureTableView(){
+        messageTableView.rowHeight = UITableViewAutomaticDimension
+        messageTableView.estimatedRowHeight = 120
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -72,7 +82,7 @@ class ClustersPerCategoryTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ClusterTableViewCell", for: indexPath) as! ClusterTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
         /*
         //Getting the image
         //set the image URL
@@ -98,14 +108,14 @@ class ClustersPerCategoryTableViewController: UITableViewController {
         
         // Configure the cell...
         //cell.newsHeadline.numberOfLines = 0
-        cell.clusterTitle.text = clusterArray[indexPath.row].clustertitle
+        cell.senderUsername.text = clusterArray[indexPath.row].clustertitle
         //cell.clusterTitle.sizeToFit()
        var urlKey = clusterArray[indexPath.row].clusterimgurl
         if let url = URL(string: urlKey){
             
             do {
                 let data = try Data(contentsOf: url)
-                 cell.clusterImage.image = UIImage(data: data)
+                 cell.avatarImageView.image = UIImage(data: data)
                 
             }catch let err {
                 print(" Error : \(err.localizedDescription)")
@@ -119,7 +129,7 @@ class ClustersPerCategoryTableViewController: UITableViewController {
   
         
         
-        cell.clusterCommentCounter.text = "21"
+        cell.messageBody.text = "21"
         
         //cellHeight = cell.newsDescription.frame.size.height + cell.newsDescription.frame.origin.y + 50
       
