@@ -14,14 +14,21 @@ class ArticlesInClusAndCatViewController: UITableViewController {
     var chosenCluster : Cluster?
     var allArticles : [Article] = [Article]()
     var model:NewsFirebase?
-    var cellHeight : CGFloat = 0
+ //   var cellHeight : CGFloat = 0
 
+    @IBOutlet var messageTablieView: UITableView!
+    
+    //customCell2 identifier
+    //CustomCell2 = Class
     
     override func viewDidLoad() {
         super.viewDidLoad()
         model=NewsFirebase.instance
         //self.tableView.tableFooterView = UIView()
-        
+        messageTablieView.register(UINib(nibName: "BlockCell", bundle: nil), forCellReuseIdentifier: "customCell")
+
+        messageTablieView.separatorStyle = .none
+
         
         //self.type = CATEGORIES[selected_Catedories]
         
@@ -64,16 +71,30 @@ class ArticlesInClusAndCatViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleTableViewCell", for: indexPath) as! ArticleTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
         
         // Configure the cell...
 
-        cell.articleTitle.text = allArticles[indexPath.row].title
+        cell.senderUsername.text = allArticles[indexPath.row].title
         //cell.article_title.sizeToFit()
         //Get the image
         //cell.logo.image = allArticles[indexPath.row].clusterimgurl
-        cell.articleImage.image=#imageLiteral(resourceName: "NewsCombinedLogo")
-        cell.articleDescription.text = allArticles[indexPath.row].description
+        
+        var urlKey = allArticles[indexPath.row].imageURL
+        if let url = URL(string: urlKey){
+            
+            do {
+                let data = try Data(contentsOf: url)
+                cell.avatarImageView.image = UIImage(data: data)
+                
+            }catch let err {
+                print(" Error : \(err.localizedDescription)")
+            }
+            
+            
+        }
+        
+        cell.messageBody.text = allArticles[indexPath.row].description
         //cell.article_description.sizeToFit()
         return cell
     }
@@ -139,6 +160,14 @@ class ArticlesInClusAndCatViewController: UITableViewController {
             vc.article = allArticles[chosenRow!]
             //vc.chosenRow = chosenRow
         }
+    }
+    
+    
+    //DESIGN FUNCTIONS FOR CELLS!
+    func configureTableView(){
+        messageTablieView.rowHeight = UITableViewAutomaticDimension
+        messageTablieView.estimatedRowHeight = 120
+        
     }
     
 

@@ -132,6 +132,8 @@
 		6321A9E91B94EBEE0053D2E7 /* Custom Cell */ = {
 			isa = PBXGroup;
 			children = (
+				6321A9DE1B94EBE70053D2E7 /* BlockCell.xib */,
+				6321A9DB1B94EBE70053D2E7 /* CustomCell.swift */,
 			);
 			name = "Custom Cell";
 			sourceTree = "<group>";
@@ -140,8 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				8496F6A2200E63780062B32C /* ViewController.swift */,
-				6321A9DB1B94EBE70053D2E7 /* CustomCell.swift */,
-				6321A9DE1B94EBE70053D2E7 /* BlockCell.xib */,
 				8407D46C200A19AD000B0277 /* BaseScreenViewController.swift */,
 				78A443D02006824900C4CC31 /* BaseNavigationViewController.swift */,
 				78A443D2200682FC00C4CC31 /* ClustersPerCategoryTableViewController.swift */,
