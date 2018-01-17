@@ -20,6 +20,7 @@ class ArticlesInClusAndCatViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         model=NewsFirebase.instance
+    self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         //self.tableView.tableFooterView = UIView()
         
         

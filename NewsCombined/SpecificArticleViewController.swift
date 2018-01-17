@@ -15,7 +15,7 @@ class SpecificArticleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
     }
 

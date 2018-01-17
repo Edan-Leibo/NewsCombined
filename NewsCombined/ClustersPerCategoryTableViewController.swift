@@ -18,28 +18,30 @@ class ClustersPerCategoryTableViewController: UITableViewController {
     var chosenRow:Int=0
     var model:NewsFirebase?
     var cellHeight : CGFloat = 0
+    var currentCategory : String = "politics"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        model=NewsFirebase.instance
+        refreshClusters(withChosenCategoty: currentCategory)
         sideMenus()
         
-        model=NewsFirebase.instance
-
-        navigationItem.title = "Politics"
-        //self.tableView.tableFooterView = UIView()
-        model!.getAllClustersInCategory(byCategory: "politics", callback: { (allClusters) in
-            if let clusterArr = allClusters{
-                //print(clusterArr)
-                self.clusterArray = clusterArr
-                self.tableView.reloadData()
-            }
-        })
         
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    func refreshClusters(withChosenCategoty category: String){
+        navigationItem.title = category.capitalized
+        //self.tableView.tableFooterView = UIView()
+        model!.getAllClustersInCategory(byCategory: category, callback: { (allClusters) in
+            if let clusterArr = allClusters{
+                self.clusterArray = clusterArr
+                self.tableView.reloadData()
+            }
+        })
     }
     
     func sideMenus(){

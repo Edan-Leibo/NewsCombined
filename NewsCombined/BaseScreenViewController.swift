@@ -8,8 +8,7 @@
 
 import UIKit
 
-let NUM_OF_CATEGORIES=8
-let CATEGORIES = ["general","sport", "business", "entertainment", "science", "tech", "politics", "gaming"]
+
 //var selected_Catedories = 0
 class BaseScreenViewController: UIViewController {
 
@@ -30,7 +29,7 @@ class BaseScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        /*
         //Instansiate all view controllers
         for i in 0...CATEGORIES.count-1{
             let navViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CategoryListBaseViewController") as! BaseNavigationViewController
@@ -42,7 +41,7 @@ class BaseScreenViewController: UIViewController {
             politicsButtonPressed()
 
         }
-    
+    */
     }
 
     override func didReceiveMemoryWarning() {
