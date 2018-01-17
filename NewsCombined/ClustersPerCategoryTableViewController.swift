@@ -29,6 +29,8 @@ class ClustersPerCategoryTableViewController: UITableViewController {
         sideMenus()
         messageTableView.register(UINib(nibName: "BlockCell", bundle: nil), forCellReuseIdentifier: "customCell")
        configureTableView()
+        messageTableView.separatorStyle = .none
+        
         //SVProgressHUD.show()
         
         
