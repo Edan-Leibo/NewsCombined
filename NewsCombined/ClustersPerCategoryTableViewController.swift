@@ -34,7 +34,7 @@ class ClustersPerCategoryTableViewController: UITableViewController {
 
         navigationItem.title = currentCategory
         //self.tableView.tableFooterView = UIView()
-        model!.getAllClustersInCategory(byCategory: "politics", callback: { (allClusters) in
+        model!.getAllClustersInCategory(byCategory: currentCategory, callback: { (allClusters) in
             if let clusterArr = allClusters{
                 //print(clusterArr)
                 self.clusterArray = clusterArr
