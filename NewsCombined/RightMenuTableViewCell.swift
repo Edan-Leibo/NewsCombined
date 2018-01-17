@@ -1,5 +1,5 @@
 //
-//  LeftMenuTableViewCell.swift
+//  RightMenuTableViewCell.swift
 //  NewsCombined
 //
 //  Created by admin on 17/01/2018.
@@ -8,12 +8,13 @@
 
 import UIKit
 
-protocol LeftMenuTableViewCellDelegate {
+protocol RightMenuTableViewCellDelegate {
     func cellPressed(numOfRow:Int)
 }
 
-class LeftMenuTableViewCell: UITableViewCell {
-    var delegate:LeftMenuTableViewCellDelegate?
+class RightMenuTableViewCell: UITableViewCell {
+    @IBOutlet weak var optionLabel: UILabel!
+    var delegate:RightMenuTableViewCellDelegate?
     var numOfCell:Int?
     
     override func awakeFromNib() {
@@ -24,6 +25,7 @@ class LeftMenuTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         delegate?.cellPressed(numOfRow: numOfCell!)
+
         // Configure the view for the selected state
     }
 

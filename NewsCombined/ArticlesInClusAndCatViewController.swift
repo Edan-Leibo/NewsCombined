@@ -81,7 +81,7 @@ class ArticlesInClusAndCatViewController: UITableViewController {
         //Get the image
         //cell.logo.image = allArticles[indexPath.row].clusterimgurl
         
-        var urlKey = allArticles[indexPath.row].imageURL
+        let urlKey = allArticles[indexPath.row].imageURL
         if let url = URL(string: urlKey){
             
             do {

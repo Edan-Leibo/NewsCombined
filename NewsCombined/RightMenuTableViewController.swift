@@ -1,5 +1,5 @@
 //
-//  LeftMenuTableViewController.swift
+//  RightMenuTableViewController.swift
 //  NewsCombined
 //
 //  Created by admin on 17/01/2018.
@@ -8,20 +8,15 @@
 
 import UIKit
 
-class LeftMenuTableViewController: UITableViewController, LeftMenuTableViewCellDelegate {
-    func cellPressed(numOfRow: Int) {
-        selectedRow=numOfRow
-    }
+class RightMenuTableViewController: UITableViewController ,RightMenuTableViewCellDelegate{
     
-    let NUM_OF_CATEGORIES=8
-    let CATEGORIES = ["general", "politics","sport", "business","science", "tech", "entertainment", "gaming"]
-    var LeftMenuArray=[String]()
+    let NUM_OF_OPTIONS=3
+    let OPTIONS = ["Profile", "Settings", "Logout"]
     var selectedRow:Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        LeftMenuArray=["General News","Politics","Sport", "Business","Science", "Technology", "Entertainment", "Gaming"]
-        
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,6 +24,10 @@ class LeftMenuTableViewController: UITableViewController, LeftMenuTableViewCellD
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    func cellPressed(numOfRow: Int) {
+        selectedRow=numOfRow
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -43,21 +42,22 @@ class LeftMenuTableViewController: UITableViewController, LeftMenuTableViewCellD
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return LeftMenuArray.count
+        return OPTIONS.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LeftMenuTableViewCell", for: indexPath) as! LeftMenuTableViewCell
-
-        // Configure the cell...
-        cell.delegate=self
-        cell.numOfCell=indexPath.row
-        cell.textLabel?.text=LeftMenuArray[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RightMenuTableViewCell", for: indexPath) as! RightMenuTableViewCell
         
+        // Configure the cell...
+        cell.delegate = self
+        cell.numOfCell = indexPath.row
+        cell.optionLabel.text=OPTIONS[indexPath.row]
+        
+
         return cell
     }
-    
+ 
 
     /*
     // Override to support conditional editing of the table view.
@@ -93,22 +93,19 @@ class LeftMenuTableViewController: UITableViewController, LeftMenuTableViewCellD
         return true
     }
     */
-    /*
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //super.tableView(tableView, didSelectRowAt: indexPath)
-        //performSegue(withIdentifier: "updateClusterSegue, sender: self)
-    }
-	*/
+
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destNavVC=segue.destination as! UINavigationController
-        let clustersVC = destNavVC.topViewController as! ClustersPerCategoryTableViewController
-        clustersVC.currentCategory = CATEGORIES[selectedRow!]
-        dismiss(animated: false, completion: nil)
-        //destVC.currentCategory=CATEGORIES[selectedRow!]
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        //let destNavVC=segue.destination as! UINavigationController
+        //let clustersVC = destNavVC.topViewController as! ClustersPerCategoryTableViewController
+        //clustersVC.currentCategory = CATEGORIES[selectedRow!]
+        //dismiss(animated: false, completion: nil)
     }
-    
+   
 
 }

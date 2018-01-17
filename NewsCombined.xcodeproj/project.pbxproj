@@ -25,6 +25,8 @@
 		8496F6A3200E63780062B32C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496F6A2200E63780062B32C /* ViewController.swift */; };
 		84A4A9AE200F682800FA72F3 /* LeftMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4A9AD200F682800FA72F3 /* LeftMenuTableViewController.swift */; };
 		84A4A9B0200FA59300FA72F3 /* LeftMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4A9AF200FA59300FA72F3 /* LeftMenuTableViewCell.swift */; };
+		84A4A9B2200FCE5600FA72F3 /* RightMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4A9B1200FCE5600FA72F3 /* RightMenuTableViewController.swift */; };
+		84A4A9B4200FCEBE00FA72F3 /* RightMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4A9B3200FCEBE00FA72F3 /* RightMenuTableViewCell.swift */; };
 		84A6A405200D0C4800EFF828 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6A404200D0C4800EFF828 /* Article.swift */; };
 		84A6A407200D0C5900EFF828 /* Cluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6A406200D0C5900EFF828 /* Cluster.swift */; };
 		84A6A409200D0C8B00EFF828 /* NewsFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6A408200D0C8B00EFF828 /* NewsFirebase.swift */; };
@@ -61,6 +63,8 @@
 		8496F6A2200E63780062B32C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		84A4A9AD200F682800FA72F3 /* LeftMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuTableViewController.swift; sourceTree = "<group>"; };
 		84A4A9AF200FA59300FA72F3 /* LeftMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuTableViewCell.swift; sourceTree = "<group>"; };
+		84A4A9B1200FCE5600FA72F3 /* RightMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightMenuTableViewController.swift; sourceTree = "<group>"; };
+		84A4A9B3200FCEBE00FA72F3 /* RightMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightMenuTableViewCell.swift; sourceTree = "<group>"; };
 		84A6A404200D0C4800EFF828 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		84A6A406200D0C5900EFF828 /* Cluster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cluster.swift; sourceTree = "<group>"; };
 		84A6A408200D0C8B00EFF828 /* NewsFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFirebase.swift; sourceTree = "<group>"; };
@@ -148,6 +152,8 @@
 				8496F6A2200E63780062B32C /* ViewController.swift */,
 				84A4A9AD200F682800FA72F3 /* LeftMenuTableViewController.swift */,
 				84A4A9AF200FA59300FA72F3 /* LeftMenuTableViewCell.swift */,
+				84A4A9B1200FCE5600FA72F3 /* RightMenuTableViewController.swift */,
+				84A4A9B3200FCEBE00FA72F3 /* RightMenuTableViewCell.swift */,
 				8407D46C200A19AD000B0277 /* BaseScreenViewController.swift */,
 				78A443D02006824900C4CC31 /* BaseNavigationViewController.swift */,
 				78A443D2200682FC00C4CC31 /* ClustersPerCategoryTableViewController.swift */,
@@ -341,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A4A9B2200FCE5600FA72F3 /* RightMenuTableViewController.swift in Sources */,
 				63E28B331B9A337600FBF6E0 /* WelcomeViewController.swift in Sources */,
 				84A4A9AE200F682800FA72F3 /* LeftMenuTableViewController.swift in Sources */,
 				84A6A409200D0C8B00EFF828 /* NewsFirebase.swift in Sources */,
@@ -353,6 +360,7 @@
 				63E28B311B9A337600FBF6E0 /* LogInViewController.swift in Sources */,
 				F645CCD3200B31F200F45904 /* SpecificArticleViewController.swift in Sources */,
 				84E9125B2005140F007A87D9 /* ModelFirebase.swift in Sources */,
+				84A4A9B4200FCEBE00FA72F3 /* RightMenuTableViewCell.swift in Sources */,
 				78A443D12006824900C4CC31 /* BaseNavigationViewController.swift in Sources */,
 				F645CCD5200B4C9300F45904 /* ArticlesInClusAndCatViewController.swift in Sources */,
 				84A6A407200D0C5900EFF828 /* Cluster.swift in Sources */,
