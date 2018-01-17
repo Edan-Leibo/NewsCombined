@@ -100,7 +100,25 @@ class ClustersPerCategoryTableViewController: UITableViewController {
         //cell.newsHeadline.numberOfLines = 0
         cell.clusterTitle.text = clusterArray[indexPath.row].clustertitle
         //cell.clusterTitle.sizeToFit()
-        cell.clusterImage.image=#imageLiteral(resourceName: "NewsCombinedLogo")
+       var urlKey = clusterArray[indexPath.row].clusterimgurl
+        if let url = URL(string: urlKey){
+            
+            do {
+                let data = try Data(contentsOf: url)
+                 cell.clusterImage.image = UIImage(data: data)
+                
+            }catch let err {
+                print(" Error : \(err.localizedDescription)")
+            }
+            
+            
+        }
+        
+        
+  
+  
+        
+        
         cell.clusterCommentCounter.text = "21"
         
         //cellHeight = cell.newsDescription.frame.size.height + cell.newsDescription.frame.origin.y + 50
