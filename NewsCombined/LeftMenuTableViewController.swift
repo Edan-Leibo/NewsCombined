@@ -93,12 +93,12 @@ class LeftMenuTableViewController: UITableViewController, LeftMenuTableViewCellD
         return true
     }
     */
-    /*
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //super.tableView(tableView, didSelectRowAt: indexPath)
         //performSegue(withIdentifier: "updateClusterSegue, sender: self)
     }
-	*/
+  
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

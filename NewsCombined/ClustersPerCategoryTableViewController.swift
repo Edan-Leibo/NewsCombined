@@ -29,18 +29,6 @@ class ClustersPerCategoryTableViewController: UITableViewController {
         messageTableView.register(UINib(nibName: "BlockCell", bundle: nil), forCellReuseIdentifier: "customCell")
        configureTableView()
         
-        messageTableView.separatorStyle = .none
-        model=NewsFirebase.instance
-
-        navigationItem.title = currentCategory
-        //self.tableView.tableFooterView = UIView()
-        model!.getAllClustersInCategory(byCategory: "politics", callback: { (allClusters) in
-            if let clusterArr = allClusters{
-                //print(clusterArr)
-                self.clusterArray = clusterArr
-                self.tableView.reloadData()
-            }
-        })
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -123,7 +111,7 @@ class ClustersPerCategoryTableViewController: UITableViewController {
         //cell.newsHeadline.numberOfLines = 0
         cell.senderUsername.text = clusterArray[indexPath.row].clustertitle
         //cell.clusterTitle.sizeToFit()
-       let urlKey = clusterArray[indexPath.row].clusterimgurl
+       var urlKey = clusterArray[indexPath.row].clusterimgurl
         if let url = URL(string: urlKey){
             
             do {

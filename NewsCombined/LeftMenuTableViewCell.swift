@@ -13,6 +13,7 @@ protocol LeftMenuTableViewCellDelegate {
 }
 
 class LeftMenuTableViewCell: UITableViewCell {
+    
     var delegate:LeftMenuTableViewCellDelegate?
     var numOfCell:Int?
     
