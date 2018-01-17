@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ClustersPerCategoryTableViewController: UITableViewController {
     
@@ -28,7 +29,7 @@ class ClustersPerCategoryTableViewController: UITableViewController {
         sideMenus()
         messageTableView.register(UINib(nibName: "BlockCell", bundle: nil), forCellReuseIdentifier: "customCell")
        configureTableView()
-        
+        //SVProgressHUD.show()
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -37,12 +38,14 @@ class ClustersPerCategoryTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     func refreshClusters(withChosenCategoty category: String){
+        SVProgressHUD.show()
         navigationItem.title = category.capitalized
         //self.tableView.tableFooterView = UIView()
         model!.getAllClustersInCategory(byCategory: category, callback: { (allClusters) in
             if let clusterArr = allClusters{
                 self.clusterArray = clusterArr
                 self.tableView.reloadData()
+                SVProgressHUD.dismiss()
             }
         })
     }

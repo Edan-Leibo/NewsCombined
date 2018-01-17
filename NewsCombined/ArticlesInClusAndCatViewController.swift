@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ArticlesInClusAndCatViewController: UITableViewController {
 
@@ -34,11 +35,13 @@ class ArticlesInClusAndCatViewController: UITableViewController {
         //self.type = CATEGORIES[selected_Catedories]
         
         //self.tableView.tableFooterView = UIView()
-        
+        SVProgressHUD.show()
         model!.getAllArticlesInCluster(byCluster: chosenCluster!, callback: { (articleArr) in
-                if let aritcleArray = articleArr{
+            if let aritcleArray = articleArr{
                     self.allArticles = aritcleArray
                     self.tableView.reloadData()
+                SVProgressHUD.dismiss()
+
                 }
         })
 

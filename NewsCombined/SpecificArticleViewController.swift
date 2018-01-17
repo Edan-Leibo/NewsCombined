@@ -7,16 +7,24 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class SpecificArticleViewController: UIViewController {
 
     var article:Article?
+    var url : String = ""
     //var chosenRow : Int = 0
     
+    @IBOutlet weak var myWebView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
-    self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
+    self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        SVProgressHUD.show()
+        url = article!.url
+        var urltodisplay = URL(string: url)
+        SVProgressHUD.dismiss()
+        myWebView.loadRequest(URLRequest(url:urltodisplay!))
     }
 
     override func didReceiveMemoryWarning() {
