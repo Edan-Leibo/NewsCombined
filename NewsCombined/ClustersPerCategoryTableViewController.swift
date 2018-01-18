@@ -135,7 +135,8 @@ class ClustersPerCategoryTableViewController: UITableViewController {
   
         
         
-        cell.clusterLabel2.text = "21"
+        cell.clusterLabel2.isHidden = true
+        cell.commentsButton.setTitle("400044 Comments", for: .normal)
         
         //cellHeight = cell.newsDescription.frame.size.height + cell.newsDescription.frame.origin.y + 50
       
