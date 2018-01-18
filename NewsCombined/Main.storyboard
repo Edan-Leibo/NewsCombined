@@ -359,7 +359,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ClusterTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="BlockCell" rowHeight="100" id="De5-i2-vLc" customClass="CustomCell" customModule="NewsCombined" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ClusterTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="BlockCell3" rowHeight="100" id="De5-i2-vLc" customClass="ClusterTableViewCell" customModule="NewsCombined" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="De5-i2-vLc" id="ej1-U9-vAO">

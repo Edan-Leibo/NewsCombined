@@ -27,7 +27,7 @@ class ClustersPerCategoryTableViewController: UITableViewController {
         model=NewsFirebase.instance
         refreshClusters(withChosenCategoty: currentCategory)
         sideMenus()
-        messageTableView.register(UINib(nibName: "BlockCell", bundle: nil), forCellReuseIdentifier: "customCell")
+        messageTableView.register(UINib(nibName: "BlockCellCluster", bundle: nil), forCellReuseIdentifier: "cellForCluster")
        configureTableView()
         messageTableView.separatorStyle = .none
         
@@ -88,7 +88,7 @@ class ClustersPerCategoryTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellForCluster", for: indexPath) as! ClusterTableViewCell
         /*
         //Getting the image
         //set the image URL
@@ -114,14 +114,14 @@ class ClustersPerCategoryTableViewController: UITableViewController {
         
         // Configure the cell...
         //cell.newsHeadline.numberOfLines = 0
-        cell.senderUsername.text = clusterArray[indexPath.row].clustertitle
+        cell.clusterLabel1.text = clusterArray[indexPath.row].clustertitle
         //cell.clusterTitle.sizeToFit()
        var urlKey = clusterArray[indexPath.row].clusterimgurl
         if let url = URL(string: urlKey){
             
             do {
                 let data = try Data(contentsOf: url)
-                 cell.avatarImageView.image = UIImage(data: data)
+                 cell.clusterImage.image = UIImage(data: data)
                 
             }catch let err {
                 print(" Error : \(err.localizedDescription)")
@@ -135,7 +135,7 @@ class ClustersPerCategoryTableViewController: UITableViewController {
   
         
         
-        cell.messageBody.text = "21"
+        cell.clusterLabel2.text = "21"
         
         //cellHeight = cell.newsDescription.frame.size.height + cell.newsDescription.frame.origin.y + 50
       
