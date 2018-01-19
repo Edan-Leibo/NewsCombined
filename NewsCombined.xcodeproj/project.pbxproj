@@ -22,8 +22,6 @@
 		8407D46D200A19AD000B0277 /* BaseScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8407D46C200A19AD000B0277 /* BaseScreenViewController.swift */; };
 		846EB1F0200E587800BD64F4 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846EB1EE200E513B00BD64F4 /* SWRevealViewController.m */; };
 		847E58812000234800E2CDF8 /* NewsCluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E58802000234800E2CDF8 /* NewsCluster.swift */; };
-		84889632201118670037E8AF /* BlockCellCluster.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84889631201118670037E8AF /* BlockCellCluster.xib */; };
-		84889634201118A60037E8AF /* ClusterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84889633201118A60037E8AF /* ClusterTableViewCell.swift */; };
 		8496F6A3200E63780062B32C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496F6A2200E63780062B32C /* ViewController.swift */; };
 		84A4A9AE200F682800FA72F3 /* LeftMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4A9AD200F682800FA72F3 /* LeftMenuTableViewController.swift */; };
 		84A4A9B0200FA59300FA72F3 /* LeftMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4A9AF200FA59300FA72F3 /* LeftMenuTableViewCell.swift */; };
@@ -62,8 +60,6 @@
 		846EB1EE200E513B00BD64F4 /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		846EB1EF200E513C00BD64F4 /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		847E58802000234800E2CDF8 /* NewsCluster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCluster.swift; sourceTree = "<group>"; };
-		84889631201118670037E8AF /* BlockCellCluster.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BlockCellCluster.xib; path = "../../Design Cell/BlockCellCluster.xib"; sourceTree = "<group>"; };
-		84889633201118A60037E8AF /* ClusterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterTableViewCell.swift; sourceTree = "<group>"; };
 		8496F6A2200E63780062B32C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		84A4A9AD200F682800FA72F3 /* LeftMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuTableViewController.swift; sourceTree = "<group>"; };
 		84A4A9AF200FA59300FA72F3 /* LeftMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -75,7 +71,6 @@
 		84BA3F111FFEE80F00FB1A56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84D08EE62010ADBA00725145 /* RightMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightMenuTableViewCell.swift; sourceTree = "<group>"; };
 		84D08EE72010ADBB00725145 /* RightMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightMenuTableViewController.swift; sourceTree = "<group>"; };
-		84E4C92220123E8800D0D23D /* BlockCellCluster.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BlockCellCluster.xib; path = "../../Design Cell/BlockCellCluster.xib"; sourceTree = "<group>"; };
 		84E9125A2005140F007A87D9 /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
 		8DFB125442B07F31AA333E42 /* Pods_NewsCombined.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsCombined.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE08285C871AD8A47D3BBDA4 /* Pods-NewsCombined.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsCombined.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewsCombined/Pods-NewsCombined.release.xcconfig"; sourceTree = "<group>"; };
@@ -154,8 +149,6 @@
 		6321A9EA1B94EC0A0053D2E7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				84889631201118670037E8AF /* BlockCellCluster.xib */,
-				84E4C92220123E8800D0D23D /* BlockCellCluster.xib */,
 				8496F6A2200E63780062B32C /* ViewController.swift */,
 				84A4A9AD200F682800FA72F3 /* LeftMenuTableViewController.swift */,
 				84A4A9AF200FA59300FA72F3 /* LeftMenuTableViewCell.swift */,
@@ -176,7 +169,6 @@
 				63E28B2D1B9A337600FBF6E0 /* RegisterViewController.swift */,
 				63E28B2E1B9A337600FBF6E0 /* WelcomeViewController.swift */,
 				84A6A40A200D0D1F00EFF828 /* NewsFirebaseViewController.swift */,
-				84889633201118A60037E8AF /* ClusterTableViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -278,7 +270,6 @@
 			files = (
 				63E28B291B9A336600FBF6E0 /* Main.storyboard in Resources */,
 				6321A9C31B94EBA10053D2E7 /* Images.xcassets in Resources */,
-				84889632201118670037E8AF /* BlockCellCluster.xib in Resources */,
 				84BA3F121FFEE80F00FB1A56 /* GoogleService-Info.plist in Resources */,
 				63EBB3051D98004B004175E5 /* LaunchScreen.storyboard in Resources */,
 				6321A9E51B94EBE70053D2E7 /* BlockCell.xib in Resources */,
@@ -366,7 +357,6 @@
 				846EB1F0200E587800BD64F4 /* SWRevealViewController.m in Sources */,
 				84A4A9B0200FA59300FA72F3 /* LeftMenuTableViewCell.swift in Sources */,
 				8407D46D200A19AD000B0277 /* BaseScreenViewController.swift in Sources */,
-				84889634201118A60037E8AF /* ClusterTableViewCell.swift in Sources */,
 				63E28B311B9A337600FBF6E0 /* LogInViewController.swift in Sources */,
 				F645CCD3200B31F200F45904 /* SpecificArticleViewController.swift in Sources */,
 				84E9125B2005140F007A87D9 /* ModelFirebase.swift in Sources */,

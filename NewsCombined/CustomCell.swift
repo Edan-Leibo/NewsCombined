@@ -16,6 +16,7 @@ class CustomCell: UITableViewCell {
     @IBOutlet var messageBody: UILabel!
     @IBOutlet var senderUsername: UILabel!
     
+    @IBOutlet weak var commentsBTN: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code goes here

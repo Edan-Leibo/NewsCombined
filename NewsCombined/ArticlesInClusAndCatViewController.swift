@@ -78,7 +78,7 @@ class ArticlesInClusAndCatViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
         
         // Configure the cell...
-
+        cell.commentsBTN.isHidden = true
         cell.senderUsername.text = allArticles[indexPath.row].title
         //cell.article_title.sizeToFit()
         //Get the image

@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -28,25 +29,36 @@
                         <rect key="frame" x="59" y="10" width="251" height="60"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khv-tc-S9N">
-                                <rect key="frame" x="9" y="0.0" width="244" height="27.5"/>
+                                <rect key="frame" x="9" y="0.0" width="244" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.45543920993804932" green="0.47536808252334595" blue="0.48771500587463379" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="751" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ael-H3-UuV">
-                                <rect key="frame" x="9" y="25.5" width="244" height="14.5"/>
+                                <rect key="frame" x="9" y="25" width="244" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVr-Pf-OsD">
+                                <rect key="frame" x="8" y="41" width="121" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="fDk-Xe-lau"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="2000000 Comments"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97597555049999996" green="0.97597555049999996" blue="0.97597555049999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="OVr-Pf-OsD" secondAttribute="bottom" id="2wV-6Y-x0W"/>
                             <constraint firstItem="khv-tc-S9N" firstAttribute="leading" secondItem="Yxz-95-vHl" secondAttribute="leading" constant="9" id="BC4-vJ-vr1"/>
                             <constraint firstAttribute="trailing" secondItem="Ael-H3-UuV" secondAttribute="trailing" constant="-2" id="FEb-k1-GJa"/>
                             <constraint firstItem="khv-tc-S9N" firstAttribute="top" secondItem="Yxz-95-vHl" secondAttribute="top" id="KDv-Ve-rYc"/>
                             <constraint firstItem="Ael-H3-UuV" firstAttribute="top" secondItem="khv-tc-S9N" secondAttribute="bottom" constant="-2" id="TgT-eu-tjd"/>
                             <constraint firstItem="Ael-H3-UuV" firstAttribute="leading" secondItem="Yxz-95-vHl" secondAttribute="leading" constant="9" id="iOu-Kv-VUo"/>
+                            <constraint firstItem="OVr-Pf-OsD" firstAttribute="leading" secondItem="Yxz-95-vHl" secondAttribute="leadingMargin" id="n9y-Te-VKK"/>
                             <constraint firstAttribute="bottom" secondItem="Ael-H3-UuV" secondAttribute="bottom" constant="20" id="wpC-VG-q67"/>
+                            <constraint firstItem="OVr-Pf-OsD" firstAttribute="top" secondItem="Ael-H3-UuV" secondAttribute="bottom" id="yEg-el-lIz"/>
                             <constraint firstAttribute="trailing" secondItem="khv-tc-S9N" secondAttribute="trailing" constant="-2" id="yrF-p5-5aK"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -68,6 +80,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="avatarImageView" destination="KKK-He-xNm" id="Fn7-YS-QGj"/>
+                <outlet property="commentsBTN" destination="OVr-Pf-OsD" id="Oju-Pg-idU"/>
                 <outlet property="messageBackground" destination="Yxz-95-vHl" id="i3E-B9-bCM"/>
                 <outlet property="messageBody" destination="Ael-H3-UuV" id="kXz-0y-fp3"/>
                 <outlet property="senderUsername" destination="khv-tc-S9N" id="9FT-43-C9p"/>

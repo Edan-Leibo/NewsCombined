@@ -52,14 +52,11 @@ class NewsFirebase{
         })
     }
     
- 
     
-    //TO GET ALL CLUSTERS IN A CATEGORY
-
     func getAllClustersInCategory(byCategory:String,callback:@escaping ([Cluster]?)->Void){
         let myRef = ref?.child("Clusters").child(byCategory)
         myRef?.observeSingleEvent(of: .value, with: { (snapshot) in
-             var clusterArray = [Cluster]()
+            var clusterArray = [Cluster]()
             if let snaps = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snaps {
                     if let clusterDict = snap.value as? Dictionary<String,AnyObject> {
@@ -72,7 +69,7 @@ class NewsFirebase{
                                     if let clustertopic = clusterDict["topic"] as? String{
                                         print(clustertopic)
                                         let clus = Cluster(insertcategory: clusterCategory, inserttopic: clustertopic, insertclusterimg: clusterimg, insertclustertitle: clustertitle)
-                                    clusterArray.append(clus)
+                                        clusterArray.append(clus)
                                     }
                                 }
                             }
@@ -81,61 +78,11 @@ class NewsFirebase{
                     }
                 }
                 callback(clusterArray)
+            }else{
+                callback(nil)
             }
         })
     }
-    
-    
-    /*
- 
- 
-     func getAllClustersInCategory(byCategory:String,callback:@escaping ([Cluster]?)->Void){
-     
-     let myRef = ref?.child("Clusters").child(byCategory)
-     
-     myRef?.observeSingleEvent(of: .value, with: { (snapshot) in
-     
-     var toprint = snapshot.value as? [String:[String:Any]]
-     
-     print(toprint)
-     
-     if let values = snapshot.value as? [String:[String:Any]]{
-     
-     print (values)
-     
-     var clusterArray = [Cluster]()
-     
-     for csJson in values{
-     
-     let clus = Cluster(fromJson: csJson.value)
-     
-     clusterArray.append(clus)
-     
-     }
-     
-     callback(clusterArray)
-     
-     }else{
-     
-     callback(nil)
-     
-     }
-     
-     })
-     
-     }
-     
-
- 
- 
- 
- */
-    
-    
-    
-    
-    
-    
     
     
     //TO GET ALL ARTICLES FROM CLUSTER
@@ -177,15 +124,12 @@ class NewsFirebase{
         let ArticlesDB = ref?.child("Articles")
         
         var ClusterArray : [Cluster] = [Cluster]()
-        /*
         var ArticleArray : [Article] = [Article]()
         let Cluster1 = Cluster (insertcategory: "politics", inserttopic: "11",insertclusterimg : "", insertclustertitle : "")
         let Cluster3 = Cluster (insertcategory: "politics", inserttopic: "2",insertclusterimg : "", insertclustertitle : "")
- 
- */
-        let Cluster2 = Cluster  (insertcategory: "sport", inserttopic: "10",insertclusterimg :"https://talksport.com/sites/default/files/field/image/201712/gettyimages-884538850_0.jpg", insertclustertitle : "Norwich 1-2 Brentford: Lasse Vibe brace piles on more misery for Canaries")
+        let Cluster2 = Cluster  (insertcategory: "sport", inserttopic: "10",insertclusterimg : "", insertclustertitle : "")
         
-        /*
+        
         let article1 = Article (inserturl: "http://www.breitbart.com/big-government/2017/12/11/roy-moore-its-difficult-to-drain-the-swamp-when-youre-up-to-your-neck-in-alligators/", inserttitle: "Roy Moore: ‘It’s Difficult to Drain the Swamp When You’re Up to Your Neck in Alligators’", insertimageURL: "http://media.breitbart.com/media/2017/12/Roy-Moore-Rally-GETTY-IMAGES-NORTH-AMERICAAFPFile-JOE-RAEDLE-.jpg", insertdescription: "Republican Senate candidate Roy Moore vowed to drain the swamp if he is elected to office, making his final argument to win voters in Alabama on Monday night.", insertauthor: "Charlie Spiering", insertsource: "breitbart-news", insertpublishdate: "2017-12-11T19:04:40Z", insertcontent: "“It’s difficult to drain the swamp when you’re up to your neck in alligators,” he said after taking the stage.......", insertclusterkey : Cluster1.category+"_"+Cluster1.topic)
         
         
@@ -194,22 +138,16 @@ class NewsFirebase{
         
         let article2 = Article(inserturl: "http://espn.go.com/blog/boston/new-england-patriots/post/_/id/4809116/tom-brady-patriots-offense-out-of-rhythm-without-rob-gronkowski-in-loss", inserttitle: "Patriots, Tom Brady struggle without Gronk; on to Pittsburgh", insertimageURL: "http://a4.espncdn.com/combiner/i?img=%2Fphoto%2F2017%2F1211%2Fr301562_1296x729_16%2D9.jpg", insertdescription: "During a loss on Monday night to the Dolphins, the Patriots looked out of sync and vulnerable ahead of their showdown next week with the Steelers.", insertauthor: "Mike ReissESPN Staff Writer", insertsource: "espn", insertpublishdate: "2017-12-12T04:50:40Z", insertcontent: "AMI GARDENS, Fla. -- The New England Patriots have turned to the next man up and had continued success, which almost makes it a surprise when it doesn't happen.That's what unfolded Monday night in a 27-20 loss to the Miami Dolphins.",insertclusterkey : Cluster2.category+"_"+Cluster2.topic)
         
- 
-       
-        ClusterArray.append(Cluster1)
- 
-     */
-        ClusterArray.append(Cluster2)
         
-        /*
+        ClusterArray.append(Cluster1)
+        ClusterArray.append(Cluster2)
         ClusterArray.append(Cluster3)
         ArticleArray.append(article1)
         ArticleArray.append(article11)
         ArticleArray.append(article2)
-        */
+        
         for Cluster in ClusterArray {
-            var clustertoupdate = Cluster.toJson()
-            ClusterDB?.child(Cluster.category).child(Cluster.topic).setValue(clustertoupdate)
+            ClusterDB?.child(Cluster.category).child(Cluster.topic).setValue(Cluster.toJson())
             {
                 (error,ref) in
                 
@@ -222,7 +160,6 @@ class NewsFirebase{
                 }
             }
         }
-        /*
         for Article in ArticleArray {
             ArticlesDB?.childByAutoId().setValue(Article.toJson())
             {
@@ -237,7 +174,7 @@ class NewsFirebase{
                 }
             }
         }
-        */
+        
         
         
     }

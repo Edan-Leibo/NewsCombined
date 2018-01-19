@@ -27,7 +27,7 @@ class ClustersPerCategoryTableViewController: UITableViewController {
         model=NewsFirebase.instance
         refreshClusters(withChosenCategoty: currentCategory)
         sideMenus()
-        messageTableView.register(UINib(nibName: "BlockCellCluster", bundle: nil), forCellReuseIdentifier: "cellForCluster")
+        messageTableView.register(UINib(nibName: "BlockCell", bundle: nil), forCellReuseIdentifier: "customCell")
        configureTableView()
         messageTableView.separatorStyle = .none
         
@@ -88,7 +88,7 @@ class ClustersPerCategoryTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellForCluster", for: indexPath) as! ClusterTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
         /*
         //Getting the image
         //set the image URL
@@ -114,14 +114,14 @@ class ClustersPerCategoryTableViewController: UITableViewController {
         
         // Configure the cell...
         //cell.newsHeadline.numberOfLines = 0
-        cell.clusterLabel1.text = clusterArray[indexPath.row].clustertitle
+        cell.senderUsername.text = clusterArray[indexPath.row].clustertitle
         //cell.clusterTitle.sizeToFit()
        var urlKey = clusterArray[indexPath.row].clusterimgurl
         if let url = URL(string: urlKey){
             
             do {
                 let data = try Data(contentsOf: url)
-                 cell.clusterImage.image = UIImage(data: data)
+                 cell.avatarImageView.image = UIImage(data: data)
                 
             }catch let err {
                 print(" Error : \(err.localizedDescription)")
@@ -131,12 +131,13 @@ class ClustersPerCategoryTableViewController: UITableViewController {
         }
         
         
-  
+  cell.messageBody.isHidden = true
+        cell.commentsBTN.setTitle("4 Comments", for: .normal)
+        
   
         
         
-        cell.clusterLabel2.isHidden = true
-        cell.commentsButton.setTitle("400044 Comments", for: .normal)
+  
         
         //cellHeight = cell.newsDescription.frame.size.height + cell.newsDescription.frame.origin.y + 50
       
