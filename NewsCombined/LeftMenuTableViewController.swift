@@ -14,7 +14,7 @@ class LeftMenuTableViewController: UITableViewController, LeftMenuTableViewCellD
     }
     
     let NUM_OF_CATEGORIES=8
-    let CATEGORIES = ["general", "politics","sport", "business","science", "tech", "entertainment", "gaming"]
+    let CATEGORIES = ["general", "politics","sport", "business","science-and-nature", "technology", "entertainment", "gaming"]
     var LeftMenuArray=[String]()
     var selectedRow:Int?
     
