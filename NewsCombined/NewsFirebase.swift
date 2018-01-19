@@ -52,26 +52,90 @@ class NewsFirebase{
         })
     }
     
+ 
     
     //TO GET ALL CLUSTERS IN A CATEGORY
+
     func getAllClustersInCategory(byCategory:String,callback:@escaping ([Cluster]?)->Void){
         let myRef = ref?.child("Clusters").child(byCategory)
         myRef?.observeSingleEvent(of: .value, with: { (snapshot) in
-            var toprint = snapshot.value as? [String:[String:Any]]
-            print(toprint)
-            if let values = snapshot.value as? [String:[String:Any]]{
-                print (values)
-                var clusterArray = [Cluster]()
-                for csJson in values{
-                    let clus = Cluster(fromJson: csJson.value)
-                    clusterArray.append(clus)
+             var clusterArray = [Cluster]()
+            if let snaps = snapshot.children.allObjects as? [DataSnapshot] {
+                for snap in snaps {
+                    if let clusterDict = snap.value as? Dictionary<String,AnyObject> {
+                        if let clusterCategory = clusterDict["category"] as? String {
+                            print(clusterCategory)
+                            if let clusterimg = clusterDict["clusterimgurl"] as? String{
+                                print (clusterimg)
+                                if let clustertitle = clusterDict["clustertitle"] as? String{
+                                    print (clustertitle)
+                                    if let clustertopic = clusterDict["topic"] as? String{
+                                        print(clustertopic)
+                                        let clus = Cluster(insertcategory: clusterCategory, inserttopic: clustertopic, insertclusterimg: clusterimg, insertclustertitle: clustertitle)
+                                    clusterArray.append(clus)
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
                 }
                 callback(clusterArray)
-            }else{
-                callback(nil)
             }
         })
     }
+    
+    
+    /*
+ 
+ 
+     func getAllClustersInCategory(byCategory:String,callback:@escaping ([Cluster]?)->Void){
+     
+     let myRef = ref?.child("Clusters").child(byCategory)
+     
+     myRef?.observeSingleEvent(of: .value, with: { (snapshot) in
+     
+     var toprint = snapshot.value as? [String:[String:Any]]
+     
+     print(toprint)
+     
+     if let values = snapshot.value as? [String:[String:Any]]{
+     
+     print (values)
+     
+     var clusterArray = [Cluster]()
+     
+     for csJson in values{
+     
+     let clus = Cluster(fromJson: csJson.value)
+     
+     clusterArray.append(clus)
+     
+     }
+     
+     callback(clusterArray)
+     
+     }else{
+     
+     callback(nil)
+     
+     }
+     
+     })
+     
+     }
+     
+
+ 
+ 
+ 
+ */
+    
+    
+    
+    
+    
+    
     
     
     //TO GET ALL ARTICLES FROM CLUSTER

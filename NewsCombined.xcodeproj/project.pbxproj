@@ -75,6 +75,7 @@
 		84BA3F111FFEE80F00FB1A56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84D08EE62010ADBA00725145 /* RightMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightMenuTableViewCell.swift; sourceTree = "<group>"; };
 		84D08EE72010ADBB00725145 /* RightMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightMenuTableViewController.swift; sourceTree = "<group>"; };
+		84E4C92220123E8800D0D23D /* BlockCellCluster.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BlockCellCluster.xib; path = "../../Design Cell/BlockCellCluster.xib"; sourceTree = "<group>"; };
 		84E9125A2005140F007A87D9 /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
 		8DFB125442B07F31AA333E42 /* Pods_NewsCombined.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsCombined.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE08285C871AD8A47D3BBDA4 /* Pods-NewsCombined.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsCombined.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewsCombined/Pods-NewsCombined.release.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				84889631201118670037E8AF /* BlockCellCluster.xib */,
+				84E4C92220123E8800D0D23D /* BlockCellCluster.xib */,
 				8496F6A2200E63780062B32C /* ViewController.swift */,
 				84A4A9AD200F682800FA72F3 /* LeftMenuTableViewController.swift */,
 				84A4A9AF200FA59300FA72F3 /* LeftMenuTableViewCell.swift */,
