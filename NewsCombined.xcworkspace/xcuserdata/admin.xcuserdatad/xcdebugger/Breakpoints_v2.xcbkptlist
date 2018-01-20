@@ -402,7 +402,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/LeftMenuTableViewController.swift"
-            timestampString = "538061309.296437"
+            timestampString = "538148559.942993"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
@@ -418,7 +418,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/LeftMenuTableViewController.swift"
-            timestampString = "538061309.448892"
+            timestampString = "538148559.950933"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"
@@ -434,7 +434,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/LeftMenuTableViewController.swift"
-            timestampString = "538061309.4500901"
+            timestampString = "538148559.951472"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "110"
@@ -466,7 +466,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/LeftMenuTableViewController.swift"
-            timestampString = "538061309.450626"
+            timestampString = "538148559.951961"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "99"
@@ -497,8 +497,8 @@
                   symbolName = "NewsCombined.SViewController.clusterToHold.getter : Swift.Optional&lt;NewsCombined.Cluster&gt;"
                   moduleName = "NewsCombined"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/newscombinedreposi/NewsCombined/SViewController.swift"
-                  timestampString = "538107539.398321"
+                  urlString = "file:///Users/admin/Documents/newscombined/NewsCombined/SViewController.swift"
+                  timestampString = "538151007.2889791"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -512,8 +512,8 @@
                   symbolName = "NewsCombined.SViewController.clusterToHold.setter : Swift.Optional&lt;NewsCombined.Cluster&gt;"
                   moduleName = "NewsCombined"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/newscombinedreposi/NewsCombined/SViewController.swift"
-                  timestampString = "538107539.402923"
+                  urlString = "file:///Users/admin/Documents/newscombined/NewsCombined/SViewController.swift"
+                  timestampString = "538151007.293278"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -527,8 +527,8 @@
                   symbolName = "NewsCombined.SViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; NewsCombined.SViewController"
                   moduleName = "NewsCombined"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/newscombinedreposi/NewsCombined/SViewController.swift"
-                  timestampString = "538107539.407577"
+                  urlString = "file:///Users/admin/Documents/newscombined/NewsCombined/SViewController.swift"
+                  timestampString = "538151007.297634"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -542,8 +542,8 @@
                   symbolName = "NewsCombined.SViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;NewsCombined.SViewController&gt;"
                   moduleName = "NewsCombined"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/newscombinedreposi/NewsCombined/SViewController.swift"
-                  timestampString = "538107539.412057"
+                  urlString = "file:///Users/admin/Documents/newscombined/NewsCombined/SViewController.swift"
+                  timestampString = "538151007.306444"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -716,7 +716,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/ClustersPerCategoryTableViewController.swift"
@@ -732,7 +732,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/ClustersPerCategoryTableViewController.swift"
@@ -764,7 +764,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/ClustersPerCategoryTableViewController.swift"
@@ -822,6 +822,70 @@
             startingLineNumber = "39"
             endingLineNumber = "39"
             landmarkName = "btnPressed(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsCombined/RightMenuTableViewController.swift"
+            timestampString = "538151005.707234"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "RightMenuTableViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsCombined/RightMenuTableViewController.swift"
+            timestampString = "538151005.707472"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "RightMenuTableViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsCombined/RightMenuTableViewController.swift"
+            timestampString = "538151005.7076041"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "RightMenuTableViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsCombined/RightMenuTableViewController.swift"
+            timestampString = "538151005.707721"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
