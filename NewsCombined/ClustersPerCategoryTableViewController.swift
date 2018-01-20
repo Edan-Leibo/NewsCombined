@@ -53,7 +53,7 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
     
     func didpressbutton(title: Any) {
         chosenRow = title as! Int
-        performSegue(withIdentifier: "showView", sender: self)
+        performSegue(withIdentifier: "goToMessages", sender: self)
 
     }
     
@@ -187,8 +187,8 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
             let vc = segue.destination as! ArticlesInClusAndCatViewController
             vc.chosenCluster = clusterArray[chosenRow]
         }
-        if (segue.identifier=="showView"){
-            let vc = segue.destination as! SViewController
+        if (segue.identifier=="goToMessages"){
+            let vc = segue.destination as! MessagesViewController
             vc.clusterToHold = clusterArray[chosenRow]
     }
     
