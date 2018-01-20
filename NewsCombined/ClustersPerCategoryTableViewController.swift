@@ -9,7 +9,11 @@
 import UIKit
 import SVProgressHUD
 
-class ClustersPerCategoryTableViewController: UITableViewController {
+class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat{
+   
+    
+    
+    
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var alertButton: UIBarButtonItem!
@@ -17,6 +21,7 @@ class ClustersPerCategoryTableViewController: UITableViewController {
     
     var type : String?
     var clusterArray : [Cluster] = [Cluster]()
+   // var Clustertosend : Cluster?
     var chosenRow:Int=0
     var model:NewsFirebase?
     var cellHeight : CGFloat = 0
@@ -31,13 +36,7 @@ class ClustersPerCategoryTableViewController: UITableViewController {
        configureTableView()
         messageTableView.separatorStyle = .none
         
-        //SVProgressHUD.show()
-        
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+
     }
     func refreshClusters(withChosenCategoty category: String){
         SVProgressHUD.show()
@@ -50,6 +49,12 @@ class ClustersPerCategoryTableViewController: UITableViewController {
                 SVProgressHUD.dismiss()
             }
         })
+    }
+    
+    func didpressbutton(title: Any) {
+        chosenRow = title as! Int
+        performSegue(withIdentifier: "showView", sender: self)
+
     }
     
     func sideMenus(){
@@ -85,35 +90,16 @@ class ClustersPerCategoryTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return clusterArray.count
     }
+    
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
-        /*
-        //Getting the image
-        //set the image URL
-        let imageUrl = URL(string: arrayNewsCluster[indexPath.row].clusterimgurl)!
-        //create a URL Session, this time a shared one since its a simple app
-        let session = URLSession.shared
-        //then create a URL data task since we are getting simple data
-        let task = session.dataTask(with:imageUrl) { (data, response, error) in
-            if error == nil {
-                //incase of success, get the data and pass it to the UIImage class
-                let downloadedImage = UIImage(data: data!)
-                //then we run the UI updating on the main thread.
-                DispatchQueue.main.async {
-                    //cell.newsImage.image = downloadedImage
-                }
-            }
-        }
-        //then start the task or resume it
-        task.resume()
-        
-*/
-        
-        
-        // Configure the cell...
-        //cell.newsHeadline.numberOfLines = 0
+        let clus = clusterArray[indexPath.row]
+        cell.setCluster(cluster: clus)
+        cell.delegate = self
+        cell.commentsBTN.tag = indexPath.row
+       // cell.commentsBTN.addTarget(self, action: "btnTapped", for: .touchUpInside)
         cell.senderUsername.text = clusterArray[indexPath.row].clustertitle
         //cell.clusterTitle.sizeToFit()
        var urlKey = clusterArray[indexPath.row].clusterimgurl
@@ -201,9 +187,13 @@ class ClustersPerCategoryTableViewController: UITableViewController {
             let vc = segue.destination as! ArticlesInClusAndCatViewController
             vc.chosenCluster = clusterArray[chosenRow]
         }
+        if (segue.identifier=="showView"){
+            let vc = segue.destination as! SViewController
+            vc.clusterToHold = clusterArray[chosenRow]
     }
     
 
     
 
+}
 }

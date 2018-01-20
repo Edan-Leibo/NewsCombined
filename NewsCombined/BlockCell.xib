@@ -46,6 +46,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="2000000 Comments"/>
+                                <connections>
+                                    <action selector="btnPressed:" destination="9hv-3d-eEy" eventType="touchUpInside" id="D3q-uk-rIw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97597555049999996" green="0.97597555049999996" blue="0.97597555049999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -80,7 +83,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="avatarImageView" destination="KKK-He-xNm" id="Fn7-YS-QGj"/>
-                <outlet property="commentsBTN" destination="OVr-Pf-OsD" id="Oju-Pg-idU"/>
+                <outlet property="commentsBTN" destination="OVr-Pf-OsD" id="X03-WN-IPH"/>
                 <outlet property="messageBackground" destination="Yxz-95-vHl" id="i3E-B9-bCM"/>
                 <outlet property="messageBody" destination="Ael-H3-UuV" id="kXz-0y-fp3"/>
                 <outlet property="senderUsername" destination="khv-tc-S9N" id="9FT-43-C9p"/>

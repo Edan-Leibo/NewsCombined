@@ -388,6 +388,7 @@
                         <outlet property="menuButton" destination="QyZ-ya-1b9" id="tyC-Dr-gZ0"/>
                         <outlet property="messageTableView" destination="Aeo-mH-rfO" id="4OR-jm-t0V"/>
                         <segue destination="UVw-YW-baa" kind="push" identifier="moveToSpecificClusterSegue" id="ohH-Nx-HgP"/>
+                        <segue destination="slM-P9-ZXn" kind="push" identifier="showView" id="xjq-Bs-idO"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R0I-Ra-eJa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -429,7 +430,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8NG-yl-Mvd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2626.5" y="515.5"/>
+            <point key="canvasLocation" x="2732" y="485"/>
         </scene>
         <!--Articles In Clus And Cat View Controller-->
         <scene sceneID="7Aa-u1-Ekn">
@@ -463,7 +464,26 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jQu-h3-dB5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2077" y="516"/>
+            <point key="canvasLocation" x="2192" y="485"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="I3J-lO-vda">
+            <objects>
+                <viewController id="slM-P9-ZXn" customClass="SViewController" customModule="NewsCombined" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BYG-K4-2JK"/>
+                        <viewControllerLayoutGuide type="bottom" id="vey-o2-rh2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e0j-dT-iFd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GO4-BW-7Lz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bGJ-jU-OHj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2200" y="1319"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nHZ-1Z-JaT">
