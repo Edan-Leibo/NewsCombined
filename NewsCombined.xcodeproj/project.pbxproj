@@ -20,6 +20,8 @@
 		78A443D12006824900C4CC31 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A443D02006824900C4CC31 /* BaseNavigationViewController.swift */; };
 		78A443D3200682FC00C4CC31 /* ClustersPerCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A443D2200682FC00C4CC31 /* ClustersPerCategoryTableViewController.swift */; };
 		8407D46D200A19AD000B0277 /* BaseScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8407D46C200A19AD000B0277 /* BaseScreenViewController.swift */; };
+		8448B61B2013633700E5999A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448B61A2013633700E5999A /* ProfileViewController.swift */; };
+		8448B61D2013675500E5999A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448B61C2013675500E5999A /* SettingsViewController.swift */; };
 		846EB1F0200E587800BD64F4 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846EB1EE200E513B00BD64F4 /* SWRevealViewController.m */; };
 		847E58812000234800E2CDF8 /* NewsCluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E58802000234800E2CDF8 /* NewsCluster.swift */; };
 		8496F6A3200E63780062B32C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496F6A2200E63780062B32C /* ViewController.swift */; };
@@ -55,6 +57,8 @@
 		78A443D02006824900C4CC31 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		78A443D2200682FC00C4CC31 /* ClustersPerCategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClustersPerCategoryTableViewController.swift; sourceTree = "<group>"; };
 		8407D46C200A19AD000B0277 /* BaseScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScreenViewController.swift; sourceTree = "<group>"; };
+		8448B61A2013633700E5999A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		8448B61C2013675500E5999A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		846EB1ED200E513A00BD64F4 /* NewsCombined-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NewsCombined-Bridging-Header.h"; sourceTree = "<group>"; };
 		846EB1EE200E513B00BD64F4 /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		846EB1EF200E513C00BD64F4 /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -166,6 +170,8 @@
 				63E28B2E1B9A337600FBF6E0 /* WelcomeViewController.swift */,
 				84A6A40A200D0D1F00EFF828 /* NewsFirebaseViewController.swift */,
 				84F93F812012AE91000CF033 /* SViewController.swift */,
+				8448B61A2013633700E5999A /* ProfileViewController.swift */,
+				8448B61C2013675500E5999A /* SettingsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -350,7 +356,9 @@
 				6321A9E21B94EBE70053D2E7 /* CustomCell.swift in Sources */,
 				847E58812000234800E2CDF8 /* NewsCluster.swift in Sources */,
 				84F93F822012AE91000CF033 /* SViewController.swift in Sources */,
+				8448B61B2013633700E5999A /* ProfileViewController.swift in Sources */,
 				63E28B321B9A337600FBF6E0 /* RegisterViewController.swift in Sources */,
+				8448B61D2013675500E5999A /* SettingsViewController.swift in Sources */,
 				846EB1F0200E587800BD64F4 /* SWRevealViewController.m in Sources */,
 				84A4A9B0200FA59300FA72F3 /* LeftMenuTableViewCell.swift in Sources */,
 				8407D46D200A19AD000B0277 /* BaseScreenViewController.swift in Sources */,
