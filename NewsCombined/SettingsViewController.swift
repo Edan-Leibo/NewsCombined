@@ -10,12 +10,10 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-    @IBAction func backButton(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
 
         // Do any additional setup after loading the view.
     }

@@ -10,12 +10,12 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
-    @IBAction func backButton(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        //self.revealViewController().revealToggle(animated: true)
+
 
         // Do any additional setup after loading the view.
     }
