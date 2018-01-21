@@ -7,13 +7,13 @@
 //
 
 import UIKit
-import Firebase
+
 
 class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
     
     var clusterToHold : Cluster?
     var messagearray : [Message] = [Message]()
-
+    var messageFirebaseunit : MessagesFirebase?
 
     
     @IBOutlet var heightConstraint: NSLayoutConstraint!
@@ -29,7 +29,7 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
         //TODO: Set yourself as the delegate and datasource here:
         messageTableView.dataSource = self
         messageTableView.delegate = self
-        
+        messageFirebaseunit = MessagesFirebase()
         
              //TODO: Set yourself as the delegate of the text field here:
             messageTextfield.delegate = self
@@ -69,7 +69,7 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
         cell.senderUsername.text = messagearray[indexPath.row].body
         cell.messageBody.text = messagearray[indexPath.row].sender
         cell.avatarImageView.image = UIImage(named: "NewsLogoBetter")
-       // cell.senderUsername.text = "Username"
+      
         return cell
     }
     
@@ -139,50 +139,40 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
         messageTextfield.isEnabled = false
         sendButton.isEnabled = false
         
-        let messagesDB = Database.database().reference().child("Messages").child(((clusterToHold?.category)! + "_" + (clusterToHold?.topic)!))
-        let messageDictionary = ["sender": "TheUserName", "MessageBody" : messageTextfield.text] as [String : Any]
+        messageFirebaseunit?.saveMessage(insertCluster: clusterToHold!, messageTextfield: messageTextfield)
 
         
-        //TODO: Send the message to Firebase and save it in our database
-        messagesDB.childByAutoId().setValue(messageDictionary) { //creating auto id for each message!!!!
-            (error,ref) in
-            
-            if error != nil{
-                print(error)
-            }
-            else {
+     
                 print("No Problem with saving message")
                 self.messageTextfield.isEnabled = true
                 self.messageTextfield.text = ""
                 self.sendButton.isEnabled = true
             }
-        }
-        
-    }
+    
     
     //TODO: Create the retrieveMessages method here:
     func retriveMessages()
     {
-        var messageDB = Database.database().reference().child("Messages").child(((clusterToHold?.category)! + "_" + (clusterToHold?.topic)!))
-        messageDB.observe(.childAdded, with: { (snapshot) in
-            let snapshotValue = snapshot.value as!Dictionary <String,String>
-            
-            let text = snapshotValue["MessageBody"]!
-            let sender = snapshotValue ["sender"]!
-            
-            let message = Message (insertsender : sender,insertbody : text)
-            self.messagearray.append(message)
-            
-            self.configureTableView() //AFTER SENDING NEW MESSAGE WE NEED TO RESIZE SCREEN
-            self.messageTableView.reloadData()
-        })
         
-    }
+        messageFirebaseunit!.retriveMessages(insertCluster: clusterToHold!, callback: { (allMessages) in
+         if let messagessARR = allMessages{
+         self.messagearray = messagessARR
+        self.configureTableView() //AFTER SENDING NEW MESSAGE WE NEED TO RESIZE SCREEN
+        self.messageTableView.reloadData()
+         }
+        })
+ 
+  
+        
+     
+        }
+        
+
     
 
     
     
-    
+    /*
     @IBAction func logOutPressed(_ sender: AnyObject) {
         let firebaseAuth = Auth.auth()
         do {
@@ -200,4 +190,6 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
 }
 
 }
+    
+    */
 }

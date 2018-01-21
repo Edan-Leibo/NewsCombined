@@ -31,9 +31,9 @@ class NewsFirebase{
     
     
     init(){
-        //MAYBE NEED TO DELETE THIS BECAUSE IT HAPPENS IN MODELFIREBASE TOO
-        FirebaseApp.configure()
-        
+        if(FirebaseApp.app() == nil){
+            FirebaseApp.configure()
+        }
         ref = Database.database().reference()
 
     }
@@ -55,7 +55,7 @@ class NewsFirebase{
     
     func getAllClustersInCategory(byCategory:String,callback:@escaping ([Cluster]?)->Void){
         let myRef = ref?.child("Clusters").child(byCategory)
-        myRef?.observeSingleEvent(of: .value, with: { (snapshot) in
+        myRef?.observe(.value, with: { (snapshot) in
             var clusterArray = [Cluster]()
             if let snaps = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snaps {
@@ -89,7 +89,7 @@ class NewsFirebase{
     func getAllArticlesInCluster(byCluster: Cluster ,callback:@escaping ([Article]?)->Void){
         let profileRef = ref?.child("Articles")
         // profileRef?.queryOrdered(byChild: "clusterKey").queryEqual(toValue: "politics_11")
-        profileRef?.observeSingleEvent(of: .value, with: { snapshot in
+        profileRef?.observe( .value, with: { snapshot in
             if let values = snapshot.value as? [String:[String:Any]]{
                 var articleArray = [Article]()
                 for csJson in values{

@@ -34,8 +34,9 @@ class ModelFirebase{
     
     init(){
         
-        FirebaseApp.configure()
-        
+        if(FirebaseApp.app() == nil){
+            FirebaseApp.configure()
+        }
         ref = Database.database().reference()
            
         
