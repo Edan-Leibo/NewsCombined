@@ -54,12 +54,17 @@ class MessagesFirebase{
         
     }
     
+
+   
     
     func saveMessage(insertCluster : Cluster, messageTextfield : UITextField) {
         
-       
+        var sender = "Guest"
+        if (Auth.auth().currentUser != nil) {
+            sender = (Auth.auth().currentUser?.email)!
+        }
         let messagesDB = ref?.child("Messages").child(((insertCluster.category) + "_" + (insertCluster.topic)))
-        let messageDictionary = ["sender": "TheUserName", "MessageBody" : messageTextfield.text] as [String : Any]
+        let messageDictionary = ["sender": sender, "MessageBody" : messageTextfield.text] as [String : Any]
         
         
         //TODO: Send the message to Firebase and save it in our database

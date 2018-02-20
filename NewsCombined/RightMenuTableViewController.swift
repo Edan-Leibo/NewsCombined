@@ -32,12 +32,19 @@ class RightMenuTableViewController: UITableViewController {
         case 0:
             performSegue(withIdentifier: "toProfile", sender: self)
             break
-        case 1:
+        case 2:
             performSegue(withIdentifier: "toSettings", sender: self)
             break
+            
+        case 1:
+            performSegue(withIdentifier: "GoToWelcome", sender: self)
+            break
+            
+            
+            
         default:
             break
-            //sign out
+            //GoToWelcome
         }
         
             

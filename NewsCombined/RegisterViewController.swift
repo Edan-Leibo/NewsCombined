@@ -45,8 +45,8 @@ class RegisterViewController: UIViewController {
             
             else {
                 //print("Created new user")
-                self.performSegue(withIdentifier: "goToNewsCombined", sender: self)
-                
+             //   self.performSegue(withIdentifier: "goToNewsCombined", sender: self)
+                 self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
             }
     
         

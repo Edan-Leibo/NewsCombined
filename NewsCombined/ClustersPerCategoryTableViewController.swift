@@ -19,6 +19,8 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
     @IBOutlet weak var alertButton: UIBarButtonItem!
     @IBOutlet var messageTableView: UITableView!
     
+    
+    var FBunit : ModelFirebase? = nil
     var type : String?
     var clusterArray : [Cluster] = [Cluster]()
    // var Clustertosend : Cluster?
@@ -35,7 +37,9 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
         messageTableView.register(UINib(nibName: "BlockCell", bundle: nil), forCellReuseIdentifier: "customCell")
        configureTableView()
         messageTableView.separatorStyle = .none
-        
+        if FBunit == nil {
+            FBunit = ModelFirebase ()
+        }
 
     }
     func refreshClusters(withChosenCategoty category: String){
@@ -53,8 +57,15 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
     
     func didpressbutton(title: Any) {
         chosenRow = title as! Int
-        performSegue(withIdentifier: "goToMessages", sender: self)
-
+        let user = FBunit?.getuser()
+        if (user != nil)
+        {
+            performSegue(withIdentifier: "goToMessages", sender: self)
+        }
+        else{
+           //goToWelcome
+            performSegue(withIdentifier: "goToWelcome", sender: self)
+        }
     }
     
     func sideMenus(){

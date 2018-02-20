@@ -44,9 +44,27 @@ class ModelFirebase{
         
     }
     
+    func getuser () -> String?{
+        print(Auth.auth().currentUser?.email as String?)
+        return Auth.auth().currentUser?.email as String?
+    
+    }
+    
+    func checkLoggedIn() {
+        Auth.auth().addStateDidChangeListener { auth, user in
+            if user != nil {
+                // User is signed in.
+            } else {
+                // No user is signed in.
+                
+            }
+        }
+    }
+    
     func LogInUser(Email : String , Password : String) ->String {
         
         self.results = ""
+        checkLoggedIn()
         Auth.auth().signIn(withEmail: Email, password: Password, completion: { (user, error) in
             if error != nil {
                 self.results = "Email/Password error"
