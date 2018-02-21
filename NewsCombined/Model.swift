@@ -37,65 +37,56 @@ class ModelNotification{
         NotificationCenter.default.removeObserver(observer)
     }
 }
+*/
 
 class Model{
     static let instance = Model()
-    
     
     lazy private var modelSql:ModelSql? = ModelSql()
     
     private init(){
     }
     
-    func clear(){
+    /*func clear(){
         print("Model.clear")
         ModelFirebase.clearObservers()
-    }
+    }*/
     
-    func addStudent(st:Student){
-        ModelFirebase.addStudent(st: st){(error) in
-            //st.addStudentToLocalDb(database: self.modelSql?.database)
-        }
-    }
-    
-    func getStudentById(id:String, callback:@escaping (Student)->Void){
-    }
-    
-    func getAllStudents(callback:@escaping ([Student])->Void){
-        print("Model.getAllStudents")
+    func getAllClusters(category: String, callback:@escaping ([Cluster])->Void){
         
         // get last update date from SQL
-        let lastUpdateDate = LastUpdateTable.getLastUpdateDate(database: modelSql?.database, table: Student.ST_TABLE)
+        let lastUpdateDate = LastUpdateTable.getLastUpdateDate(database: modelSql?.database, table: Cluster.CL_TABLE)
         
         // get all updated records from firebase
-        ModelFirebase.getAllStudents(lastUpdateDate, callback: { (students) in
+        ModelFirebase.getAllClusters(byCategory: category, lastUpdateDate: lastUpdateDate, callback: { (clusters) in
             //update the local db
-            print("got \(students.count) new records from FB")
+            //print("got \(students.count) new records from FB")
             var lastUpdate:Date?
-            for st in students{
-                st.addStudentToLocalDb(database: self.modelSql?.database)
+            for cl in clusters{
+                cl.addClusterToLocalDb(database: self.modelSql?.database)
                 if lastUpdate == nil{
-                    lastUpdate = st.lastUpdate
+                    lastUpdate = cl.lastUpdate
                 }else{
-                    if lastUpdate!.compare(st.lastUpdate!) == ComparisonResult.orderedAscending{
-                        lastUpdate = st.lastUpdate
+                    if lastUpdate!.compare(cl.lastUpdate!) == ComparisonResult.orderedAscending{
+                        lastUpdate = cl.lastUpdate
                     }
                 }
             }
             
             //upadte the last update table
             if (lastUpdate != nil){
-                LastUpdateTable.setLastUpdate(database: self.modelSql!.database, table: Student.ST_TABLE, lastUpdate: lastUpdate!)
+                LastUpdateTable.setLastUpdate(database: self.modelSql!.database, table: Cluster.CL_TABLE, lastUpdate: lastUpdate!)
             }
             
             //get the complete list from local DB
-            let totalList = Student.getAllStudentsFromLocalDb(database: self.modelSql?.database)
+            let totalList = Cluster.getAllClustersFromLocalDb(database: self.modelSql?.database)
             
             //return the list to the caller
             callback(totalList)
         })
     }
     
+    /*
     func getAllStudentsAndObserve(){
         print("Model.getAllStudentsAndObserve")
         // get last update date from SQL
@@ -128,6 +119,6 @@ class Model{
             
             ModelNotification.StudentList.post(data: totalList)
         })
-    }
+    }*/
 }
-*/
+

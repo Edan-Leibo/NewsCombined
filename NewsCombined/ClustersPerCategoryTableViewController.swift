@@ -9,6 +9,9 @@
 import UIKit
 import SVProgressHUD
 
+
+
+
 class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat{
    
     
@@ -25,13 +28,13 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
     var clusterArray : [Cluster] = [Cluster]()
    // var Clustertosend : Cluster?
     var chosenRow:Int=0
-    var model:NewsFirebase?
+    //old: var model:NewsFirebase?
     var cellHeight : CGFloat = 0
     var currentCategory : String = "politics"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        model=NewsFirebase.instance
+        //old: model=NewsFirebase.instance
         refreshClusters(withChosenCategoty: currentCategory)
         sideMenus()
         messageTableView.register(UINib(nibName: "BlockCell", bundle: nil), forCellReuseIdentifier: "customCell")
@@ -40,19 +43,20 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
         if FBunit == nil {
             FBunit = ModelFirebase ()
         }
-
+        
     }
     func refreshClusters(withChosenCategoty category: String){
         SVProgressHUD.show()
         navigationItem.title = category.capitalized
         //self.tableView.tableFooterView = UIView()
-        model!.getAllClustersInCategory(byCategory: category, callback: { (allClusters) in
-            if let clusterArr = allClusters{
-                self.clusterArray = clusterArr
-                self.tableView.reloadData()
-                SVProgressHUD.dismiss()
-            }
+        
+        Model.instance.getAllClusters(category: category, callback: { (allClusters) in
+            self.clusterArray = allClusters
+            self.tableView.reloadData()
+            SVProgressHUD.dismiss()
+            
         })
+        
     }
     
     func didpressbutton(title: Any) {
@@ -113,7 +117,7 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
        // cell.commentsBTN.addTarget(self, action: "btnTapped", for: .touchUpInside)
         cell.senderUsername.text = clusterArray[indexPath.row].clustertitle
         //cell.clusterTitle.sizeToFit()
-       var urlKey = clusterArray[indexPath.row].clusterimgurl
+       let urlKey = clusterArray[indexPath.row].clusterimgurl
         if let url = URL(string: urlKey){
             
             do {

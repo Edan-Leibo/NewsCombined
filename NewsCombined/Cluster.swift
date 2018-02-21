@@ -13,14 +13,11 @@ class Cluster {
     
     
 
-    //var id : String = ""
     var category : String = ""
     var topic : String = ""
     var clusterimgurl : String = ""
     var clustertitle : String = ""
     var lastUpdate:Date?
-
-    //  var articles : [Article] = [Article] ()
     
     
     init(insertcategory : String, inserttopic : String, insertclusterimg : String, insertclustertitle : String) {
