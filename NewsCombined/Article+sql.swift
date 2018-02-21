@@ -8,19 +8,6 @@
 
 import Foundation
 
-/*
- var id : String = ""
- var url : String = ""
- var title : String = ""
- var imageURL : String = ""
- var description : String = ""
- var author : String = ""
- var source : String = ""
- var clusterKey : String = ""    //foreign KEYS
- var content : String = ""
- var lastUpdate:Date?
-
- */
 
 
 extension Article{
@@ -35,7 +22,7 @@ extension Article{
     static let ART_CLUSTERKEY = "ART_CLUSTERKEY"
     static let ART_CONTENT = "ART_CONTENT"
     static let ART_LAST_UPDATE = "ART_LAST_UPDATE"
- 
+    
     
     
     static func createTable(database:OpaquePointer?)->Bool{
@@ -48,8 +35,8 @@ extension Article{
             + ART_DESC + " TEXT, "
             + ART_AUTH + " TEXT, "
             + ART_SOURCE + " TEXT, "
-             + ART_CLUSTERKEY + " TEXT, "
-             + ART_CONTENT + " TEXT, "
+            + ART_CLUSTERKEY + " TEXT, "
+            + ART_CONTENT + " TEXT, "
             + ART_LAST_UPDATE + " DOUBLE)", nil, nil, &errormsg);
         if(res != 0){
             print("error creating table");
@@ -78,13 +65,13 @@ extension Article{
             let url = self.url.cString(using: .utf8)
             let title = self.title.cString(using: .utf8)
             let imageURL = self.imageURL.cString(using: .utf8)
-
+            
             let description = self.description.cString(using: .utf8)
             let author = self.author.cString(using: .utf8)
             let source = self.source.cString(using: .utf8)
             let clusterKey = self.clusterKey.cString(using: .utf8)
             let content = self.content.cString(using: .utf8)
-         
+            
             sqlite3_bind_text(sqlite3_stmt, 1, id,-1,nil);
             sqlite3_bind_text(sqlite3_stmt, 2, url,-1,nil);
             sqlite3_bind_text(sqlite3_stmt, 3, title,-1,nil);
@@ -94,23 +81,25 @@ extension Article{
             sqlite3_bind_text(sqlite3_stmt, 7, source,-1,nil);
             sqlite3_bind_text(sqlite3_stmt, 8, clusterKey,-1,nil);
             sqlite3_bind_text(sqlite3_stmt, 9, content,-1,nil);
-
+            
             if (lastUpdate == nil){
                 lastUpdate = Date()
             }
             sqlite3_bind_double(sqlite3_stmt, 10, lastUpdate!.toFirebase());
             
             if(sqlite3_step(sqlite3_stmt) == SQLITE_DONE){
-                //print("new row added succefully")
+                //print("new row added succesfully")
             }
         }
         sqlite3_finalize(sqlite3_stmt)
     }
     
-    static func getAllArticlesFromLocalDb(database:OpaquePointer?)->[Article]{
+    
+    static func getAllArticlesFromLocalDb(insertCluster: Cluster, database:OpaquePointer?)->[Article]{
         var articles = [Article]()
         var sqlite3_stmt: OpaquePointer? = nil
-        if (sqlite3_prepare_v2(database,"SELECT * from "+ART_TABLE+";",-1,&sqlite3_stmt,nil) == SQLITE_OK){
+        if (sqlite3_prepare_v2(database, "SELECT * from " + ART_TABLE + " WHERE "+ART_CLUSTERKEY + " = '" + insertCluster.category+"_"+insertCluster.topic+"';",-1,&sqlite3_stmt,nil) == SQLITE_OK)
+        {
             while(sqlite3_step(sqlite3_stmt) == SQLITE_ROW){
                 let id =  String(validatingUTF8:sqlite3_column_text(sqlite3_stmt,0))
                 let url =  String(validatingUTF8:sqlite3_column_text(sqlite3_stmt,1))
@@ -121,7 +110,7 @@ extension Article{
                 let source =  String(validatingUTF8:sqlite3_column_text(sqlite3_stmt,6))
                 let clusterKey =  String(validatingUTF8:sqlite3_column_text(sqlite3_stmt,7))
                 let content =  String(validatingUTF8:sqlite3_column_text(sqlite3_stmt,8))
-
+                
                 
                 
                 //let update =  Double(sqlite3_column_double(sqlite3_stmt,3))
@@ -137,3 +126,4 @@ extension Article{
     }
     
 }
+

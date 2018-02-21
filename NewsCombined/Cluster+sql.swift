@@ -46,7 +46,7 @@ extension Cluster{
             let title = self.clustertitle.cString(using: .utf8)
             var imageUrl = "".cString(using: .utf8)
             //if self.clusterimgurl != nil {
-                imageUrl = self.clusterimgurl.cString(using: .utf8)
+            imageUrl = self.clusterimgurl.cString(using: .utf8)
             //}
             
             sqlite3_bind_text(sqlite3_stmt, 1, id,-1,nil);
@@ -67,7 +67,7 @@ extension Cluster{
     static func getAllClustersFromLocalDb(insertCategory: String, database:OpaquePointer?)->[Cluster]{
         var clusters = [Cluster]()
         var sqlite3_stmt: OpaquePointer? = nil
-
+        
         if (sqlite3_prepare_v2(database,"SELECT * from " + CL_TABLE + " WHERE "+Cluster.CL_ID + " LIKE '" + insertCategory+"%';",-1,&sqlite3_stmt,nil) == SQLITE_OK){
             while(sqlite3_step(sqlite3_stmt) == SQLITE_ROW){
                 let id =  String(validatingUTF8:sqlite3_column_text(sqlite3_stmt,0))
@@ -90,3 +90,4 @@ extension Cluster{
     }
     
 }
+

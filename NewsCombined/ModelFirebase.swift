@@ -36,7 +36,7 @@ class ModelFirebase{
         }
     }
     
-    static func getAllClusters(byCategory:String, lastUpdateDate:Date? , callback:@escaping ([Cluster])->Void){
+    static func getAllClustersAndObserve(byCategory:String, lastUpdateDate:Date? , callback:@escaping ([Cluster])->Void){
         //print("FB: getAllClusters")
         let handler = {(snapshot:DataSnapshot) in
             var clusters = [Cluster]()
@@ -81,13 +81,13 @@ class ModelFirebase{
         let myRef = ref?.child("Articles")
         if (lastUpdateDate != nil){
             let fbQuery = myRef!.queryOrdered(byChild:"lastUpdate").queryStarting(atValue:lastUpdateDate!.toFirebase())
-            fbQuery.observeSingleEvent(of: .value, with: handler)
+            fbQuery.observe(.value, with: handler)
         }else{
-            myRef!.observeSingleEvent(of: .value, with: handler)
+            myRef!.observe(.value, with: handler)
         }
     }
-
-
+    
+    
     
     
     
@@ -99,7 +99,7 @@ class ModelFirebase{
     func getuser () -> String?{
         print(Auth.auth().currentUser?.email as String?)
         return Auth.auth().currentUser?.email as String?
-    
+        
     }
     
     func checkLoggedIn() {
@@ -137,7 +137,7 @@ class ModelFirebase{
             if error != nil {
                 self.results = "Email/Password error"
             }
-        
+            
         })
         return self.results
         
@@ -148,3 +148,4 @@ class ModelFirebase{
     
     
 }
+
