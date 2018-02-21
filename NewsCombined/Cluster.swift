@@ -7,15 +7,19 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 class Cluster {
     
     
+
     //var id : String = ""
     var category : String = ""
     var topic : String = ""
     var clusterimgurl : String = ""
     var clustertitle : String = ""
+    var lastUpdate:Date?
+
     //  var articles : [Article] = [Article] ()
     
     
@@ -32,6 +36,9 @@ class Cluster {
         topic = fromJson["topic"] as! String
         clusterimgurl = fromJson["clusterimgurl"] as! String
         clustertitle = fromJson["clustertitle"] as! String
+        if let ts = fromJson["lastUpdate"] as? Double{
+            self.lastUpdate = Date.fromFirebase(ts)
+        }
     }
     
     func toJson()->[String:Any]{
@@ -40,7 +47,8 @@ class Cluster {
         json["topic"] = topic
         json["clusterimgurl"] = clusterimgurl
         json["clustertitle"] = clustertitle
-        
+        json["lastUpdate"] = ServerValue.timestamp()
+
         return json
     }
     /*

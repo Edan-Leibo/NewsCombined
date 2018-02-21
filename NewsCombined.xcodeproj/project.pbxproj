@@ -26,6 +26,11 @@
 		845021AD20139C9C008F33D6 /* MessagesFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845021AC20139C9C008F33D6 /* MessagesFirebase.swift */; };
 		845021AF2013A113008F33D6 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845021AE2013A113008F33D6 /* Message.swift */; };
 		846EB1F0200E587800BD64F4 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846EB1EE200E513B00BD64F4 /* SWRevealViewController.m */; };
+		847638DC203CABBD00EF0364 /* ModelSql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847638DB203CABBD00EF0364 /* ModelSql.swift */; };
+		847638DE203CAC0000EF0364 /* Cluster+sql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847638DD203CAC0000EF0364 /* Cluster+sql.swift */; };
+		847638E3203CC2AA00EF0364 /* Date+firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847638E2203CC2AA00EF0364 /* Date+firebase.swift */; };
+		847638E5203CCEC700EF0364 /* LastUpdateTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847638E4203CCEC700EF0364 /* LastUpdateTable.swift */; };
+		847638E7203CDC1000EF0364 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847638E6203CDC1000EF0364 /* Model.swift */; };
 		847E58812000234800E2CDF8 /* NewsCluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E58802000234800E2CDF8 /* NewsCluster.swift */; };
 		8496F6A3200E63780062B32C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496F6A2200E63780062B32C /* ViewController.swift */; };
 		84A4A9AE200F682800FA72F3 /* LeftMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4A9AD200F682800FA72F3 /* LeftMenuTableViewController.swift */; };
@@ -68,6 +73,11 @@
 		846EB1ED200E513A00BD64F4 /* NewsCombined-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NewsCombined-Bridging-Header.h"; sourceTree = "<group>"; };
 		846EB1EE200E513B00BD64F4 /* SWRevealViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		846EB1EF200E513C00BD64F4 /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		847638DB203CABBD00EF0364 /* ModelSql.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSql.swift; sourceTree = "<group>"; };
+		847638DD203CAC0000EF0364 /* Cluster+sql.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cluster+sql.swift"; sourceTree = "<group>"; };
+		847638E2203CC2AA00EF0364 /* Date+firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+firebase.swift"; sourceTree = "<group>"; };
+		847638E4203CCEC700EF0364 /* LastUpdateTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastUpdateTable.swift; sourceTree = "<group>"; };
+		847638E6203CDC1000EF0364 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		847E58802000234800E2CDF8 /* NewsCluster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCluster.swift; sourceTree = "<group>"; };
 		8496F6A2200E63780062B32C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		84A4A9AD200F682800FA72F3 /* LeftMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuTableViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +213,11 @@
 				84A6A408200D0C8B00EFF828 /* NewsFirebase.swift */,
 				845021AC20139C9C008F33D6 /* MessagesFirebase.swift */,
 				845021AE2013A113008F33D6 /* Message.swift */,
+				847638DB203CABBD00EF0364 /* ModelSql.swift */,
+				847638DD203CAC0000EF0364 /* Cluster+sql.swift */,
+				847638E2203CC2AA00EF0364 /* Date+firebase.swift */,
+				847638E4203CCEC700EF0364 /* LastUpdateTable.swift */,
+				847638E6203CDC1000EF0364 /* Model.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -374,17 +389,22 @@
 				63E28B311B9A337600FBF6E0 /* LogInViewController.swift in Sources */,
 				845021AF2013A113008F33D6 /* Message.swift in Sources */,
 				8448B61F20136E5700E5999A /* RightMenuTableViewController.swift in Sources */,
+				847638E5203CCEC700EF0364 /* LastUpdateTable.swift in Sources */,
 				F645CCD3200B31F200F45904 /* SpecificArticleViewController.swift in Sources */,
 				84E9125B2005140F007A87D9 /* ModelFirebase.swift in Sources */,
 				78A443D12006824900C4CC31 /* BaseNavigationViewController.swift in Sources */,
 				F645CCD5200B4C9300F45904 /* ArticlesInClusAndCatViewController.swift in Sources */,
+				847638DE203CAC0000EF0364 /* Cluster+sql.swift in Sources */,
 				84A6A407200D0C5900EFF828 /* Cluster.swift in Sources */,
 				84A6A405200D0C4800EFF828 /* Article.swift in Sources */,
+				847638DC203CABBD00EF0364 /* ModelSql.swift in Sources */,
+				847638E3203CC2AA00EF0364 /* Date+firebase.swift in Sources */,
 				78A443D3200682FC00C4CC31 /* ClustersPerCategoryTableViewController.swift in Sources */,
 				63E28B2F1B9A337600FBF6E0 /* AppDelegate.swift in Sources */,
 				8496F6A3200E63780062B32C /* ViewController.swift in Sources */,
 				63E28B301B9A337600FBF6E0 /* MessagesViewController.swift in Sources */,
 				84B10CD0200EAD19003D4CAB /* ArticleTableViewCell.swift in Sources */,
+				847638E7203CDC1000EF0364 /* Model.swift in Sources */,
 				84A6A40B200D0D1F00EFF828 /* NewsFirebaseViewController.swift in Sources */,
 				845021AD20139C9C008F33D6 /* MessagesFirebase.swift in Sources */,
 			);
