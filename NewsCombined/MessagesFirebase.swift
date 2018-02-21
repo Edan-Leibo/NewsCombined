@@ -68,7 +68,7 @@ class MessagesFirebase{
         
         
         //TODO: Send the message to Firebase and save it in our database
-        messagesDB?.childByAutoId().setValue(messageDictionary) { //creating auto id for each message!!!
+         messagesDB?.childByAutoId().setValue(messageDictionary) { //creating auto id for each message!!!
             (error,ref) in
             
             if error != nil{
@@ -89,12 +89,14 @@ class MessagesFirebase{
             var messageArray = [Message]()
             if let snaps = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snaps {
+                    let MessageID = snap.key;
+                    print(MessageID)
                     if let clusterDict = snap.value as? Dictionary<String,AnyObject> {
                         if let sender = clusterDict["sender"] as? String {
                             print(sender)
                             if let MessageBody = clusterDict["MessageBody"] as? String{
                                 print (MessageBody)
-                                let msg = Message(insertsender: sender, insertbody: MessageBody)
+                                let msg = Message(insertsender: sender, insertbody: MessageBody,insertID:MessageID)
                                 messageArray.append(msg)
                               
                             }

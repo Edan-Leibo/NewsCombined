@@ -498,7 +498,7 @@
                   moduleName = "NewsCombined"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/newscombinedreposi/NewsCombined/SViewController.swift"
-                  timestampString = "540836564.175068"
+                  timestampString = "540859567.925786"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -513,7 +513,7 @@
                   moduleName = "NewsCombined"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/newscombinedreposi/NewsCombined/SViewController.swift"
-                  timestampString = "540836564.180145"
+                  timestampString = "540859567.9298429"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -528,7 +528,7 @@
                   moduleName = "NewsCombined"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/newscombinedreposi/NewsCombined/SViewController.swift"
-                  timestampString = "540836564.185251"
+                  timestampString = "540859567.934548"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -543,7 +543,7 @@
                   moduleName = "NewsCombined"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/newscombinedreposi/NewsCombined/SViewController.swift"
-                  timestampString = "540836564.190526"
+                  timestampString = "540859567.938843"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "13"
@@ -880,11 +880,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.423963"
+            timestampString = "540859567.1227241"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -942,11 +942,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.433027"
+            timestampString = "540859567.122905"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -956,11 +956,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.433863"
+            timestampString = "540859567.1230071"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -970,11 +970,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.434587"
+            timestampString = "540859567.123111"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -984,11 +984,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.435236"
+            timestampString = "540859567.12319"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -998,11 +998,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.435931"
+            timestampString = "540859567.123292"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1012,11 +1012,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.436512"
+            timestampString = "540859567.123372"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1026,11 +1026,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.437012"
+            timestampString = "540859567.123461"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1040,11 +1040,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.437674"
+            timestampString = "540859567.123572"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1054,11 +1054,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.43839"
+            timestampString = "540859567.123675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1068,11 +1068,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.438969"
+            timestampString = "540859567.123755"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1082,11 +1082,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.439667"
+            timestampString = "540859567.123845"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1096,11 +1096,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.440344"
+            timestampString = "540859567.1239229"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1110,11 +1110,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.441196"
+            timestampString = "540859567.12401"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1124,11 +1124,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.442072"
+            timestampString = "540859567.124114"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1138,11 +1138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.442722"
+            timestampString = "540859567.124194"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1168,11 +1168,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.444043"
+            timestampString = "540859567.124292"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1182,11 +1182,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.444766"
+            timestampString = "540859567.1243809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1196,11 +1196,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.445418"
+            timestampString = "540859567.1244611"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1210,11 +1210,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.4459701"
+            timestampString = "540859567.124567"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1224,11 +1224,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.446666"
+            timestampString = "540859567.124665"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1238,11 +1238,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.451045"
+            timestampString = "540859567.124766"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1252,11 +1252,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.452015"
+            timestampString = "540859567.124866"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1266,11 +1266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.453108"
+            timestampString = "540859567.124945"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1280,11 +1280,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.45392"
+            timestampString = "540859567.125046"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1294,11 +1294,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.454583"
+            timestampString = "540859567.125124"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1308,11 +1308,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.455372"
+            timestampString = "540859567.125204"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1322,11 +1322,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.459041"
+            timestampString = "540859567.125283"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1336,11 +1336,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.459749"
+            timestampString = "540859567.1253901"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1350,11 +1350,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.460277"
+            timestampString = "540859567.125478"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1364,11 +1364,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.460876"
+            timestampString = "540859567.125564"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1378,11 +1378,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.461411"
+            timestampString = "540859567.125643"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1392,11 +1392,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.461903"
+            timestampString = "540859567.125742"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1406,11 +1406,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.4624979"
+            timestampString = "540859567.12582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132">
+            startingLineNumber = "134"
+            endingLineNumber = "134">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1548,7 +1548,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.4718471"
+            timestampString = "540859567.126034"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
@@ -1564,7 +1564,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.472631"
+            timestampString = "540859567.126125"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
@@ -1580,7 +1580,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.473349"
+            timestampString = "540859567.126213"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
@@ -1596,7 +1596,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.474038"
+            timestampString = "540859567.1262929"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
@@ -1612,7 +1612,7 @@
                   moduleName = "NewsCombined"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/newscombinedreposi/NewsCombined/MessagesFirebase.swift"
-                  timestampString = "540836564.411787"
+                  timestampString = "540859568.1238919"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "71"
@@ -1627,7 +1627,7 @@
                   moduleName = "NewsCombined"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/newscombinedreposi/NewsCombined/MessagesFirebase.swift"
-                  timestampString = "540836564.4167579"
+                  timestampString = "540859568.12822"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "74"
@@ -1644,7 +1644,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.474653"
+            timestampString = "540859567.126374"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
@@ -1660,7 +1660,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.475255"
+            timestampString = "540859567.126462"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
@@ -1676,7 +1676,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.4758281"
+            timestampString = "540859567.126564"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
@@ -1692,7 +1692,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.476398"
+            timestampString = "540859567.126652"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -1708,7 +1708,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.4769911"
+            timestampString = "540859567.126731"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
@@ -1724,7 +1724,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.47762"
+            timestampString = "540859567.12683"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
@@ -1740,7 +1740,7 @@
                   moduleName = "NewsCombined"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/newscombinedreposi/NewsCombined/MessagesFirebase.swift"
-                  timestampString = "540836564.463213"
+                  timestampString = "540859568.170837"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "81"
@@ -1755,7 +1755,7 @@
                   moduleName = "NewsCombined"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/newscombinedreposi/NewsCombined/MessagesFirebase.swift"
-                  timestampString = "540836564.468112"
+                  timestampString = "540859568.175714"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "81"
@@ -1772,7 +1772,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.478212"
+            timestampString = "540859567.126909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
@@ -1788,11 +1788,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.4788181"
+            timestampString = "540859567.126989"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "MessagesFirebase"
             landmarkType = "3">
          </BreakpointContent>
@@ -1804,7 +1804,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.479426"
+            timestampString = "540859567.127069"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "87"
@@ -1820,7 +1820,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.4801559"
+            timestampString = "540859567.127153"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
@@ -1868,7 +1868,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.480872"
+            timestampString = "540859567.127233"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
@@ -1880,11 +1880,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.4816819"
+            timestampString = "540859567.1273119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
@@ -1900,7 +1900,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.482291"
+            timestampString = "540859567.127391"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
@@ -1916,11 +1916,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.482831"
+            timestampString = "540859567.12749"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "retriveMessages(insertCluster:callback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1928,43 +1928,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.483797"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "retriveMessages(insertCluster:callback:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.487239"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "retriveMessages(insertCluster:callback:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.4881001"
+            timestampString = "540859567.127582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"
@@ -1980,23 +1948,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.4888819"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "retriveMessages(insertCluster:callback:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.489766"
+            timestampString = "540859567.127661"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"
@@ -2012,7 +1964,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.490494"
+            timestampString = "540859567.127748"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "retriveMessages(insertCluster:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsCombined/MessagesFirebase.swift"
+            timestampString = "540859567.127827"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "97"
@@ -2028,23 +1996,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.491201"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "retriveMessages(insertCluster:callback:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.491928"
+            timestampString = "540859567.127905"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "100"
@@ -2060,7 +2012,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.4924771"
+            timestampString = "540859567.127992"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "retriveMessages(insertCluster:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsCombined/MessagesFirebase.swift"
+            timestampString = "540859567.128072"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "101"
@@ -2076,7 +2044,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.493127"
+            timestampString = "540859567.128173"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "102"
@@ -2092,7 +2060,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.493794"
+            timestampString = "540859567.128314"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
@@ -2108,7 +2076,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.494418"
+            timestampString = "540859567.128409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "104"
@@ -2124,7 +2092,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.495061"
+            timestampString = "540859567.1284879"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "retriveMessages(insertCluster:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsCombined/MessagesFirebase.swift"
+            timestampString = "540859567.128624"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "106"
@@ -2140,11 +2124,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.495581"
+            timestampString = "540859567.1287251"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "retriveMessages(insertCluster:callback:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2156,11 +2140,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.49631"
+            timestampString = "540859567.128805"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "retriveMessages(insertCluster:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsCombined/MessagesFirebase.swift"
+            timestampString = "540859567.128884"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "retriveMessages(insertCluster:callback:)"
             landmarkType = "7">
             <Locations>
@@ -2204,11 +2204,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.49705"
+            timestampString = "540859567.1289639"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "retriveMessages(insertCluster:callback:)"
             landmarkType = "7">
             <Locations>
@@ -2284,7 +2284,7 @@
                   moduleName = "NewsCombined"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/newscombinedreposi/NewsCombined/MessagesViewController.swift"
-                  timestampString = "540836564.50732"
+                  timestampString = "540859568.225033"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "174"
@@ -2299,7 +2299,7 @@
                   moduleName = "NewsCombined"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/newscombinedreposi/NewsCombined/MessagesViewController.swift"
-                  timestampString = "540836564.512264"
+                  timestampString = "540859568.229059"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "175"
@@ -2348,7 +2348,7 @@
                   moduleName = "NewsCombined"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/newscombinedreposi/NewsCombined/MessagesViewController.swift"
-                  timestampString = "540836564.533536"
+                  timestampString = "540859568.246307"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "174"
@@ -2363,7 +2363,7 @@
                   moduleName = "NewsCombined"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/newscombinedreposi/NewsCombined/MessagesViewController.swift"
-                  timestampString = "540836564.5388761"
+                  timestampString = "540859568.2508709"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "175"
@@ -2408,7 +2408,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesViewController.swift"
@@ -2421,14 +2421,14 @@
             landmarkType = "3">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "NewsCombined.MessagesViewController.messagearray.getter : Swift.Array&lt;NewsCombined.Message&gt;"
                   moduleName = "NewsCombined"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/newscombinedreposi/NewsCombined/MessagesViewController.swift"
-                  timestampString = "540836564.571057"
+                  timestampString = "540855835.190496"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
@@ -2436,14 +2436,14 @@
                   offsetFromSymbolStart = "109">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "NewsCombined.MessagesViewController.messagearray.setter : Swift.Array&lt;NewsCombined.Message&gt;"
                   moduleName = "NewsCombined"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/newscombinedreposi/NewsCombined/MessagesViewController.swift"
-                  timestampString = "540836564.5766309"
+                  timestampString = "540855835.197142"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
@@ -2451,14 +2451,14 @@
                   offsetFromSymbolStart = "112">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "NewsCombined.MessagesViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; NewsCombined.MessagesViewController"
                   moduleName = "NewsCombined"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/newscombinedreposi/NewsCombined/MessagesViewController.swift"
-                  timestampString = "540836564.582147"
+                  timestampString = "540855835.201405"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
@@ -2466,14 +2466,14 @@
                   offsetFromSymbolStart = "193">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "NewsCombined.MessagesViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;NewsCombined.MessagesViewController&gt;"
                   moduleName = "NewsCombined"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/newscombinedreposi/NewsCombined/MessagesViewController.swift"
-                  timestampString = "540836564.5873179"
+                  timestampString = "540855835.205323"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "15"
@@ -2534,7 +2534,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/LogInViewController.swift"
@@ -2550,7 +2550,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/LogInViewController.swift"
@@ -2566,7 +2566,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/LogInViewController.swift"
@@ -2582,7 +2582,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/LogInViewController.swift"
@@ -2598,7 +2598,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/LogInViewController.swift"
@@ -2614,7 +2614,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/LogInViewController.swift"
@@ -2634,7 +2634,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.5306"
+            timestampString = "540859567.1293139"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
@@ -2650,7 +2650,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/MessagesFirebase.swift"
-            timestampString = "540834682.53123"
+            timestampString = "540859567.129455"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
@@ -2662,7 +2662,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/ClustersPerCategoryTableViewController.swift"
@@ -2678,7 +2678,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/ClustersPerCategoryTableViewController.swift"
@@ -2703,8 +2703,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
             endingLineNumber = "18"
-            landmarkName = "WelcomeViewController"
-            landmarkType = "3">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2719,8 +2719,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
             endingLineNumber = "19"
-            landmarkName = "WelcomeViewController"
-            landmarkType = "3">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2735,8 +2735,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
             endingLineNumber = "20"
-            landmarkName = "hideButton(_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2751,8 +2751,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
             endingLineNumber = "23"
-            landmarkName = "hideButton(_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2767,8 +2767,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
             endingLineNumber = "24"
-            landmarkName = "WelcomeViewController"
-            landmarkType = "3">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2783,8 +2783,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
             endingLineNumber = "25"
-            landmarkName = "logOutPressed(_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2799,8 +2799,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
             endingLineNumber = "26"
-            landmarkName = "logOutPressed(_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2815,8 +2815,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
             endingLineNumber = "27"
-            landmarkName = "logOutPressed(_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -2863,8 +2863,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
             endingLineNumber = "28"
-            landmarkName = "logOutPressed(_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -2911,8 +2911,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
             endingLineNumber = "29"
-            landmarkName = "logOutPressed(_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2927,8 +2927,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
             endingLineNumber = "31"
-            landmarkName = "logOutPressed(_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2943,14 +2943,14 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
             endingLineNumber = "30"
-            landmarkName = "logOutPressed(_:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewsCombined/ClustersPerCategoryTableViewController.swift"
@@ -3121,6 +3121,278 @@
             endingLineNumber = "44"
             landmarkName = "functionName()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsCombined/LogInViewController.swift"
+            timestampString = "540855951.5742331"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "logInPressed(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsCombined/NewsFirebase.swift"
+            timestampString = "540859567.133502"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "getAllArticlesInCluster(byCluster:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsCombined/Article.swift"
+            timestampString = "540859567.134136"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "Article"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsCombined/NewsFirebase.swift"
+            timestampString = "540859567.1342191"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "getArticle(byId:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsCombined/NewsFirebase.swift"
+            timestampString = "540859567.134838"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "getArticle(byId:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsCombined/NewsFirebase.swift"
+            timestampString = "540859567.135435"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "getArticle(byId:callback:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsCombined.NewsFirebase.getArticle(byId: Swift.String, callback: (Swift.Optional&lt;NewsCombined.Article&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "NewsCombined"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/newscombinedreposi/NewsCombined/NewsFirebase.swift"
+                  timestampString = "540859568.45104"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "481">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__ObjC.DataSnapshot) -&gt; () in NewsCombined.NewsFirebase.getArticle(byId: Swift.String, callback: (Swift.Optional&lt;NewsCombined.Article&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "NewsCombined"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/newscombinedreposi/NewsCombined/NewsFirebase.swift"
+                  timestampString = "540859568.455603"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "25">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsCombined/NewsFirebase.swift"
+            timestampString = "540859567.1360379"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "getArticle(byId:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsCombined/NewsFirebase.swift"
+            timestampString = "540859567.137229"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "getArticle(byId:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsCombined/NewsFirebase.swift"
+            timestampString = "540859567.138463"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "getArticle(byId:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsCombined/NewsFirebase.swift"
+            timestampString = "540859567.13907"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "getArticle(byId:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsCombined/NewsFirebase.swift"
+            timestampString = "540859567.13968"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "getArticle(byId:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsCombined/NewsFirebase.swift"
+            timestampString = "540859567.140283"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "getAllArticlesInCluster(byCluster:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsCombined/NewsFirebase.swift"
+            timestampString = "540859567.140885"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "getAllArticlesInCluster(byCluster:callback:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsCombined.NewsFirebase.getAllArticlesInCluster(byCluster: NewsCombined.Cluster, callback: (Swift.Optional&lt;Swift.Array&lt;NewsCombined.Article&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "NewsCombined"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/newscombinedreposi/NewsCombined/NewsFirebase.swift"
+                  timestampString = "540859568.5571949"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "326">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__ObjC.DataSnapshot) -&gt; () in NewsCombined.NewsFirebase.getAllArticlesInCluster(byCluster: NewsCombined.Cluster, callback: (Swift.Optional&lt;Swift.Array&lt;NewsCombined.Article&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "NewsCombined"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Desktop/newscombinedreposi/NewsCombined/NewsFirebase.swift"
+                  timestampString = "540859568.561612"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "29">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
