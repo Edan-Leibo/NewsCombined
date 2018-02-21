@@ -36,3 +36,4 @@ class NewsArticle {
         self.logo = logo
     }
 }
+
