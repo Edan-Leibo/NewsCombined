@@ -8,10 +8,18 @@
 
 import UIKit
 
-class RightMenuTableViewController: UITableViewController {
 
+class RightMenuTableViewController: UITableViewController {
+  
+    @IBOutlet weak var userName: UILabel!
+     var FBunit : ModelFirebase? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        if FBunit == nil {
+            FBunit = ModelFirebase ()
+        }
+        NotificationCenter.default.addObserver(self, selector: #selector(RightMenuTableViewController.functionName), name:NSNotification.Name(rawValue: "NotificationID"), object: nil)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -25,6 +33,20 @@ class RightMenuTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @objc func functionName() {
+        
+        var name = FBunit?.getuser()
+        if (name != nil) {
+            userName.text = name
+            
+        }
+        else{
+            userName.text = "Guest"
+        }
+        
+    }
+    
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //print(indexPath.row)
         //super.tableView(tableView, didSelectRowAt: indexPath)
@@ -32,12 +54,19 @@ class RightMenuTableViewController: UITableViewController {
         case 0:
             performSegue(withIdentifier: "toProfile", sender: self)
             break
-        case 1:
+        case 2:
             performSegue(withIdentifier: "toSettings", sender: self)
             break
+            
+        case 1:
+            performSegue(withIdentifier: "GoToWelcome", sender: self)
+            break
+            
+            
+            
         default:
             break
-            //sign out
+            //GoToWelcome
         }
         
             

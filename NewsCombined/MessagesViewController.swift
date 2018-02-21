@@ -14,6 +14,7 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var clusterToHold : Cluster?
     var messagearray : [Message] = [Message]()
     var messageFirebaseunit : MessagesFirebase?
+    var FBunit : ModelFirebase? = nil
 
     
     @IBOutlet var heightConstraint: NSLayoutConstraint!
@@ -52,8 +53,9 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
       retriveMessages()
         
         messageTableView.separatorStyle = .none
-
-
+        if FBunit == nil {
+            FBunit = ModelFirebase ()
+        }
     }
 
     ///////////////////////////////////////////
@@ -65,10 +67,25 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
     //TODO: Declare cellForRowAtIndexPath here:
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
-        cell.messageBackground.backgroundColor = UIColor.green
+       // cell.messageBackground.backgroundColor = UIColor.green
         cell.senderUsername.text = messagearray[indexPath.row].body
         cell.messageBody.text = messagearray[indexPath.row].sender
         cell.avatarImageView.image = UIImage(named: "NewsLogoBetter")
+        
+    
+         if cell.messageBody.text ==  FBunit?.getuser() { //TO CHECK IF MESSAGE IS FROM USER OR SOMEBODY ELSE!!!
+         
+         
+         cell.messageBackground.backgroundColor = UIColor.cyan
+         
+         }
+         
+         else {
+         
+        cell.messageBackground.backgroundColor = UIColor.green
+         
+         }
+
       
         return cell
     }

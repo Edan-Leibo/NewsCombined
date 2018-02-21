@@ -43,7 +43,16 @@ class LogInViewController: UIViewController {
             
         else {
           //  print("Created new user")
-            self.performSegue(withIdentifier: "goToNewsCombined", sender: self)
+        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+
+            /*
+            guard (navigationController?.popToRootViewController(animated: true)) != nil
+                else {
+                    print("This is first nav screen")
+                    return
+            }
+ */
+           // self.performSegue(withIdentifier: "goToNewsCombined", sender: self)
             
         }
         
