@@ -221,7 +221,6 @@
         <!--Log In-->
         <scene sceneID="Ku8-Lc-W7f">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ewD-vV-GoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="logInVC" id="xYK-ej-9R9" customClass="LogInViewController" customModule="NewsCombined" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fxq-LK-1OE"/>
@@ -301,6 +300,7 @@
                         <outlet property="passwordTextfield" destination="zuQ-XP-4Q7" id="FBf-fZ-iYp"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ewD-vV-GoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4858" y="-1845"/>
         </scene>

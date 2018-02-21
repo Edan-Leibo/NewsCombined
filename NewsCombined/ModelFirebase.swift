@@ -26,23 +26,78 @@ import FirebaseDatabase
 
 class ModelFirebase{
     
-    let ref:DatabaseReference?
     
     var results : String = ""
-    
-    
+    static var ref:DatabaseReference?=Database.database().reference()
     
     init(){
-        
         if(FirebaseApp.app() == nil){
             FirebaseApp.configure()
         }
-        ref = Database.database().reference()
-           
-        
-       
-        
     }
+    
+    static func getAllClusters(byCategory:String, lastUpdateDate:Date? , callback:@escaping ([Cluster])->Void){
+        //print("FB: getAllClusters")
+        let handler = {(snapshot:DataSnapshot) in
+            var clusters = [Cluster]()
+            for child in snapshot.children.allObjects{
+                if let childData = child as? DataSnapshot{
+                    if let json = childData.value as? Dictionary<String,Any>{
+                        let st = Cluster(fromJson: json)
+                        clusters.append(st)
+                    }
+                }
+            }
+            callback(clusters)
+        }
+        let myRef = ref?.child("Clusters").child(byCategory)
+        if (lastUpdateDate != nil){
+            //print("q starting at:\(lastUpdateDate!) \(lastUpdateDate!.toFirebase())")
+            let fbQuery = myRef!.queryOrdered(byChild:"lastUpdate").queryStarting(atValue:lastUpdateDate!.toFirebase())
+            fbQuery.observeSingleEvent(of: .value, with: handler)
+        }else{
+            myRef!.observeSingleEvent(of: .value, with: handler)
+        }
+    }
+    /*
+    func getAllClustersInCategory(byCategory:String,callback:@escaping ([Cluster]?)->Void){
+        let myRef = ref?.child("Clusters").child(byCategory)
+        myRef?.observe(.value, with: { (snapshot) in
+            var clusterArray = [Cluster]()
+            if let snaps = snapshot.children.allObjects as? [DataSnapshot] {
+                for snap in snaps {
+                    if let clusterDict = snap.value as? Dictionary<String,AnyObject> {
+                        if let clusterCategory = clusterDict["category"] as? String {
+                            print(clusterCategory)
+                            if let clusterimg = clusterDict["clusterimgurl"] as? String{
+                                print (clusterimg)
+                                if let clustertitle = clusterDict["clustertitle"] as? String{
+                                    print (clustertitle)
+                                    if let clustertopic = clusterDict["topic"] as? String{
+                                        print(clustertopic)
+                                        let clus = Cluster(insertcategory: clusterCategory, inserttopic: clustertopic, insertclusterimg: clusterimg, insertclustertitle: clustertitle)
+                                        clusterArray.append(clus)
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+                callback(clusterArray)
+            }else{
+                callback(nil)
+            }
+        })
+    }*/
+    
+    
+    
+    
+    
+    
+    
+    
     
     func getuser () -> String?{
         print(Auth.auth().currentUser?.email as String?)
