@@ -39,6 +39,10 @@ class ModelSql{
         if Cluster.createTable(database: database) == false{
             return nil
         }
+        if Article.createTable(database: database) == false{
+            return nil
+        }
+        
         
         if LastUpdateTable.createTable(database: database) == false{
             return nil

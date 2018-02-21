@@ -24,7 +24,7 @@ class ArticlesInClusAndCatViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        model=NewsFirebase.instance
+        //model=NewsFirebase.instance
     self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         //self.tableView.tableFooterView = UIView()
         messageTablieView.register(UINib(nibName: "BlockCell", bundle: nil), forCellReuseIdentifier: "customCell")
@@ -36,7 +36,7 @@ class ArticlesInClusAndCatViewController: UITableViewController {
         
         //self.tableView.tableFooterView = UIView()
         SVProgressHUD.show()
-        model!.getAllArticlesInCluster(byCluster: chosenCluster!, callback: { (articleArr) in
+        Model.instance.getAllArticlesInCluster(cluster: chosenCluster!, callback: { (articleArr) in
             if let aritcleArray = articleArr{
                     self.allArticles = aritcleArray
                     self.tableView.reloadData()

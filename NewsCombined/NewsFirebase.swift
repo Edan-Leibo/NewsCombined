@@ -38,8 +38,8 @@ class NewsFirebase{
 
     }
     
-    
-    //TO GET SINGLE ARTICLE!
+    /*
+    //TO GET SINGLE ARTICLE! - WE NEED TO CHECK IF TO REMOVE
     func getArticle(byId:String, callback: @escaping (Article?)->Void){
         let myRef = ref?.child("Articles").child(byId)
         myRef?.observeSingleEvent(of: .value, with: { (snapshot ) in
@@ -51,7 +51,7 @@ class NewsFirebase{
             }
         })
     }
-    
+    */
     
     func getAllClustersInCategory(byCategory:String,callback:@escaping ([Cluster]?)->Void){
         let myRef = ref?.child("Clusters").child(byCategory)
@@ -84,7 +84,7 @@ class NewsFirebase{
         })
     }
     
-    
+ /*
     //TO GET ALL ARTICLES FROM CLUSTER
     func getAllArticlesInCluster(byCluster: Cluster ,callback:@escaping ([Article]?)->Void){
         let profileRef = ref?.child("Articles")
@@ -107,6 +107,7 @@ class NewsFirebase{
         })
     }
     
+*/
     
     
     
@@ -116,8 +117,7 @@ class NewsFirebase{
     
     
     
-    
-    
+    /*
     
     func WriteDummyToDatabase() {
         let ClusterDB = ref?.child("Clusters")
@@ -178,7 +178,7 @@ class NewsFirebase{
         
         
     }
-    
+  */
     
     
 }

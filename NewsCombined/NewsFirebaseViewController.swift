@@ -34,7 +34,7 @@ class NewsFirebaseViewController: UIViewController {
         
         
         //To Get 1 article with ID
-        
+       /*
         NewsFBunit?.getArticle(byId: "-L2u7HWTWwZGIhcrg69n", callback: { (article) in
             if let check = article {
                 print(article!.author)
@@ -44,10 +44,10 @@ class NewsFirebaseViewController: UIViewController {
                 print(article?.author)
             }
         })
+        */
         
         
-        
-        
+        /*
         
         //THIS IS TO GET ALL ARTICLES IN CLUSTER
         let testo : Cluster = Cluster (insertcategory: "politics", inserttopic: "11", insertclusterimg: "", insertclustertitle: "")
@@ -58,7 +58,7 @@ class NewsFirebaseViewController: UIViewController {
             }
         })
         
-        
+        */
         
     }
     
