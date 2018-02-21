@@ -37,7 +37,7 @@ class ModelNotification{
         NotificationCenter.default.removeObserver(observer)
     }
 }
-*/
+
 class Model{
     static let instance = Model()
     
@@ -130,3 +130,4 @@ class Model{
         })
     }
 }
+*/
