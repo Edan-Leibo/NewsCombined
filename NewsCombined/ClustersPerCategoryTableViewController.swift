@@ -55,7 +55,7 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
                 }
                 self.clusterArray = clusters!
                 self.tableView.reloadData()
-                SVProgressHUD.dismiss()
+                SVProgressHUD.dismiss(withDelay: 1)
             }
         }
         Model.instance.getAllClustersAndObserve(category: category)
