@@ -27,11 +27,14 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        messageTableView.backgroundView = UIImageView(image: UIImage(named: "Preview.jpg"))
         //TODO: Set yourself as the delegate and datasource here:
         messageTableView.dataSource = self
         messageTableView.delegate = self
         messageFirebaseunit = MessagesFirebase()
-        
+       
+
+
              //TODO: Set yourself as the delegate of the text field here:
             messageTextfield.delegate = self
         
@@ -50,6 +53,8 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
         //TODO: Register your Cell.xib file here:
         messageTableView.register(UINib(nibName: "BlockCell", bundle: nil), forCellReuseIdentifier: "customCell")
         configureTableView()
+      //  tableView.backgroundView = UIImageView(image: UIImage(named: "Preview.jpg"))
+
       retriveMessages()
         
         messageTableView.separatorStyle = .none
@@ -67,7 +72,9 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
     //TODO: Declare cellForRowAtIndexPath here:
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
+        cell.backgroundColor = UIColor.clear
        // cell.messageBackground.backgroundColor = UIColor.green
+        cell.commentsBTN.isHidden = true
         cell.senderUsername.text = messagearray[indexPath.row].body
         cell.messageBody.text = messagearray[indexPath.row].sender
         cell.avatarImageView.image = UIImage(named: "NewsLogoBetter")

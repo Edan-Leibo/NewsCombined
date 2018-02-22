@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 
 protocol cellDelegat {
     func didpressbutton (title: Any)
@@ -34,9 +34,10 @@ class CustomCell: UITableViewCell {
     
     @IBOutlet weak var commentsBTN: UIButton!
     @IBAction func btnPressed(_ sender: Any) {
-        
+        SVProgressHUD.show()
         var tosend = commentsBTN.tag
         print(tosend)
+        SVProgressHUD.dismiss(withDelay: 1)
         delegate?.didpressbutton(title: tosend)
     }
     

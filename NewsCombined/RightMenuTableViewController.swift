@@ -52,7 +52,7 @@ class RightMenuTableViewController: UITableViewController {
         //super.tableView(tableView, didSelectRowAt: indexPath)
         switch indexPath.row {
         case 0:
-                 self.revealViewController().revealToggle(animated: true)
+            self.revealViewController().revealToggle(animated: true)
             performSegue(withIdentifier: "toProfile", sender: self)
              self.revealViewController().revealToggle(animated: true)
              SVProgressHUD.dismiss(withDelay: 1)
@@ -67,7 +67,6 @@ class RightMenuTableViewController: UITableViewController {
             performSegue(withIdentifier: "GoToWelcome", sender: self)
             self.revealViewController().revealToggle(animated: true)
             SVProgressHUD.dismiss(withDelay: 1)
-
             break
             
             

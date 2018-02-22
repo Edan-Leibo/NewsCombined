@@ -17,10 +17,11 @@ class SpecificArticleViewController: UIViewController {
     
     @IBOutlet weak var myWebView: UIWebView!
     override func viewDidLoad() {
+        SVProgressHUD.show()
+
         super.viewDidLoad()
         
     self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        SVProgressHUD.show()
         url = article!.url
         var urltodisplay = URL(string: url)
         SVProgressHUD.dismiss()

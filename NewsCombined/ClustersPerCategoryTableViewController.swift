@@ -39,6 +39,8 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
         sideMenus()
         messageTableView.register(UINib(nibName: "BlockCell", bundle: nil), forCellReuseIdentifier: "customCell")
         configureTableView()
+        tableView.backgroundView = UIImageView(image: UIImage(named: "Preview.jpg"))
+
         messageTableView.separatorStyle = .none
         if FBunit == nil {
             FBunit = ModelFirebase ()
@@ -119,6 +121,7 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
+        cell.backgroundColor = UIColor.clear
         let clus = clusterArray[indexPath.row]
         cell.setCluster(cluster: clus)
         cell.delegate = self

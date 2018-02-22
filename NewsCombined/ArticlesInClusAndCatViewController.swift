@@ -22,6 +22,8 @@ class ArticlesInClusAndCatViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //model=NewsFirebase.instance
+        tableView.backgroundView = UIImageView(image: UIImage(named: "Preview.jpg"))
+      SVProgressHUD.show()
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         //self.tableView.tableFooterView = UIView()
         messageTablieView.register(UINib(nibName: "BlockCell", bundle: nil), forCellReuseIdentifier: "customCell")
@@ -32,7 +34,7 @@ class ArticlesInClusAndCatViewController: UITableViewController {
         //self.type = CATEGORIES[selected_Catedories]
         
         //self.tableView.tableFooterView = UIView()
-        SVProgressHUD.show()
+      
         ModelNotification.ArticleList.observe { (articleArr) in
             if let aritcleArray = articleArr{
                 if (!SVProgressHUD.isVisible()){
@@ -70,7 +72,7 @@ class ArticlesInClusAndCatViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
-        
+        cell.backgroundColor = UIColor.clear
         // Configure the cell...
         cell.commentsBTN.isHidden = true
         cell.senderUsername.text = allArticles[indexPath.row].title
