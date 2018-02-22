@@ -37,7 +37,6 @@ class ModelFirebase{
     }
     
     static func getAllClustersAndObserve(byCategory:String, lastUpdateDate:Date? , callback:@escaping ([Cluster])->Void){
-        //print("FB: getAllClusters")
         let handler = {(snapshot:DataSnapshot) in
             var clusters = [Cluster]()
             for child in snapshot.children.allObjects{
@@ -54,13 +53,13 @@ class ModelFirebase{
         let myRef = ref?.child("Clusters").child(byCategory)
         if (lastUpdateDate != nil){
             let fbQuery = myRef!.queryOrdered(byChild:"lastUpdate").queryStarting(atValue:lastUpdateDate!.toFirebase())
-            fbQuery.observeSingleEvent(of: .value, with: handler)
+            fbQuery.observe(.value, with: handler)
         }else{
-            myRef!.observeSingleEvent(of: .value, with: handler)
+            myRef!.observe(.value, with: handler)
         }
     }
     
-    static func getAllArticlesInCluster(byCluster: Cluster, lastUpdateDate:Date? , callback:@escaping ([Article])->Void){
+    static func getAllArticlesInClusterAndObserve(byCluster: Cluster, lastUpdateDate:Date? , callback:@escaping ([Article])->Void){
         let handler = {(snapshot:DataSnapshot) in
             var articles = [Article]()
             for child in snapshot.children.allObjects{
@@ -86,11 +85,6 @@ class ModelFirebase{
             myRef!.observe(.value, with: handler)
         }
     }
-    
-    
-    
-    
-    
     
     
     

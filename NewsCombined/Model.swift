@@ -31,6 +31,8 @@ class ModelNotificationBase<T>{
 
 class ModelNotification{
     static let ClusterList = ModelNotificationBase<[Cluster]>(name: "ClusterListNotification")
+    static let ArticleList = ModelNotificationBase<[Article]>(name: "ArticleListNotification")
+
     //static let Student = ModelNotificationBase<Student>(name: "StudentNotificatio")
     
     static func removeObserver(observer:Any){
@@ -55,7 +57,6 @@ class Model{
         // get all updated records from firebase
         ModelFirebase.getAllClustersAndObserve(byCategory: category, lastUpdateDate: lastUpdateDate, callback: { (clusters) in
             //update the local db
-            //print("got \(students.count) new records from FB")
             var lastUpdate:Date?
             for cl in clusters{
                 cl.addClusterToLocalDb(database: self.modelSql?.database)
@@ -80,12 +81,12 @@ class Model{
         })
     }
     
-    func getAllArticlesInCluster(cluster: Cluster, callback:@escaping ([Article]?)->Void){
+    func getAllArticlesInClusterAndObserve(cluster: Cluster){
         // get last update date from SQL
         let lastUpdateDate = LastUpdateTable.getLastUpdateDate(database: modelSql?.database, table: Cluster.CL_TABLE)
         
         // get all updated records from firebase
-        ModelFirebase.getAllArticlesInCluster(byCluster: cluster, lastUpdateDate: lastUpdateDate, callback: { (articles) in
+        ModelFirebase.getAllArticlesInClusterAndObserve(byCluster: cluster, lastUpdateDate: lastUpdateDate, callback: { (articles) in
             
             //update the local db
             var lastUpdate:Date?
@@ -109,7 +110,7 @@ class Model{
             let totalList = Article.getAllArticlesFromLocalDb(insertCluster: cluster, database: self.modelSql?.database)
             
             //return the list to the caller
-            callback(totalList)
+            ModelNotification.ArticleList.post(data: totalList)
         })
     }
     /*
