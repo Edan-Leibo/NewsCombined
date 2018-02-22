@@ -487,23 +487,80 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummy" translatesAutoresizingMaskIntoConstraints="NO" id="7CD-dR-6Cf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMAGEPREVIEW_00000" translatesAutoresizingMaskIntoConstraints="NO" id="J9H-kW-OXf">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEX-CE-3oV">
+                                <rect key="frame" x="0.0" y="577" width="375" height="45"/>
+                                <color key="backgroundColor" red="0.1819814891" green="0.69426733259999995" blue="0.53024792669999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="6cZ-T2-niR"/>
+                                </constraints>
+                                <state key="normal" title="Choose Photo">
+                                    <color key="titleColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="chooseImage:" destination="9Up-Od-bUc" eventType="touchUpInside" id="enV-bC-gLk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rD2-hl-qzB">
+                                <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                <color key="backgroundColor" red="0.89865487060000004" green="0.99307959769999998" blue="1" alpha="0.52363006160000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="nQH-uR-gje"/>
+                                </constraints>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nrh-gs-nGq">
+                                <rect key="frame" x="16" y="251" width="343" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" red="0.02334224060177803" green="0.031550712883472443" blue="0.010601241141557693" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-photo-male" translatesAutoresizingMaskIntoConstraints="NO" id="bWD-cj-Nxh">
+                                <rect key="frame" x="124" y="72" width="126" height="120"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="WC4-HW-RWf" firstAttribute="top" secondItem="7CD-dR-6Cf" secondAttribute="bottom" id="IMR-BV-4KH"/>
-                            <constraint firstItem="7CD-dR-6Cf" firstAttribute="leading" secondItem="Klw-AS-jMd" secondAttribute="leading" id="Isq-gS-lV0"/>
-                            <constraint firstItem="7CD-dR-6Cf" firstAttribute="top" secondItem="Klw-AS-jMd" secondAttribute="top" id="ZaV-pq-x2u"/>
-                            <constraint firstAttribute="trailing" secondItem="7CD-dR-6Cf" secondAttribute="trailing" id="hAH-lY-eDd"/>
+                            <constraint firstItem="rD2-hl-qzB" firstAttribute="top" secondItem="NEX-CE-3oV" secondAttribute="bottom" id="0UT-YN-5Xz"/>
+                            <constraint firstItem="Nrh-gs-nGq" firstAttribute="centerX" secondItem="bWD-cj-Nxh" secondAttribute="centerX" id="2Nf-Pc-pqh"/>
+                            <constraint firstItem="rD2-hl-qzB" firstAttribute="leading" secondItem="Klw-AS-jMd" secondAttribute="leading" id="3J1-fV-4t8"/>
+                            <constraint firstItem="WC4-HW-RWf" firstAttribute="top" secondItem="bWD-cj-Nxh" secondAttribute="bottom" constant="475" id="3a4-kE-f1t"/>
+                            <constraint firstItem="J9H-kW-OXf" firstAttribute="trailing" secondItem="rD2-hl-qzB" secondAttribute="trailing" id="8bc-eh-YYj"/>
+                            <constraint firstItem="J9H-kW-OXf" firstAttribute="leading" secondItem="NEX-CE-3oV" secondAttribute="leading" id="CSC-vM-tdK"/>
+                            <constraint firstAttribute="trailing" secondItem="rD2-hl-qzB" secondAttribute="trailing" id="Hhz-lz-rk8"/>
+                            <constraint firstItem="NEX-CE-3oV" firstAttribute="leading" secondItem="Klw-AS-jMd" secondAttribute="leading" id="MYV-Nd-Lg7"/>
+                            <constraint firstItem="bWD-cj-Nxh" firstAttribute="leading" secondItem="Klw-AS-jMd" secondAttribute="leadingMargin" constant="108" id="PfF-64-at6"/>
+                            <constraint firstItem="bWD-cj-Nxh" firstAttribute="top" secondItem="Z7n-mY-d6H" secondAttribute="bottom" constant="52" id="Pyl-Xc-a5x"/>
+                            <constraint firstAttribute="trailing" secondItem="NEX-CE-3oV" secondAttribute="trailing" id="RhX-B0-8iQ"/>
+                            <constraint firstItem="Nrh-gs-nGq" firstAttribute="top" secondItem="bWD-cj-Nxh" secondAttribute="bottom" constant="59" id="Sf8-T6-ctE"/>
+                            <constraint firstItem="bWD-cj-Nxh" firstAttribute="leading" secondItem="Klw-AS-jMd" secondAttribute="leading" constant="124" id="Xrs-yT-nZ4"/>
+                            <constraint firstItem="NEX-CE-3oV" firstAttribute="top" secondItem="bWD-cj-Nxh" secondAttribute="bottom" constant="385" id="bFS-lP-K6m"/>
+                            <constraint firstItem="J9H-kW-OXf" firstAttribute="bottom" secondItem="WC4-HW-RWf" secondAttribute="top" id="cjI-Gk-JLt"/>
+                            <constraint firstItem="J9H-kW-OXf" firstAttribute="top" secondItem="Klw-AS-jMd" secondAttribute="top" id="d02-gc-E3o"/>
+                            <constraint firstItem="WC4-HW-RWf" firstAttribute="top" secondItem="rD2-hl-qzB" secondAttribute="bottom" id="dSi-FR-7AU"/>
+                            <constraint firstItem="Nrh-gs-nGq" firstAttribute="leading" secondItem="Klw-AS-jMd" secondAttribute="leadingMargin" id="fqQ-TY-7U2"/>
+                            <constraint firstItem="rD2-hl-qzB" firstAttribute="top" secondItem="NEX-CE-3oV" secondAttribute="bottom" id="heU-yQ-1rD"/>
+                            <constraint firstAttribute="trailing" secondItem="bWD-cj-Nxh" secondAttribute="trailing" constant="125" id="mOU-3a-fXk"/>
+                            <constraint firstItem="bWD-cj-Nxh" firstAttribute="top" secondItem="Klw-AS-jMd" secondAttribute="top" constant="72" id="myV-Jq-eaw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bWD-cj-Nxh" secondAttribute="trailing" constant="109" id="up8-oB-RSE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Bgt-29-mKf"/>
+                    <connections>
+                        <outlet property="imageView" destination="bWD-cj-Nxh" id="2Ns-Wq-72e"/>
+                        <outlet property="userLabel" destination="Nrh-gs-nGq" id="hvW-7T-rQ1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0QS-bX-gTb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2885" y="-2734"/>
+            <point key="canvasLocation" x="2884.5" y="-2734.5"/>
         </scene>
         <!--Clusters Per Category Table View Controller-->
         <scene sceneID="ofv-As-i5F">
@@ -745,10 +802,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="IMAGEPREVIEW_00000" width="590" height="332"/>
         <image name="NewsCombinedLogo" width="177" height="106"/>
-        <image name="dummy" width="320" height="480"/>
         <image name="hamburgericon" width="50" height="50"/>
         <image name="icons8-notification-50" width="50" height="50"/>
+        <image name="no-photo-male" width="400" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4IF-0F-IY6"/>
