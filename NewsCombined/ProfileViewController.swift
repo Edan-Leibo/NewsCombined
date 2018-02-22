@@ -7,15 +7,60 @@
 //ProfileViewController
 
 import UIKit
+import SVProgressHUD
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
+    var FBunit:ModelFirebase? //LESHANOT!!!!!!
+    var user: String?
+    var imageUrl:String?
+    var selectedImage:UIImage?
+    
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    
+  
+    /*
+     @IBAction func backToNews(_ sender: Any) {
+     self.dismiss(animated: true, completion: nil)
+     }
+     */
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        if FBunit == nil {
+            FBunit = ModelFirebase ()
+        }
+        user = FBunit?.getuser() as String! //LESHANOT!!!
+        userLabel.text = "Hello" + user!
+        loadUserimage()
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    
+    @IBAction func saveBTN(_ sender: Any) {
+        
+        if let image = self.selectedImage{
+            ModelFileStore.saveImage(image: image, name: user!){(url) in
+                self.imageUrl = url
+            }
+        }else{
+            print ("No image")
+        }
+    }
+    
+    
+    
+    
+    func loadUserimage()
+    {
+        ModelFileStore.getImage(urlStr: user!) { (data) in
+            self.imageView.image = data
+        }
+    }
+    
+    
     
     @IBAction func chooseImage(_ sender: Any) {
         
@@ -47,10 +92,12 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
         
     }
     
+    
+    
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        
-        imageView.image = image
+        selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        imageView.image = selectedImage
         picker.dismiss(animated: true, completion: nil)
     }
     

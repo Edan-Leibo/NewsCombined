@@ -36,6 +36,8 @@ class ModelFirebase{
         }
     }
     
+    ///////////////////// CLUSTERS ///////////////////////////////
+
     static func getAllClustersAndObserve(byCategory:String, lastUpdateDate:Date? , callback:@escaping ([Cluster])->Void){
         let handler = {(snapshot:DataSnapshot) in
             var clusters = [Cluster]()
@@ -59,6 +61,8 @@ class ModelFirebase{
         }
     }
     
+    ///////////////////// ARTICLES ///////////////////////////////
+
     static func getAllArticlesInClusterAndObserve(byCluster: Cluster, lastUpdateDate:Date? , callback:@escaping ([Article])->Void){
         let handler = {(snapshot:DataSnapshot) in
             var articles = [Article]()
@@ -86,12 +90,60 @@ class ModelFirebase{
         }
     }
     
+    ///////////////////// MESSAGES ///////////////////////////////
+    
+    static func getAllMessagesAndObserve(insertCluster:Cluster, lastUpdateDate:Date?, callback:@escaping ([Message])->Void){
+        let handler = {(snapshot:DataSnapshot) in
+            var messages = [Message]()
+            for child in snapshot.children.allObjects{
+                if let childData = child as? DataSnapshot{
+                    if let json = childData.value as? Dictionary<String,Any>{
+                        let message = Message(json: json)
+                        if message.categoryTopic == insertCluster.category+"_"+insertCluster.topic
+                        {
+                            messages.append(message)
+                        }
+                    }
+                }
+            }
+            callback(messages)
+        }
+        
+        //USE QUERYORDERED IN GET ALL MESSAGES-VERY HEAVY!!!!!!!!!!!!
+        let myRef = ref?.child("Messages").child(((insertCluster.category) + "_" + (insertCluster.topic)))
+        if (lastUpdateDate != nil){
+            let fbQuery = myRef!.queryOrdered(byChild:"lastUpdate").queryStarting(atValue:lastUpdateDate!.toFirebase())
+            fbQuery.observe(.value, with: handler)
+        }else{
+            myRef!.observe(.value, with: handler)
+        }
+        
+    }
     
     
     
+    static func addMessage(insertCluster : Cluster, insertMessageBody : String, onCompletion:@escaping (Error?, Message)->Void){
+        var sender = "Guest"
+        if (Auth.auth().currentUser != nil) {
+            sender = (Auth.auth().currentUser?.email)!
+        }
+        let categoryTopic = ((insertCluster.category) + "_" + (insertCluster.topic))
+        let messagesRef = ref?.child("Messages").child(categoryTopic).childByAutoId()
+        let message = Message(insertId: (messagesRef?.key)!, insertSender: sender, insertBody: insertMessageBody, InsertCategotyTopic: categoryTopic)
+        messagesRef?.setValue(message.toJson()){(error, dbref) in
+            onCompletion(error, message)
+        }
+    }
+    
+    
+    
+    
+    
+    
+   //////////// FIREBASE AUTH //////////////////
     
     func getuser () -> String?{
-        print(Auth.auth().currentUser?.email as String?)
+        //print(Auth.auth().currentUser?.email as String?)
         return Auth.auth().currentUser?.email as String?
         
     }
@@ -122,9 +174,7 @@ class ModelFirebase{
         
     }
     
-    
-    
-    
+
     func RegisterUser(Email : String , Password : String, callback:@escaping (String)->Void){
         
         // self.results = ""

@@ -1,19 +1,17 @@
 //
-//  FirebaseFileStore.swift
+//  FireBaseFileStore.swift
 //  NewsCombined
 //
 //  Created by admin on 22/02/2018.
-//  Copyright © 2018 London App Brewery. All rights reserved.
 //
 
 
 import Foundation
 import Firebase
-import FirebaseStorage
+
 
 class FirebaseFileStore {
-    static var storageRef = Storage.storage().reference(forURL:
-        "gs://sssss-41596.appspot.com/")
+    static var storageRef = Storage.storage().reference()
     
     static func saveImageToFirebase(image:UIImage, name:(String), callback:@escaping (String?)->Void){
         let filesRef = storageRef.child(name)
@@ -28,7 +26,7 @@ class FirebaseFileStore {
             }
         }
     }
-    //NEEDED CHANGES MIGHT BE PROBLEM
+    
     static func getImageFromFirebase(url:String, callback:@escaping (UIImage?)->Void){
         let ref = Storage.storage().reference(forURL: url)
         ref.getData (maxSize: 10000000, completion: {(data, error) in
@@ -41,4 +39,5 @@ class FirebaseFileStore {
         })
     }
 }
+
 

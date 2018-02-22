@@ -13,9 +13,8 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     var clusterToHold : Cluster?
     var messagearray : [Message] = [Message]()
-    var messageFirebaseunit : MessagesFirebase?
     var FBunit : ModelFirebase? = nil
-
+    
     
     @IBOutlet var heightConstraint: NSLayoutConstraint!
     @IBOutlet var sendButton: UIButton!
@@ -31,12 +30,11 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
         //TODO: Set yourself as the delegate and datasource here:
         messageTableView.dataSource = self
         messageTableView.delegate = self
-        messageFirebaseunit = MessagesFirebase()
-       
-
-
-             //TODO: Set yourself as the delegate of the text field here:
-            messageTextfield.delegate = self
+        
+        
+        
+        //TODO: Set yourself as the delegate of the text field here:
+        messageTextfield.delegate = self
         
         
         //AFTER WE RISED THE KEYBOARD(103) WE NEED EVENT TO KNOW WE TAPPED OUTSIDE OF IT TO MAKE KEAYBAORD DISSAPPEAR!!!
@@ -46,23 +44,23 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         messageTableView.addGestureRecognizer(tapgesture)
         
-
         
         
-
+        
+        
         //TODO: Register your Cell.xib file here:
         messageTableView.register(UINib(nibName: "BlockCell", bundle: nil), forCellReuseIdentifier: "customCell")
         configureTableView()
-      //  tableView.backgroundView = UIImageView(image: UIImage(named: "Preview.jpg"))
-
-      retriveMessages()
+        //  tableView.backgroundView = UIImageView(image: UIImage(named: "Preview.jpg"))
+        
+        retriveMessages()
         
         messageTableView.separatorStyle = .none
         if FBunit == nil {
             FBunit = ModelFirebase ()
         }
     }
-
+    
     ///////////////////////////////////////////
     
     //MARK: - TableView DataSource Methods
@@ -73,27 +71,27 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
         cell.backgroundColor = UIColor.clear
-       // cell.messageBackground.backgroundColor = UIColor.green
+        // cell.messageBackground.backgroundColor = UIColor.green
         cell.commentsBTN.isHidden = true
         cell.senderUsername.text = messagearray[indexPath.row].body
         cell.messageBody.text = messagearray[indexPath.row].sender
         cell.avatarImageView.image = UIImage(named: "NewsLogoBetter")
         
-    
-         if cell.messageBody.text ==  FBunit?.getuser() { //TO CHECK IF MESSAGE IS FROM USER OR SOMEBODY ELSE!!!
-         
-         
-         cell.messageBackground.backgroundColor = UIColor.cyan
-         
-         }
-         
-         else {
-         
-        cell.messageBackground.backgroundColor = UIColor.green
-         
-         }
-
-      
+        
+        if cell.messageBody.text ==  FBunit?.getuser() { //TO CHECK IF MESSAGE IS FROM USER OR SOMEBODY ELSE!!!
+            
+            
+            cell.messageBackground.backgroundColor = UIColor.cyan
+            
+        }
+            
+        else {
+            
+            cell.messageBackground.backgroundColor = UIColor.green
+            
+        }
+        
+        
         return cell
     }
     
@@ -122,9 +120,9 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
     ///////////////////////////////////////////
     
     //MARK:- TextField Delegate Methods
-   
     
-
+    
+    
     
     //TODO: Declare textFieldDidBeginEditing here:
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -145,8 +143,8 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
             self.view.layoutIfNeeded()
         }
     }
-
-
+    
+    
     
     ///////////////////////////////////////////
     
@@ -162,58 +160,56 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
         messageTextfield.endEditing(true) //STOP ALLOWING ENTERING TEXT and repeadetly pressing Send!!!!!
         messageTextfield.isEnabled = false
         sendButton.isEnabled = false
-        
-        messageFirebaseunit?.saveMessage(insertCluster: clusterToHold!, messageTextfield: messageTextfield)
-
-        
-     
-                print("No Problem with saving message")
-                self.messageTextfield.isEnabled = true
-                self.messageTextfield.text = ""
-                self.sendButton.isEnabled = true
+        Model.instance.addMessage(insertCluster: clusterToHold!, insertMessageBody: messageTextfield.text!) { (err) in
+            if err == nil{
+                print("ERROR WITH MESSAGES!!!!!")
             }
+        }
+        self.messageTextfield.isEnabled = true
+        self.messageTextfield.text = ""
+        self.sendButton.isEnabled = true
+    }
     
     
     //TODO: Create the retrieveMessages method here:
     func retriveMessages()
     {
-        
-        messageFirebaseunit!.retriveMessages(insertCluster: clusterToHold!, callback: { (allMessages) in
-         if let messagessARR = allMessages{
-         self.messagearray = messagessARR
-        self.configureTableView() //AFTER SENDING NEW MESSAGE WE NEED TO RESIZE SCREEN
-        self.messageTableView.reloadData()
-         }
-        })
- 
-  
-        
-     
+        Model.instance.getAllMessagesAndObserve(cluster: clusterToHold!)
+        ////////////////////////////
+        ModelNotification.MessageList.observe { (list) in
+            if let messagessARR = list{
+                self.messagearray = messagessARR
+                self.configureTableView() //AFTER SENDING NEW MESSAGE WE NEED TO RESIZE SCREEN
+                self.messageTableView.reloadData()
+            }
         }
         
-
+        
+    }
     
-
+    
+    
+    
     
     
     /*
-    @IBAction func logOutPressed(_ sender: AnyObject) {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
-        guard (navigationController?.popToRootViewController(animated: true)) != nil
-            else {
-                print("This is first nav screen")
-                return
-    
-
-
-}
-
-}
-    
-    */
+     @IBAction func logOutPressed(_ sender: AnyObject) {
+     let firebaseAuth = Auth.auth()
+     do {
+     try firebaseAuth.signOut()
+     } catch let signOutError as NSError {
+     print ("Error signing out: %@", signOutError)
+     }
+     guard (navigationController?.popToRootViewController(animated: true)) != nil
+     else {
+     print("This is first nav screen")
+     return
+     
+     
+     
+     }
+     
+     }
+     
+     */
 }

@@ -32,8 +32,7 @@ class ModelNotificationBase<T>{
 class ModelNotification{
     static let ClusterList = ModelNotificationBase<[Cluster]>(name: "ClusterListNotification")
     static let ArticleList = ModelNotificationBase<[Article]>(name: "ArticleListNotification")
-
-    //static let Student = ModelNotificationBase<Student>(name: "StudentNotificatio")
+    static let MessageList = ModelNotificationBase<[Message]>(name: "MessageListNotification")
     
     static func removeObserver(observer:Any){
         NotificationCenter.default.removeObserver(observer)
@@ -113,39 +112,46 @@ class Model{
             ModelNotification.ArticleList.post(data: totalList)
         })
     }
-    /*
-     func getAllStudentsAndObserve(){
-     print("Model.getAllStudentsAndObserve")
-     // get last update date from SQL
-     let lastUpdateDate = LastUpdateTable.getLastUpdateDate(database: modelSql?.database, table: Student.ST_TABLE)
-     
-     // get all updated records from firebase
-     ModelFirebase.getAllStudentsAndObserve(lastUpdateDate, callback: { (students) in
-     //update the local db
-     print("got \(students.count) new records from FB")
-     var lastUpdate:Date?
-     for st in students{
-     st.addStudentToLocalDb(database: self.modelSql?.database)
-     s    if lastUpdate == nil{
-     lastUpdate = st.lastUpdate
-     }else{
-     if lastUpdate!.compare(st.lastUpdate!) == ComparisonResult.orderedAscending{
-     lastUpdate = st.lastUpdate
-     }
-     }
-     }
-     
-     //upadte the last update table
-     if (lastUpdate != nil){
-     LastUpdateTable.setLastUpdate(database: self.modelSql!.database, table: Student.ST_TABLE, lastUpdate: lastUpdate!)
-     }
-     
-     //get the complete list from local DB
-     let totalList = Student.getAllStudentsFromLocalDb(database: self.modelSql?.database)
-     print("\(totalList)")
-     
-     ModelNotification.StudentList.post(data: totalList)
-     })
-     }*/
+    
+    func getAllMessagesAndObserve(cluster: Cluster){
+        // get last update date from SQL
+        let lastUpdateDate = LastUpdateTable.getLastUpdateDate(database: modelSql?.database, table: Message.MSG_TABLE)
+        
+        // get all updated records from firebase
+        ModelFirebase.getAllMessagesAndObserve(insertCluster: cluster, lastUpdateDate: lastUpdateDate, callback: { (messages) in
+            
+            //update the local db
+            var lastUpdate:Date?
+            for msg in messages{
+                msg.addMassageToLocalDb(database: self.modelSql?.database)
+                if lastUpdate == nil{
+                    lastUpdate = msg.lastUpdate
+                }else{
+                    if lastUpdate!.compare(msg.lastUpdate!) == ComparisonResult.orderedAscending{
+                        lastUpdate = msg.lastUpdate
+                    }
+                }
+            }
+            
+            //upadte the last update table
+            if (lastUpdate != nil){
+                LastUpdateTable.setLastUpdate(database: self.modelSql!.database, table: Article.ART_TABLE, lastUpdate: lastUpdate!)
+            }
+            
+            //get the complete list from local DB
+            let totalList = Message.getAllMassagesFromLocalDb(insertCluster: cluster, database: self.modelSql?.database)
+            
+            //return the list to the caller
+            ModelNotification.MessageList.post(data: totalList)
+        })
+    }
+    
+    func addMessage(insertCluster: Cluster, insertMessageBody: String, completionBlock: @escaping (Error?) -> Void){
+        ModelFirebase.addMessage(insertCluster: insertCluster, insertMessageBody: insertMessageBody, onCompletion:{(err, msg) in
+            msg.addMassageToLocalDb(database: self.modelSql?.database)
+            completionBlock(err)
+        })
+    }
+
 }
 

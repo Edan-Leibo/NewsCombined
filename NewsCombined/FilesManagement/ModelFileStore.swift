@@ -39,5 +39,7 @@ class ModelFileStore {
                 callback(image)
             })
         }
+    }
 }
-}
+
+

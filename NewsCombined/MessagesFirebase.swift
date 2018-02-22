@@ -6,7 +6,6 @@
 //  Copyright © 2018 London App Brewery. All rights reserved.
 //
 
-import Foundation
 
 //
 
@@ -22,7 +21,7 @@ import Foundation
 
 //
 
-
+/*
 
 import Foundation
 
@@ -112,21 +111,9 @@ class MessagesFirebase{
     }
     
     
-            
-            /*
-            let text = snapshotValue["MessageBody"]!
-            let sender = snapshotValue ["sender"]!
- 
-            let message = Message (insertsender : sender,insertbody : text)
-             */
-      
-   
-
-    
-    
 }
 
-
+*/
 
 
  

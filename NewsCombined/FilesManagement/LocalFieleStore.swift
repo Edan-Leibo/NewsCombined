@@ -6,6 +6,7 @@
 //  Copyright © 2018 London App Brewery. All rights reserved.
 //
 
+
 import Foundation
 import UIKit
 
@@ -28,4 +29,5 @@ class LocalFileStore {
         return UIImage(contentsOfFile:filename.path)
     }
 }
+
 

@@ -42,7 +42,9 @@ class ModelSql{
         if Article.createTable(database: database) == false{
             return nil
         }
-        
+        if Message.createTable(database: database) == false{
+            return nil
+        }
         
         if LastUpdateTable.createTable(database: database) == false{
             return nil

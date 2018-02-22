@@ -1,31 +1,43 @@
-//
-//  Message.swift
-//  Flash Chat
-//
-//  This is the model class that represents the blueprint for a message
+
+
+import Foundation
+import FirebaseDatabase
 
 class Message {
     
-    //TODO: Messages need a messageBody and a sender variable
-    //sender and body
+    var id : String
+    var sender : String
+    var body : String
+    var categoryTopic : String
+    var lastUpdate:Date?
+
     
-    var sender : String = ""
-    var body : String = ""
-    var id : String = ""
+    init(insertId: String, insertSender : String, insertBody: String, InsertCategotyTopic: String) {
+        self.id = insertId
+        self.sender = insertSender
+        self.body = insertBody
+        self.categoryTopic = InsertCategotyTopic
+    }
     
-    init(insertsender : String, insertbody: String,insertID: String) {
-        self.sender = insertsender
-        self.body = insertbody
-        self.id = insertID
+    init(json:Dictionary<String,Any>){
+        id = json["id"] as! String
+        sender = json["sender"] as! String
+        body = json["body"] as! String
+        categoryTopic = json["categoryTopic"] as! String
+        if let ts = json["lastUpdate"] as? Double{
+            self.lastUpdate = Date.fromFirebase(ts)
+        }
     }
     
     func toJson()->[String:Any]{
         var json = [String:Any]()
-        json["MessageBody"] = body
-        json["sender"] = sender
         json["id"] = id
-        
+        json["sender"] = sender
+        json["body"] = body
+        json["categoryTopic"] = categoryTopic
+        json["lastUpdate"] = ServerValue.timestamp()
         return json
+        
     }
 }
 
