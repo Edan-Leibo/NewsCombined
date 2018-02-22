@@ -35,24 +35,17 @@ class RegisterViewController: UIViewController {
     @IBAction func registerPressed(_ sender: AnyObject) {
         
 
-        let check : String = (FBunit?.RegisterUser(Email: emailTextfield.text!, Password: passwordTextfield.text!))!
-        
-        if check == "Email/Password error" {
-                self.errorTextLabelRegister.text = check
-        }
-            
-
-            
-            else {
-                //print("Created new user")
-             //   self.performSegue(withIdentifier: "goToNewsCombined", sender: self)
-                 self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+        //RegisterUser(Email: emailTextfield.text!, Password: passwordTextfield.text!, completion: (res), in
+        FBunit?.RegisterUser(Email: emailTextfield.text!, Password: passwordTextfield.text!,callback: { (data) in
+            if (data == "Email/Password Error Use An Email With A 6 letter Password")
+            {
+                self.errorTextLabelRegister.text = data as String!
             }
-    
-        
-        
-
-        
+            else {
+                self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+                
+            }
+        })
         
     } 
     

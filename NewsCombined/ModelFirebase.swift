@@ -106,37 +106,40 @@ class ModelFirebase{
             }
         }
     }
-    
-    func LogInUser(Email : String , Password : String) ->String {
+    func LogInUser(Email : String , Password : String, callback:@escaping (String)->Void)  {
         
-        self.results = ""
-        checkLoggedIn()
+        
         Auth.auth().signIn(withEmail: Email, password: Password, completion: { (user, error) in
             if error != nil {
-                self.results = "Email/Password error"
+                callback("Email/Password combination Error")
+            }
+            else {
+                callback ("")
             }
             
         })
-        return self.results
+        
         
     }
     
     
     
     
-    func RegisterUser(Email : String , Password : String) ->String {
+    func RegisterUser(Email : String , Password : String, callback:@escaping (String)->Void){
         
-        self.results = ""
+        // self.results = ""
         Auth.auth().createUser(withEmail: Email, password: Password, completion: { (user, error) in
             if error != nil {
-                self.results = "Email/Password error"
+                callback("Email/Password Error Use An Email With A 6 letter Password")
+            }
+            else{
+                callback("")
             }
             
         })
-        return self.results
+        
         
     }// Auth.auth().signIn(withEmail: Email, password: Password) { (user, error) in
-    
     
     
     

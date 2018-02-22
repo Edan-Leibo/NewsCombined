@@ -29,35 +29,24 @@ class LogInViewController: UIViewController {
 
    
     @IBAction func logInPressed(_ sender: AnyObject) {
-
         
-        //TODO: Log in the user
         
-        let check : String = (FBunit?.LogInUser(Email: emailTextfield.text!, Password: passwordTextfield.text!))!
-        
-        if check == "Email/Password error" {
-            self.errorTextLabelLogIn.text = check
-        }
-            
-            
-            
-        else {
-          //  print("Created new user")
-        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
-
-            /*
-            guard (navigationController?.popToRootViewController(animated: true)) != nil
-                else {
-                    print("This is first nav screen")
-                    return
+       FBunit?.LogInUser(Email: emailTextfield.text!, Password: passwordTextfield.text!,callback: { (data) in
+            if (data == "Email/Password combination Error")
+            {
+                self.errorTextLabelLogIn.text = data as String!
             }
- */
-           // self.performSegue(withIdentifier: "goToNewsCombined", sender: self)
-            
-        }
+            else {
+                self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+                
+            }
+        })
         
-    
-
-
+        
+        
+        
+        
+        
+        
     }
 }  
