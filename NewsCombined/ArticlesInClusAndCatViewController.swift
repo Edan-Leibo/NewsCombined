@@ -19,9 +19,6 @@ class ArticlesInClusAndCatViewController: UITableViewController {
     
     @IBOutlet var messageTablieView: UITableView!
     
-    //customCell2 identifier
-    //CustomCell2 = Class
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         //model=NewsFirebase.instance
@@ -36,23 +33,20 @@ class ArticlesInClusAndCatViewController: UITableViewController {
         
         //self.tableView.tableFooterView = UIView()
         SVProgressHUD.show()
-        Model.instance.getAllArticlesInCluster(cluster: chosenCluster!, callback: { (articleArr) in
+        ModelNotification.ArticleList.observe { (articleArr) in
             if let aritcleArray = articleArr{
+                if (!SVProgressHUD.isVisible()){
+                    SVProgressHUD.show()
+                }
                 self.allArticles = aritcleArray
                 self.tableView.reloadData()
-                SVProgressHUD.dismiss()
-                
+                SVProgressHUD.dismiss(withDelay: 1)
             }
-        })
-        
-        //arrayNewsArticle.append(NewsArticle(title: "BCC Headlines1", description: "BCC Article 1",logo:#imageLiteral(resourceName: "bcc")))
-        //arrayNewsArticle.append(NewsArticle(title: "BCC Headlines2", description: "BCC Article 2", logo: #imageLiteral(resourceName: "cnn")))
-        //print(chosenRow)
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        }
+
+                
+        Model.instance.getAllArticlesInClusterAndObserve(cluster: chosenCluster!)
+
     }
     
     override func didReceiveMemoryWarning() {
