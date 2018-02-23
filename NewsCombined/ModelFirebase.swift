@@ -192,11 +192,7 @@ class ModelFirebase{
         
     }
     
- func getuser () -> String?{
-        //print(Auth.auth().currentUser?.email as String?)
-        return Auth.auth().currentUser?.email as String?
-        
-    }
+ 
     
     func checkLoggedIn() {
         Auth.auth().addStateDidChangeListener { auth, user in
@@ -208,21 +204,7 @@ class ModelFirebase{
             }
         }
     }
-    func LogInUser(Email : String , Password : String, callback:@escaping (String)->Void)  {
-        
-        
-        Auth.auth().signIn(withEmail: Email, password: Password, completion: { (user, error) in
-            if error != nil {
-                callback("Email/Password combination Error")
-            }
-            else {
-                callback ("")
-            }
-            
-        })
-        
-        
-    }
+   
     
     static func LogInUser(Email : String , Password : String, callback:@escaping (String)->Void)  {
         

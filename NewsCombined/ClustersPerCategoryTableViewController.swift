@@ -23,7 +23,6 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
     @IBOutlet var messageTableView: UITableView!
     
     var observerId:Any?
-    var FBunit : ModelFirebase? = nil
     var type : String?
     var clusterArray : [Cluster] = [Cluster]()
     // var Clustertosend : Cluster?
@@ -42,9 +41,7 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
         tableView.backgroundView = UIImageView(image: UIImage(named: "Preview.jpg"))
 
         messageTableView.separatorStyle = .none
-        if FBunit == nil {
-            FBunit = ModelFirebase ()
-        }
+        
         
     }
     func refreshClusters(withChosenCategoty category: String){
@@ -72,7 +69,7 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
     
     func didpressbutton(title: Any) {
         chosenRow = title as! Int
-        let user = FBunit?.getuser()
+        let user = Model.instance.GetUser()
         if (user != nil)
         {
             performSegue(withIdentifier: "goToMessages", sender: self)

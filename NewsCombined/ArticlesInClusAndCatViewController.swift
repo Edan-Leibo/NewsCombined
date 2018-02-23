@@ -14,14 +14,12 @@ class ArticlesInClusAndCatViewController: UITableViewController {
     var chosenRow: Int?
     var chosenCluster : Cluster?
     var allArticles : [Article] = [Article]()
-    var model:NewsFirebase?
     //   var cellHeight : CGFloat = 0
     
     @IBOutlet var messageTablieView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //model=NewsFirebase.instance
         tableView.backgroundView = UIImageView(image: UIImage(named: "Preview.jpg"))
       SVProgressHUD.show()
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
