@@ -135,6 +135,32 @@ class ModelFirebase{
         }
     }
     
+    /////////// IMAGEURL ////////////
+
+    
+    static func addImageDetails(insertImageDetails : ImageDetails,  onCompletion:@escaping (Error?, ImageDetails)->Void){
+        var sender = "Guest"
+        if (Auth.auth().currentUser != nil) {
+            sender = (Auth.auth().currentUser?.email)!
+        }
+        print (sender)
+        let imageRef = ref?.child("imageDetail").childByAutoId()
+        var jsonofdetails = insertImageDetails.toJson()
+        print (jsonofdetails)
+        imageRef?.setValue(jsonofdetails){(error, dbref) in
+            onCompletion(error, insertImageDetails)
+        }
+    }
+    // ref.queryOrdered(byChild: "email").queryEqual(toValue: idtosearch)
+    //orderByChild('email').equalTo('wal@aol.com')
+    static func getImgDetailsFromUser(user:String, callback:@escaping (ImageDetails)->Void){
+        let ref = Database.database().reference().child("imageDetail").ref.queryOrdered(byChild: "sender").queryEqual(toValue: user)
+        ref.observeSingleEvent(of: .value, with: {(snapshot) in
+            let json = snapshot.value as? Dictionary<String,String>
+            let st = ImageDetails(json: json!)
+            callback(st)
+        })
+    }
     
     
     

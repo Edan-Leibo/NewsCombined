@@ -34,6 +34,7 @@ class ModelNotification{
     static let ArticleList = ModelNotificationBase<[Article]>(name: "ArticleListNotification")
     static let MessageList = ModelNotificationBase<[Message]>(name: "MessageListNotification")
     
+    
     static func removeObserver(observer:Any){
         NotificationCenter.default.removeObserver(observer)
     }
@@ -113,6 +114,8 @@ class Model{
         })
     }
     
+    
+    
     func getAllMessagesAndObserve(cluster: Cluster){
         // get last update date from SQL
         let lastUpdateDate = LastUpdateTable.getLastUpdateDate(database: modelSql?.database, table: Message.MSG_TABLE)
@@ -152,6 +155,21 @@ class Model{
             completionBlock(err)
         })
     }
+    func addImageDetails(insertImageDetails: ImageDetails) {
+        ModelFirebase.addImageDetails(insertImageDetails: insertImageDetails, onCompletion: { (err, imgDetail) in
+           
+        })
+    }
+    
+
+     func getImgDetailsFromUser(insertUser:String, callback:@escaping (ImageDetails)->Void){
+     ModelFirebase.getImgDetailsFromUser(user: insertUser, callback: <#T##(ImageDetails) -> Void#>)
+     
+     }
+
+    
+    
+ 
 
 }
 

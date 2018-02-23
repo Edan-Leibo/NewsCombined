@@ -39,13 +39,28 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     }
     
     
+    /*
+     Model.instance.addMessage(insertCluster: clusterToHold!, insertMessageBody: messageTextfield.text!) { (err) in
+     if err == nil{
+     print("ERROR WITH MESSAGES!!!!!")
+     }
+     }
+     
+     Model.instance.addImageDetails(insertImageDetails: userimagedetail,
+ */
+    
+    
     @IBAction func saveBTN(_ sender: Any) {
         
         if let image = self.selectedImage{
             ModelFileStore.saveImage(image: image, name: user!){(url) in
                 self.imageUrl = url
+                let userimagedetail = ImageDetails (insertsender: self.user!, insertimageurl: self.imageUrl!)
+                Model.instance.addImageDetails(insertImageDetails: userimagedetail)
             }
-        }else{
+           
+            }
+      else{
             print ("No image")
         }
     }
