@@ -78,13 +78,12 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
         cell.avatarImageView.image = UIImage(named: "NewsLogoBetter")
         
         
-        if cell.messageBody.text ==  FBunit?.getuser() { //TO CHECK IF MESSAGE IS FROM USER OR SOMEBODY ELSE!!!
+        if cell.messageBody.text ==  Model.instance.GetUser() { //TO CHECK IF MESSAGE IS FROM USER OR SOMEBODY ELSE!!!
             
             
             cell.messageBackground.backgroundColor = UIColor.cyan
             
         }
-            
         else {
             
             cell.messageBackground.backgroundColor = UIColor.green

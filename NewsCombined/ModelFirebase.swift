@@ -166,33 +166,33 @@ class ModelFirebase{
         })
     }
     
-    
-    //ref.queryOrdered(byChild: "sender").queryEqual(toValue: user)
-    
-     func getImgDetailsFromUser(user:String, callback:@escaping (ImageDetails?)->Void){
-        let ref = Database.database().reference().child("imageDetail").queryOrdered(byChild: "sender").queryEqual(toValue: user)
-        ref.observeSingleEvent(of: .value, with: {(snapshot) in
-            if let json = snapshot.value as? Dictionary<String,Dictionary<String,Any>> {
-                for (_,value) in json{
-                let img = ImageDetails(json: value)
-                callback(img)
-            }
-            }
-            callback (nil)
-        })
-    }
-    
-    
-    
-    
-    
+
     
     
     
     
    //////////// FIREBASE AUTH //////////////////
     
-    func getuser () -> String?{
+    static func logoutFB()
+    {
+        do {
+            try
+                Auth.auth().signOut()
+            
+        } catch {
+            print("Error signing out")
+        }
+        
+    }
+    
+    
+    static func getuser () -> String?{
+        //print(Auth.auth().currentUser?.email as String?)
+        return Auth.auth().currentUser?.email as String?
+        
+    }
+    
+ func getuser () -> String?{
         //print(Auth.auth().currentUser?.email as String?)
         return Auth.auth().currentUser?.email as String?
         

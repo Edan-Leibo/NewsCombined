@@ -11,7 +11,6 @@ import SVProgressHUD
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
-    var FBunit:ModelFirebase? //LESHANOT!!!!!!
     var user: String?
     var imageUrl:String?
     var selectedImage:UIImage?
@@ -28,10 +27,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if FBunit == nil {
-            FBunit = ModelFirebase ()
-        }
-        user = FBunit?.getuser() as String! //LESHANOT!!!
+       
+        user = Model.instance.GetUser()
         userLabel.text = "Hello" + user!
         loadUserimage()
         

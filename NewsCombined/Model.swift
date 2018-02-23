@@ -171,7 +171,15 @@ class Model{
      }
 
     
+     func logoutFB() {
+        ModelFirebase.logoutFB()
+        
+    }
     
+    func GetUser() -> String? {
+        
+        return ModelFirebase.getuser()
+    }
  
 
 }
