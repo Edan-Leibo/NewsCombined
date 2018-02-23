@@ -224,8 +224,26 @@ class ModelFirebase{
         
     }
     
-
-    func RegisterUser(Email : String , Password : String, callback:@escaping (String)->Void){
+    static func LogInUser(Email : String , Password : String, callback:@escaping (String)->Void)  {
+        
+        
+        Auth.auth().signIn(withEmail: Email, password: Password, completion: { (user, error) in
+            if error != nil {
+                callback("Email/Password combination Error")
+            }
+            else {
+                callback ("")
+            }
+            
+        })
+        
+        
+    }
+    
+    
+    
+    
+   static func RegisterUser(Email : String , Password : String, callback:@escaping (String)->Void){
         
         // self.results = ""
         Auth.auth().createUser(withEmail: Email, password: Password, completion: { (user, error) in
@@ -240,6 +258,9 @@ class ModelFirebase{
         
         
     }// Auth.auth().signIn(withEmail: Email, password: Password) { (user, error) in
+    
+    
+    
     
     
     

@@ -171,6 +171,8 @@ class Model{
      }
 
     
+    ////////AUTH_FB/////////
+    
      func logoutFB() {
         ModelFirebase.logoutFB()
         
@@ -179,6 +181,26 @@ class Model{
     func GetUser() -> String? {
         
         return ModelFirebase.getuser()
+    }
+   
+    func RegisterUser(Email : String , Password : String, callback:@escaping (String)->Void){
+        
+        ModelFirebase.RegisterUser(Email: Email, Password: Password) { (res) in
+            callback(res)
+        }
+        
+        
+        
+    }
+    
+    func Login(Email : String , Password : String, callback:@escaping (String)->Void){
+        
+        ModelFirebase.LogInUser(Email: Email, Password: Password) { (res) in
+            callback(res)
+        }
+        
+        
+        
     }
  
 

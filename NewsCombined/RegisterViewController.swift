@@ -12,7 +12,6 @@ class RegisterViewController: UIViewController {
 
     
     
-    var FBunit : ModelFirebase? = nil
     
     @IBOutlet var emailTextfield: UITextField!
     @IBOutlet var passwordTextfield: UITextField!
@@ -21,9 +20,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if FBunit == nil {
-            FBunit = ModelFirebase ()
-        }
+     
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +33,7 @@ class RegisterViewController: UIViewController {
         
 
         //RegisterUser(Email: emailTextfield.text!, Password: passwordTextfield.text!, completion: (res), in
-        FBunit?.RegisterUser(Email: emailTextfield.text!, Password: passwordTextfield.text!,callback: { (data) in
+        Model.instance.RegisterUser(Email: emailTextfield.text!, Password: passwordTextfield.text!,callback: { (data) in
             if (data == "Email/Password Error Use An Email With A 6 letter Password")
             {
                 self.errorTextLabelRegister.text = data as String!

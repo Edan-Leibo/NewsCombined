@@ -13,7 +13,6 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     var clusterToHold : Cluster?
     var messagearray : [Message] = [Message]()
-    var FBunit : ModelFirebase? = nil
     
     
     @IBOutlet var heightConstraint: NSLayoutConstraint!
@@ -56,9 +55,7 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
         retriveMessages()
         
         messageTableView.separatorStyle = .none
-        if FBunit == nil {
-            FBunit = ModelFirebase ()
-        }
+       
     }
     
     ///////////////////////////////////////////

@@ -17,9 +17,7 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var errorTextLabelLogIn: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        if FBunit == nil {
-            FBunit = ModelFirebase ()
-        }
+       
         
     }
 
@@ -31,7 +29,7 @@ class LogInViewController: UIViewController {
     @IBAction func logInPressed(_ sender: AnyObject) {
         
         
-       FBunit?.LogInUser(Email: emailTextfield.text!, Password: passwordTextfield.text!,callback: { (data) in
+      Model.instance.Login(Email: emailTextfield.text!, Password: passwordTextfield.text!,callback: { (data) in
             if (data == "Email/Password combination Error")
             {
                 self.errorTextLabelLogIn.text = data as String!
