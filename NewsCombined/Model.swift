@@ -161,12 +161,15 @@ class Model{
         })
     }
     
-    /*
-     func getImgDetailsFromUser(insertUser:String, callback:@escaping (ImageDetails)->Void){
-     ModelFirebase.getImgDetailsFromUser(user: insertUser, callback: <#T##(ImageDetails) -> Void#>)
+    
+     func getImgDetailsFromUser(insertUser:String, callback:@escaping (ImageDetails?)->Void){
+        ModelFirebase.getImgDetailsFromUser(user: insertUser) { (imgd) in
+        callback(imgd)
+        }
+           
  
      }
-*/
+
     
     
  

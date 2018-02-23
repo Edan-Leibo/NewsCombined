@@ -153,14 +153,19 @@ class ModelFirebase{
     }
     // ref.queryOrdered(byChild: "email").queryEqual(toValue: idtosearch)
     //orderByChild('email').equalTo('wal@aol.com')
-    static func getImgDetailsFromUser(user:String, callback:@escaping (ImageDetails)->Void){
+    static func getImgDetailsFromUser(user:String, callback:@escaping (ImageDetails?)->Void){
         let ref = Database.database().reference().child("imageDetail").queryOrdered(byChild: "sender").queryEqual(toValue: user)
         ref.observeSingleEvent(of: .value, with: {(snapshot) in
-            let json = snapshot.value as? Dictionary<String,String>
-            let st = ImageDetails(json: json!)
-            callback(st)
+            if let json = snapshot.value as? Dictionary<String,Dictionary<String,Any>> {
+                for (_,value) in json{
+                    let img = ImageDetails(json: value)
+                    callback(img)
+                }
+            }
+            callback (nil)
         })
     }
+    
     
     //ref.queryOrdered(byChild: "sender").queryEqual(toValue: user)
     
