@@ -432,7 +432,7 @@
                     </tableView>
                     <connections>
                         <outlet property="userName" destination="2BH-eV-ZXo" id="lcY-JV-mc9"/>
-                        <segue destination="CXJ-GF-ky4" kind="custom" identifier="toProfile" customClass="SWRevealViewControllerSeguePushController" id="0Jq-MQ-svm"/>
+                        <segue destination="CXJ-GF-ky4" kind="modal" identifier="toProfile" id="0Jq-MQ-svm"/>
                         <segue destination="ys8-Zc-wKC" kind="custom" identifier="toSettings" customClass="SWRevealViewControllerSeguePushController" id="Tvy-Eu-MZs"/>
                         <segue destination="5o1-F8-Lml" kind="modal" identifier="GoToWelcome" id="jKZ-4E-b14"/>
                     </connections>
@@ -573,7 +573,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Bgt-29-mKf">
-                        <barButtonItem key="leftBarButtonItem" title="Back To News" id="3Mq-1B-CHa"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back To News" id="3Mq-1B-CHa">
+                            <connections>
+                                <action selector="backNewsiBtn:" destination="9Up-Od-bUc" id="RZk-HM-8M1"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="bWD-cj-Nxh" id="2Ns-Wq-72e"/>

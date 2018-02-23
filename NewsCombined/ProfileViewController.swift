@@ -20,11 +20,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     @IBOutlet weak var imageView: UIImageView!
     
   
-    /*
-     @IBAction func backToNews(_ sender: Any) {
-     self.dismiss(animated: true, completion: nil)
-     }
-     */
+    @IBAction func backNewsiBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
