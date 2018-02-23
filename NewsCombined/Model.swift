@@ -33,7 +33,7 @@ class ModelNotification{
     static let ClusterList = ModelNotificationBase<[Cluster]>(name: "ClusterListNotification")
     static let ArticleList = ModelNotificationBase<[Article]>(name: "ArticleListNotification")
     static let MessageList = ModelNotificationBase<[Message]>(name: "MessageListNotification")
-    
+    static let ImgDetailsList = ModelNotificationBase<[ImageDetails]>(name: "ImgDetailsList")
     
     static func removeObserver(observer:Any){
         NotificationCenter.default.removeObserver(observer)
@@ -161,12 +161,12 @@ class Model{
         })
     }
     
-
+    /*
      func getImgDetailsFromUser(insertUser:String, callback:@escaping (ImageDetails)->Void){
      ModelFirebase.getImgDetailsFromUser(user: insertUser, callback: <#T##(ImageDetails) -> Void#>)
-     
+ 
      }
-
+*/
     
     
  

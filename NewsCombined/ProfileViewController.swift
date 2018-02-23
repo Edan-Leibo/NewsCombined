@@ -70,9 +70,20 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     
     func loadUserimage()
     {
-        ModelFileStore.getImage(urlStr: user!) { (data) in
-            self.imageView.image = data
-        }
+        FBunit?.getImgDetailsFromUser(user: user!, callback: { (imgd) in
+            if imgd != nil{
+                self.imageUrl =   imgd?.imageurl
+                ModelFileStore.getImage(urlStr: self.imageUrl!) { (data) in
+                    self.imageView.image = data
+            }
+           
+           
+            }
+            else{
+            
+            }
+        })
+       
     }
     
     
