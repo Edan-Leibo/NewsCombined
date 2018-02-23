@@ -13,7 +13,8 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     var clusterToHold : Cluster?
     var messagearray : [Message] = [Message]()
-    
+    var imageUrl:String?
+
     
     @IBOutlet var heightConstraint: NSLayoutConstraint!
     @IBOutlet var sendButton: UIButton!
@@ -70,9 +71,13 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
         cell.backgroundColor = UIColor.clear
         // cell.messageBackground.backgroundColor = UIColor.green
         cell.commentsBTN.isHidden = true
+        var username = messagearray[indexPath.row].sender
         cell.senderUsername.text = messagearray[indexPath.row].body
         cell.messageBody.text = messagearray[indexPath.row].sender
         cell.avatarImageView.image = UIImage(named: "NewsLogoBetter")
+
+        
+        
         
         
         if cell.messageBody.text ==  Model.instance.GetUser() { //TO CHECK IF MESSAGE IS FROM USER OR SOMEBODY ELSE!!!
