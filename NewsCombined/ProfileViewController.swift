@@ -14,6 +14,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     var user: String?
     var imageUrl:String?
     var selectedImage:UIImage?
+    @IBOutlet weak var backNewsiBtn: UIBarButtonItem!
+    @IBOutlet weak var saveBTN: UIButton!
+    @IBOutlet weak var chooseImage: UIButton!
+    @IBOutlet weak var logOutBtn: UIButton!
     
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
@@ -68,14 +72,16 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     }
     
     
+
     @IBAction func saveBTN(_ sender: Any) {
-        
         SVProgressHUD.show()
+        self.deActivateBTNs()
         if let image = self.selectedImage{
             ModelFileStore.saveImage(image: image, name: user!){(url) in
                 self.imageUrl = url
                 let userimagedetail = ImageDetails (insertsender: self.user!, insertimageurl: self.imageUrl!)
                 Model.instance.addImageDetails(insertImageDetails: userimagedetail)
+                self.reactivateBTNs()
                 SVProgressHUD.dismiss(withDelay: 1)
                 self.createalert(todo: "saveImage", titletext: "Image changed successfully!", messageText: "")
 
@@ -84,13 +90,27 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
         }
         else{
             errorLbl.text = "No New Photo Selected"
+            self.reactivateBTNs()
             SVProgressHUD.dismiss(withDelay: 1)
 
         }
     }
     
     
-    
+    func deActivateBTNs(){
+        backNewsiBtn.isEnabled = false
+        saveBTN.isEnabled = false
+        chooseImage.isEnabled = false
+        logOutBtn.isEnabled = false
+        
+    }
+    func reactivateBTNs(){
+        backNewsiBtn.isEnabled = true
+        saveBTN.isEnabled = true
+        chooseImage.isEnabled = true
+        logOutBtn.isEnabled = true
+        
+    }
     
     func loadUserimage()
     {

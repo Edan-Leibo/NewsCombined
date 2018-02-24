@@ -593,8 +593,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="backNewsiBtn" destination="3Mq-1B-CHa" id="LQh-or-Nym"/>
+                        <outlet property="chooseImage" destination="NEX-CE-3oV" id="AgU-1w-cr2"/>
                         <outlet property="errorLbl" destination="nIc-GP-Jpg" id="oMu-O6-hQI"/>
                         <outlet property="imageView" destination="bWD-cj-Nxh" id="2Ns-Wq-72e"/>
+                        <outlet property="logOutBtn" destination="rD2-hl-qzB" id="uqU-tc-7dV"/>
+                        <outlet property="saveBTN" destination="znb-kW-uzd" id="lrc-1t-xTY"/>
                         <outlet property="userLabel" destination="Nrh-gs-nGq" id="hvW-7T-rQ1"/>
                     </connections>
                 </viewController>
