@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Firebase
 
 class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
     
@@ -56,12 +56,40 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
         retriveMessages()
         
         messageTableView.separatorStyle = .none
+        messageTableView.allowsMultipleSelectionDuringEditing = true
         
     }
     
     ///////////////////////////////////////////
     
     //MARK: - TableView DataSource Methods
+    
+    
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        var currentUser = Model.instance.GetUser()
+        if messagearray[indexPath.row].sender == currentUser  {
+        var ClusterId = (clusterToHold?.category)! + "_" + (clusterToHold?.topic)!
+        var messageId = messagearray [indexPath.row].id
+            Database.database().reference().child("Messages").child(ClusterId).child(messageId).removeValue(completionBlock: { (err, ref) in
+                if (err != nil) {
+                    print("Couldnt Delete Message")
+                }
+                else
+                {
+                    self.messagearray.remove(at: indexPath.row)
+                    self.retriveMessages()
+                    
+                }
+            })
+        }
+    }
+    
+    
     
     
     

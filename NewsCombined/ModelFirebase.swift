@@ -122,6 +122,8 @@ class ModelFirebase{
     
     
     
+    
+    
     static func addMessage(insertCluster : Cluster, insertMessageBody : String, onCompletion:@escaping (Error?, Message)->Void){
         var sender = "Guest"
         if (Auth.auth().currentUser != nil) {
