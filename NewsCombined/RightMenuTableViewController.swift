@@ -47,16 +47,43 @@ class RightMenuTableViewController: UITableViewController {
     }
     
     
+    /*
+     let user = Model.instance.GetUser()
+     if (user != nil)
+     {
+     performSegue(withIdentifier: "goToMessages", sender: self)
+     }
+     else{
+     //goToWelcome
+     performSegue(withIdentifier: "goToWelcome", sender: self)
+     }
+ */
+    
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //print(indexPath.row)
         //super.tableView(tableView, didSelectRowAt: indexPath)
         switch indexPath.row {
         case 0:
+            let user = Model.instance.GetUser()
+            if (user != nil)
+            {
+                SVProgressHUD.show()
             self.revealViewController().revealToggle(animated: true)
             performSegue(withIdentifier: "toProfile", sender: self)
              self.revealViewController().revealToggle(animated: true)
              SVProgressHUD.dismiss(withDelay: 1)
-            break
+            }
+            else{
+                SVProgressHUD.show()
+                self.revealViewController().revealToggle(animated: true)
+                performSegue(withIdentifier: "GoToWelcome", sender: self)
+                self.revealViewController().revealToggle(animated: true)
+                SVProgressHUD.dismiss(withDelay: 1)
+                break
+            }
+        break
+            
         case 2:
             performSegue(withIdentifier: "toSettings", sender: self)
             break

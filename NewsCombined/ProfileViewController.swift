@@ -29,7 +29,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
         super.viewDidLoad()
        
         user = Model.instance.GetUser()
-        userLabel.text = "Hello" + user!
+        userLabel.text = "Hello " + user!
         loadUserimage()
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -46,6 +46,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
      Model.instance.addImageDetails(insertImageDetails: userimagedetail,
  */
     
+    @IBAction func logOutBtn(_ sender: Any) {
+        Model.instance.logoutFB()
+        self.dismiss(animated: true, completion: nil)
+
+    }
     
     @IBAction func saveBTN(_ sender: Any) {
         
