@@ -22,13 +22,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     
     @IBAction func backNewsiBtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-
+        
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         user = Model.instance.GetUser()
         userLabel.text = "Hello " + user!
         loadUserimage()
@@ -45,26 +45,47 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
      }
      
      Model.instance.addImageDetails(insertImageDetails: userimagedetail,
- */
+     */
+    
+    func createalert(todo: String, titletext: String, messageText : String)
+    {
+        let alert = UIAlertController(title: titletext, message: messageText, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            if todo == "LogOut" {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
     
     @IBAction func logOutBtn(_ sender: Any) {
         Model.instance.logoutFB()
-        self.dismiss(animated: true, completion: nil)
-
+        createalert(todo: "LogOut", titletext: "You have been successfully logged out!", messageText: "Returning to news page")
+        
     }
+    
     
     @IBAction func saveBTN(_ sender: Any) {
         
+        SVProgressHUD.show()
         if let image = self.selectedImage{
             ModelFileStore.saveImage(image: image, name: user!){(url) in
                 self.imageUrl = url
                 let userimagedetail = ImageDetails (insertsender: self.user!, insertimageurl: self.imageUrl!)
                 Model.instance.addImageDetails(insertImageDetails: userimagedetail)
+                SVProgressHUD.dismiss(withDelay: 1)
+                self.createalert(todo: "saveImage", titletext: "Image changed successfully!", messageText: "")
+
             }
-           
-            }
-      else{
-            errorLbl.text = "No Photo Selected"
+            
+        }
+        else{
+            errorLbl.text = "No New Photo Selected"
+            SVProgressHUD.dismiss(withDelay: 1)
+
         }
     }
     
@@ -78,15 +99,15 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
                 self.imageUrl =   imgd?.imageurl
                 ModelFileStore.getImage(urlStr: self.imageUrl!) { (data) in
                     self.imageView.image = data
-            }
-           
-           
+                }
+                
+                
             }
             else{
-            
+                
             }
         })
-       
+        
     }
     
     
