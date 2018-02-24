@@ -75,7 +75,16 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
         cell.senderUsername.text = messagearray[indexPath.row].body
         cell.messageBody.text = messagearray[indexPath.row].sender
         cell.avatarImageView.image = UIImage(named: "NewsLogoBetter")
-
+        Model.instance.getImgDetailsFromUser(insertUser: messagearray[indexPath.row].sender, callback: { (imgd) in
+            if imgd != nil{
+                self.imageUrl =   imgd?.imageurl
+                ModelFileStore.getImage(urlStr: self.imageUrl!) { (data) in
+                    cell.avatarImageView.image = data
+                }
+                
+                
+            }
+        })
         
         
         
@@ -95,6 +104,9 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         return cell
     }
+    
+    
+    
     
     
     //TODO: Declare numberOfRowsInSection here:
@@ -191,26 +203,4 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     
     
-    
-    
-    /*
-     @IBAction func logOutPressed(_ sender: AnyObject) {
-     let firebaseAuth = Auth.auth()
-     do {
-     try firebaseAuth.signOut()
-     } catch let signOutError as NSError {
-     print ("Error signing out: %@", signOutError)
-     }
-     guard (navigationController?.popToRootViewController(animated: true)) != nil
-     else {
-     print("This is first nav screen")
-     return
-     
-     
-     
-     }
-     
-     }
-     
-     */
 }
