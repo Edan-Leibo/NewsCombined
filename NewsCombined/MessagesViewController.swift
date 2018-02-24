@@ -14,7 +14,7 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
     var clusterToHold : Cluster?
     var messagearray : [Message] = [Message]()
     var imageUrl:String?
-
+    
     
     @IBOutlet var heightConstraint: NSLayoutConstraint!
     @IBOutlet var sendButton: UIButton!
@@ -56,7 +56,7 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
         retriveMessages()
         
         messageTableView.separatorStyle = .none
-       
+        
     }
     
     ///////////////////////////////////////////
@@ -71,15 +71,17 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
         cell.backgroundColor = UIColor.clear
         // cell.messageBackground.backgroundColor = UIColor.green
         cell.commentsBTN.isHidden = true
-        var username = messagearray[indexPath.row].sender
         cell.senderUsername.text = messagearray[indexPath.row].body
         cell.messageBody.text = messagearray[indexPath.row].sender
         cell.avatarImageView.image = UIImage(named: "NewsLogoBetter")
+        cell.avatarImageView.tag = indexPath.row
         Model.instance.getImgDetailsFromUser(insertUser: messagearray[indexPath.row].sender, callback: { (imgd) in
             if imgd != nil{
                 self.imageUrl =   imgd?.imageurl
                 ModelFileStore.getImage(urlStr: self.imageUrl!) { (data) in
-                    cell.avatarImageView.image = data
+                    if (cell.avatarImageView.tag == indexPath.row){
+                        cell.avatarImageView.image = data
+                    }
                 }
                 
                 

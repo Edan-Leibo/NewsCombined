@@ -518,7 +518,7 @@
                                     <action selector="logOutBtn:" destination="9Up-Od-bUc" eventType="touchUpInside" id="g74-07-ZTS"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nrh-gs-nGq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nrh-gs-nGq">
                                 <rect key="frame" x="16" y="251" width="343" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" red="0.02334224060177803" green="0.031550712883472443" blue="0.010601241141557693" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -542,16 +542,24 @@
                                     <action selector="saveBTN:" destination="9Up-Od-bUc" eventType="touchUpInside" id="ARy-EB-Kel"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIc-GP-Jpg">
+                                <rect key="frame" x="16" y="323" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.055973661000000001" blue="0.056246602030000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="rD2-hl-qzB" firstAttribute="top" secondItem="NEX-CE-3oV" secondAttribute="bottom" id="0UT-YN-5Xz"/>
                             <constraint firstItem="znb-kW-uzd" firstAttribute="leading" secondItem="Klw-AS-jMd" secondAttribute="leadingMargin" constant="108" id="0yv-iG-1C1"/>
+                            <constraint firstItem="nIc-GP-Jpg" firstAttribute="leading" secondItem="Klw-AS-jMd" secondAttribute="leadingMargin" id="1lP-wQ-0W2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="znb-kW-uzd" secondAttribute="trailing" constant="108" id="1mT-6y-UFq"/>
                             <constraint firstItem="Nrh-gs-nGq" firstAttribute="centerX" secondItem="bWD-cj-Nxh" secondAttribute="centerX" id="2Nf-Pc-pqh"/>
                             <constraint firstItem="rD2-hl-qzB" firstAttribute="leading" secondItem="Klw-AS-jMd" secondAttribute="leading" id="3J1-fV-4t8"/>
                             <constraint firstItem="WC4-HW-RWf" firstAttribute="top" secondItem="bWD-cj-Nxh" secondAttribute="bottom" constant="475" id="3a4-kE-f1t"/>
                             <constraint firstItem="znb-kW-uzd" firstAttribute="leading" secondItem="Klw-AS-jMd" secondAttribute="leadingMargin" constant="108" id="6r5-n6-gIc"/>
+                            <constraint firstItem="nIc-GP-Jpg" firstAttribute="top" secondItem="Nrh-gs-nGq" secondAttribute="bottom" constant="46" id="7V6-J2-sL8"/>
                             <constraint firstItem="J9H-kW-OXf" firstAttribute="trailing" secondItem="rD2-hl-qzB" secondAttribute="trailing" id="8bc-eh-YYj"/>
                             <constraint firstItem="J9H-kW-OXf" firstAttribute="leading" secondItem="NEX-CE-3oV" secondAttribute="leading" id="CSC-vM-tdK"/>
                             <constraint firstAttribute="trailing" secondItem="rD2-hl-qzB" secondAttribute="trailing" id="Hhz-lz-rk8"/>
@@ -560,8 +568,10 @@
                             <constraint firstItem="bWD-cj-Nxh" firstAttribute="top" secondItem="Z7n-mY-d6H" secondAttribute="bottom" constant="52" id="Pyl-Xc-a5x"/>
                             <constraint firstAttribute="trailing" secondItem="NEX-CE-3oV" secondAttribute="trailing" id="RhX-B0-8iQ"/>
                             <constraint firstItem="Nrh-gs-nGq" firstAttribute="top" secondItem="bWD-cj-Nxh" secondAttribute="bottom" constant="59" id="Sf8-T6-ctE"/>
+                            <constraint firstItem="znb-kW-uzd" firstAttribute="top" secondItem="nIc-GP-Jpg" secondAttribute="bottom" constant="30" id="WRa-rO-Ykz"/>
                             <constraint firstItem="bWD-cj-Nxh" firstAttribute="leading" secondItem="Klw-AS-jMd" secondAttribute="leading" constant="124" id="Xrs-yT-nZ4"/>
                             <constraint firstItem="NEX-CE-3oV" firstAttribute="top" secondItem="bWD-cj-Nxh" secondAttribute="bottom" constant="385" id="bFS-lP-K6m"/>
+                            <constraint firstItem="nIc-GP-Jpg" firstAttribute="trailing" secondItem="Klw-AS-jMd" secondAttribute="trailingMargin" id="bgc-YX-wsh"/>
                             <constraint firstItem="J9H-kW-OXf" firstAttribute="bottom" secondItem="WC4-HW-RWf" secondAttribute="top" id="cjI-Gk-JLt"/>
                             <constraint firstItem="J9H-kW-OXf" firstAttribute="top" secondItem="Klw-AS-jMd" secondAttribute="top" id="d02-gc-E3o"/>
                             <constraint firstItem="WC4-HW-RWf" firstAttribute="top" secondItem="rD2-hl-qzB" secondAttribute="bottom" id="dSi-FR-7AU"/>
@@ -583,13 +593,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="errorLbl" destination="nIc-GP-Jpg" id="oMu-O6-hQI"/>
                         <outlet property="imageView" destination="bWD-cj-Nxh" id="2Ns-Wq-72e"/>
                         <outlet property="userLabel" destination="Nrh-gs-nGq" id="hvW-7T-rQ1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0QS-bX-gTb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3361" y="-2736"/>
+            <point key="canvasLocation" x="3360.5" y="-2736.5"/>
         </scene>
         <!--Clusters Per Category Table View Controller-->
         <scene sceneID="ofv-As-i5F">
@@ -636,7 +647,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R0I-Ra-eJa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1551" y="516"/>
+            <point key="canvasLocation" x="2659" y="-197"/>
         </scene>
         <!--Article-->
         <scene sceneID="WAR-2j-ylR">
@@ -673,7 +684,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8NG-yl-Mvd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2732" y="485"/>
+            <point key="canvasLocation" x="4388" y="-196"/>
         </scene>
         <!--Articles In Clus And Cat View Controller-->
         <scene sceneID="7Aa-u1-Ekn">
@@ -707,7 +718,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jQu-h3-dB5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2192" y="485"/>
+            <point key="canvasLocation" x="3744" y="-197"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="I3J-lO-vda">
@@ -726,7 +737,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bGJ-jU-OHj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2200" y="1319"/>
+            <point key="canvasLocation" x="3020" y="827"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nHZ-1Z-JaT">
@@ -744,7 +755,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ro-QY-HuH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1551" y="-296"/>
+            <point key="canvasLocation" x="1615" y="-198"/>
         </scene>
         <!--Messages-->
         <scene sceneID="VeY-cg-Nnc">
@@ -827,7 +838,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9tY-BP-nH3" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1567" y="1600"/>
+            <point key="canvasLocation" x="2403" y="827"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8fb-L7-Uoj">
@@ -857,6 +868,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4IF-0F-IY6"/>
-        <segue reference="jKZ-4E-b14"/>
+        <segue reference="y5s-xo-BEI"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -18,7 +18,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
-  
+    @IBOutlet weak var errorLbl: UILabel!
+    
     @IBAction func backNewsiBtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
 
@@ -63,7 +64,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
            
             }
       else{
-            print ("No image")
+            errorLbl.text = "No Photo Selected"
         }
     }
     
@@ -103,7 +104,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
                 self.present(imagePickerController,animated:true, completion: nil)
             }
             else {
-                print ("No camera")
+                self.errorLbl.text = "No camera"
             }
         }))
         
