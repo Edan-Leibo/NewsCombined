@@ -40,6 +40,28 @@ class ModelFileStore {
             })
         }
     }
+
+
+static func getImageNotInFirebase(urlStr:String, callback:@escaping (UIImage?)->Void){
+    //1. try to get the image from local store
+    let url = URL(string: urlStr)
+    let localImageName = url!.lastPathComponent
+    if let image = LocalFileStore.getImageFromFile(name: localImageName){
+        callback(image)
+    }else{
+        let url = URL(string: urlStr)
+        if let data = try? Data(contentsOf: url!)
+        {
+            let image: UIImage = UIImage(data: data)!
+            LocalFileStore.saveImageToFile(image: image, name: localImageName)
+            //4. return the image to the user
+            callback(image)
+        }
+
+       
+    }
+    
+}
 }
 
 

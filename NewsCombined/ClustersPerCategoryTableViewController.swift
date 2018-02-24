@@ -115,6 +115,17 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
     }
     
     
+    /*
+ 
+     ModelFileStore.getImage(urlStr: self.imageUrl!) { (data) in
+     if (cell.avatarImageView.tag == indexPath.row){
+     cell.avatarImageView.image = data
+     }
+     }
+ */
+    
+    
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
@@ -126,20 +137,13 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
         // cell.commentsBTN.addTarget(self, action: "btnTapped", for: .touchUpInside)
         cell.senderUsername.text = clusterArray[indexPath.row].clustertitle
         //cell.clusterTitle.sizeToFit()
-        let urlKey = clusterArray[indexPath.row].clusterimgurl
-        if let url = URL(string: urlKey){
-            
-            do {
-                let data = try Data(contentsOf: url)
-                cell.avatarImageView.image = UIImage(data: data)
-                
-            }catch let err {
-                print(" Error : \(err.localizedDescription)")
+        let urlKey = clusterArray[indexPath.row].clusterimgurl as! String
+        cell.avatarImageView.tag = indexPath.row
+        ModelFileStore.getImageNotInFirebase (urlStr: urlKey) { (data) in
+            if (cell.avatarImageView.tag == indexPath.row){
+                cell.avatarImageView.image = data
             }
-            
-            
         }
-        
         
         cell.messageBody.isHidden = true
         cell.commentsBTN.setTitle("4 Comments", for: .normal)

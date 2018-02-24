@@ -79,17 +79,11 @@ class ArticlesInClusAndCatViewController: UITableViewController {
         //cell.logo.image = allArticles[indexPath.row].clusterimgurl
         
         var urlKey = allArticles[indexPath.row].imageURL
-        if let url = URL(string: urlKey){
-            
-            do {
-                let data = try Data(contentsOf: url)
-                cell.avatarImageView.image = UIImage(data: data)
-                
-            }catch let err {
-                print(" Error : \(err.localizedDescription)")
+        cell.avatarImageView.tag = indexPath.row
+        ModelFileStore.getImageNotInFirebase (urlStr: urlKey) { (data) in
+            if (cell.avatarImageView.tag == indexPath.row){
+                cell.avatarImageView.image = data
             }
-            
-            
         }
         
         cell.messageBody.text = allArticles[indexPath.row].description
