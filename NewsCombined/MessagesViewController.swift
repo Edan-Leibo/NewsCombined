@@ -70,6 +70,11 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
         return true
     }
     
+    
+    /*
+ Will Move this once Am able to delete locally too!!!!!
+ 
+ */
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         var currentUser = Model.instance.GetUser()
         if messagearray[indexPath.row].sender == currentUser  {
@@ -89,7 +94,17 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }
     }
     
-    
+    func createalert(todo: String, titletext: String, messageText : String)
+    {
+        let alert = UIAlertController(title: titletext, message: messageText, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            if todo == "LogOut" {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     
     
@@ -223,6 +238,9 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
             if let messagessARR = list{
                 self.messagearray = messagessARR
                 self.configureTableView() //AFTER SENDING NEW MESSAGE WE NEED TO RESIZE SCREEN
+                if self.messagearray.count == 0{
+                    self.createalert(todo: "No_Comments", titletext: "No comments for this story", messageText: "Why not be the first one to comment on it?")
+                }
                 self.messageTableView.reloadData()
             }
         }

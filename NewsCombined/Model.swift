@@ -171,6 +171,11 @@ class Model{
      }
 
     
+    
+    
+    
+    
+    
     ////////AUTH_FB/////////
     
      func logoutFB() {

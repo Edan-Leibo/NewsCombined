@@ -26,6 +26,18 @@ class RegisterViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    func createalert(todo: String, titletext: String, messageText : String)
+    {
+        let alert = UIAlertController(title: titletext, message: messageText, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            if todo == "Register" {
+                self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+                
+            }
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
     
 
   
@@ -39,8 +51,8 @@ class RegisterViewController: UIViewController {
                 self.errorTextLabelRegister.text = data as String!
             }
             else {
-                self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
-                
+                self.createalert(todo: "Register", titletext: "You have been successfully registered,welcome to NewsCombined!", messageText: "Returning to news page")
+
             }
         })
         

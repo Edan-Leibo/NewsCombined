@@ -116,6 +116,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="frontLabel" destination="bXO-ov-8dK" id="5fu-6M-BId"/>
+                        <outlet property="logInBtn" destination="rV4-Sa-2Rb" id="tTg-mo-OOL"/>
+                        <outlet property="logOutbtn" destination="mGi-Kl-oY4" id="E9w-xy-71U"/>
+                        <outlet property="registerBtn" destination="uWY-w2-6La" id="B8t-LF-uIa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1I-xB-PqX" userLabel="First Responder" sceneMemberID="firstResponder"/>

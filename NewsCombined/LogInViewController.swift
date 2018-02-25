@@ -9,7 +9,7 @@ import UIKit
 
 class LogInViewController: UIViewController {
     
-    var FBunit : ModelFirebase? = nil
+   
     //Textfields 
     @IBOutlet var emailTextfield: UITextField!
     @IBOutlet var passwordTextfield: UITextField!
@@ -24,7 +24,21 @@ class LogInViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    func createalert(todo: String, titletext: String, messageText : String)
+    {
+        let alert = UIAlertController(title: titletext, message: messageText, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            if todo == "LogIn" {
+                self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
 
+            }
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
    
     @IBAction func logInPressed(_ sender: AnyObject) {
         
@@ -35,7 +49,7 @@ class LogInViewController: UIViewController {
                 self.errorTextLabelLogIn.text = data as String!
             }
             else {
-                self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+                self.createalert(todo: "LogIn", titletext: "You have been successfully logged in!", messageText: "Returning to news page")
                 
             }
         })
