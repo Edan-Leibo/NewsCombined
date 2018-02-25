@@ -85,4 +85,21 @@ extension Message{
         return messages
     }
     
+    /*
+     DELETE FROM employees
+     WHERE last_name = 'Smith';
+ */
+    
+    
+    static func deleteMessageFromLocalDB(insertId:String, database:OpaquePointer?){
+        //var messages = [Message]()
+        var sqlite3_stmt: OpaquePointer? = nil
+        if (sqlite3_prepare_v2(database,"DELETE FROM"+MSG_TABLE+" WHERE " + MSG_ID + " = '" + insertId + "';",-1,&sqlite3_stmt,nil) == SQLITE_OK){
+          print("Message" + insertId + " Deleted")
+        }
+        sqlite3_finalize(sqlite3_stmt)
+    
+    }
+    
+    
 }
