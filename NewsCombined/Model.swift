@@ -170,8 +170,19 @@ class Model{
  
      }
 
-    
-    
+    func deleteMessage(clusterId: String, insertMessage:Message, callback:@escaping (String?)->Void){
+        Message.deleteMessageFromLocalDB(insertMessage: insertMessage, database: self.modelSql?.database)
+        ModelFirebase.deleteMessage(ClusterId: clusterId, insertMessage: insertMessage) { (err) in
+            if (err == nil) {
+                callback ("Deleted")
+            }
+            else {
+               callback ("Error removing Message")
+            }
+        }
+        
+    }
+
     
     
     

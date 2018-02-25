@@ -83,6 +83,8 @@ extension Message{
         }
         sqlite3_finalize(sqlite3_stmt)
         return messages
+        
+        
     }
     
     /*
@@ -91,11 +93,14 @@ extension Message{
  */
     
     
-    static func deleteMessageFromLocalDB(insertId:String, database:OpaquePointer?){
+    static func deleteMessageFromLocalDB(insertMessage:Message, database:OpaquePointer?){
         //var messages = [Message]()
+        
         var sqlite3_stmt: OpaquePointer? = nil
-        if (sqlite3_prepare_v2(database,"DELETE FROM"+MSG_TABLE+" WHERE " + MSG_ID + " = '" + insertId + "';",-1,&sqlite3_stmt,nil) == SQLITE_OK){
-          print("Message" + insertId + " Deleted")
+        if (sqlite3_prepare_v2(database,"DELETE FROM "+MSG_TABLE+" WHERE " + MSG_ID + " = '" + insertMessage.id + "';",-1,&sqlite3_stmt,nil) == SQLITE_OK){
+            if sqlite3_step(sqlite3_stmt) == SQLITE_DONE{
+                print("Message" + insertMessage.id + " Deleted")
+            }
         }
         sqlite3_finalize(sqlite3_stmt)
     

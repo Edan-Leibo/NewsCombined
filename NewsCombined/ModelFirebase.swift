@@ -137,6 +137,22 @@ class ModelFirebase{
         }
     }
     
+    
+    
+    
+    
+    static func deleteMessage(ClusterId: String,insertMessage: Message, onCompletion:@escaping (Error?)->Void){
+        
+        
+        Database.database().reference().child("Messages").child(ClusterId).child(insertMessage.id).removeValue(completionBlock: { (err, ref) in
+            onCompletion(err)
+        })
+    }
+    
+    
+    
+   
+    
     /////////// IMAGEURL ////////////
 
     

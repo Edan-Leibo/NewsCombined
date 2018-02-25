@@ -67,7 +67,14 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+        if messagearray[indexPath.row].sender == Model.instance.GetUser() {
+            return true
+            
+        }
+        else {
+            return false
+        }
+        
     }
     
     
@@ -76,19 +83,20 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
  
  */
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        var currentUser = Model.instance.GetUser()
-        if messagearray[indexPath.row].sender == currentUser  {
-        var ClusterId = (clusterToHold?.category)! + "_" + (clusterToHold?.topic)!
-        var messageId = messagearray [indexPath.row].id
-            Database.database().reference().child("Messages").child(ClusterId).child(messageId).removeValue(completionBlock: { (err, ref) in
-                if (err != nil) {
-                    print("Couldnt Delete Message")
+        
+        if messagearray[indexPath.row].sender == Model.instance.GetUser()  {
+        let ClusterId = (clusterToHold?.category)! + "_" + (clusterToHold?.topic)!
+        let messageToDelete = messagearray [indexPath.row]
+            Model.instance.deleteMessage(clusterId: ClusterId, insertMessage: messageToDelete, callback: { (res) in
+            if (res == "Deleted")
+            {
+                //self.messagearray.remove(at: indexPath.row)
+                //self.messageTableView.reloadData()
+                
                 }
-                else
-                {
-                    self.messagearray.remove(at: indexPath.row)
-                    self.retriveMessages()
-                    
+            else {
+                print("Failed to Delete")
+                
                 }
             })
         }
