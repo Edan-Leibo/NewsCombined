@@ -79,8 +79,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
         if let image = self.selectedImage{
             ModelFileStore.saveImage(image: image, name: user!){(url) in
                 self.imageUrl = url
-                let userimagedetail = ImageDetails (insertsender: self.user!, insertimageurl: self.imageUrl!)
-                Model.instance.addImageDetails(insertImageDetails: userimagedetail)
+                let userimagedetail = UserDetails (insertsender: self.user!, insertimageurl: self.imageUrl!)
+                Model.instance.addUserDetails(insertImageDetails: userimagedetail)
                 self.reactivateBTNs()
                 SVProgressHUD.dismiss(withDelay: 1)
                 self.createalert(todo: "saveImage", titletext: "Image changed successfully!", messageText: "")

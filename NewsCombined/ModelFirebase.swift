@@ -156,13 +156,13 @@ class ModelFirebase{
     /////////// IMAGEURL ////////////
 
     
-    static func addImageDetails(insertImageDetails : ImageDetails,  onCompletion:@escaping (Error?, ImageDetails)->Void){
+    static func addUserDetails(insertImageDetails : UserDetails,  onCompletion:@escaping (Error?, UserDetails)->Void){
         var sender = "Guest"
         if (Auth.auth().currentUser != nil) {
             sender = (Auth.auth().currentUser?.email)!
         }
         print (sender)
-        let imageRef = ref?.child("imageDetail").childByAutoId()
+        let imageRef = ref?.child("UserDetails").childByAutoId()
         var jsonofdetails = insertImageDetails.toJson()
         print (jsonofdetails)
         imageRef?.setValue(jsonofdetails){(error, dbref) in
@@ -171,12 +171,12 @@ class ModelFirebase{
     }
     // ref.queryOrdered(byChild: "email").queryEqual(toValue: idtosearch)
     //orderByChild('email').equalTo('wal@aol.com')
-    static func getImgDetailsFromUser(user:String, callback:@escaping (ImageDetails?)->Void){
-        let ref = Database.database().reference().child("imageDetail").queryOrdered(byChild: "sender").queryEqual(toValue: user)
+    static func getImgDetailsFromUser(user:String, callback:@escaping (UserDetails?)->Void){
+        let ref = Database.database().reference().child("UserDetails").queryOrdered(byChild: "sender").queryEqual(toValue: user)
         ref.observeSingleEvent(of: .value, with: {(snapshot) in
             if let json = snapshot.value as? Dictionary<String,Dictionary<String,Any>> {
                 for (_,value) in json{
-                    let img = ImageDetails(json: value)
+                    let img = UserDetails(json: value)
                     callback(img)
                 }
             }

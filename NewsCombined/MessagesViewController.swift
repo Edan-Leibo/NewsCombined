@@ -124,7 +124,7 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
         cell.commentsBTN.isHidden = true
         cell.senderUsername.text = messagearray[indexPath.row].body
         cell.messageBody.text = messagearray[indexPath.row].sender
-        cell.avatarImageView.image = UIImage(named: "NewsLogoBetter")
+        cell.avatarImageView.image = UIImage(named: "no-photo-male")
         cell.avatarImageView.tag = indexPath.row
         Model.instance.getImgDetailsFromUser(insertUser: messagearray[indexPath.row].sender, callback: { (imgd) in
             if imgd != nil{

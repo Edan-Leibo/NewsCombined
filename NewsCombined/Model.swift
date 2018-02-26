@@ -33,7 +33,7 @@ class ModelNotification{
     static let ClusterList = ModelNotificationBase<[Cluster]>(name: "ClusterListNotification")
     static let ArticleList = ModelNotificationBase<[Article]>(name: "ArticleListNotification")
     static let MessageList = ModelNotificationBase<[Message]>(name: "MessageListNotification")
-    static let ImgDetailsList = ModelNotificationBase<[ImageDetails]>(name: "ImgDetailsList")
+    static let ImgDetailsList = ModelNotificationBase<[UserDetails]>(name: "ImgDetailsList")
     
     static func removeObserver(observer:Any){
         NotificationCenter.default.removeObserver(observer)
@@ -155,14 +155,14 @@ class Model{
             completionBlock(err)
         })
     }
-    func addImageDetails(insertImageDetails: ImageDetails) {
-        ModelFirebase.addImageDetails(insertImageDetails: insertImageDetails, onCompletion: { (err, imgDetail) in
+    func addUserDetails(insertImageDetails: UserDetails) {
+        ModelFirebase.addUserDetails(insertImageDetails: insertImageDetails, onCompletion: { (err, imgDetail) in
            
         })
     }
     
     
-     func getImgDetailsFromUser(insertUser:String, callback:@escaping (ImageDetails?)->Void){
+     func getImgDetailsFromUser(insertUser:String, callback:@escaping (UserDetails?)->Void){
         ModelFirebase.getImgDetailsFromUser(user: insertUser) { (imgd) in
         callback(imgd)
         }

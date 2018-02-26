@@ -3,7 +3,7 @@
 import Foundation
 import FirebaseDatabase
 
-class ImageDetails{
+class UserDetails{
     
     //var id : String
     var sender : String

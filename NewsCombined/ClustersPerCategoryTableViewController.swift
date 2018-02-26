@@ -146,7 +146,7 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
         }
         
         cell.messageBody.isHidden = true
-        cell.commentsBTN.setTitle("4 Comments", for: .normal)
+        cell.commentsBTN.setTitle("Comments", for: .normal)
         
         
         
