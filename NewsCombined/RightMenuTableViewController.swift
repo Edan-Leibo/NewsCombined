@@ -73,6 +73,7 @@ class RightMenuTableViewController: UITableViewController {
             performSegue(withIdentifier: "toProfile", sender: self)
              self.revealViewController().revealToggle(animated: true)
              SVProgressHUD.dismiss(withDelay: 1)
+            break
             }
             else{
                 SVProgressHUD.show()
@@ -82,12 +83,12 @@ class RightMenuTableViewController: UITableViewController {
                 SVProgressHUD.dismiss(withDelay: 1)
                 break
             }
-        break
-            
+        
+        /*
         case 2:
             performSegue(withIdentifier: "toSettings", sender: self)
             break
-            
+       */
         case 1:
             SVProgressHUD.show()
             self.revealViewController().revealToggle(animated: true)
