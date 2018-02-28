@@ -1,10 +1,12 @@
 //
 //  Article.swift
 //  NewsCombined
-//
-//  Created by admin on 14/01/2018.
-//  Copyright © 2018 London App Brewery. All rights reserved.
-//
+
+
+
+/*
+ This class is the Article and all its data members - each cluster has various articles with a common subject matter
+ */
 
 import Foundation
 import FirebaseDatabase
@@ -18,10 +20,13 @@ class Article {
     var description : String = ""
     var author : String = ""
     var source : String = ""
-    var clusterKey : String = ""    //foreign KEYS
+    var clusterKey : String = ""    //This is the foreign key of the Cluster so we know to which cluster the article belongs to
     var content : String = ""
     var lastUpdate:Date?
 
+    /*
+     A Json constructor for the Article class
+     */
     
     init(insertId:String, fromJson:[String:Any]){
         id = insertId
@@ -39,6 +44,10 @@ class Article {
 
     }
     
+    /*
+     Simple constructor for the Article class
+     */
+    
     init(insertId:String, inserturl : String, inserttitle : String,insertimageURL : String, insertdescription : String, insertauthor : String, insertsource : String , insertcontent : String,insertclusterkey : String) {
         
         id = insertId
@@ -51,6 +60,10 @@ class Article {
         content = insertcontent
         clusterKey = insertclusterkey
     }
+    
+    /*
+     This function creates a JSON file containing the specific Article instance
+     */
     
     func toJson()->[String:Any]{
         var json = [String:Any]()
