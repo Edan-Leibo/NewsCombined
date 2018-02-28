@@ -7,20 +7,22 @@
 import UIKit
 import SVProgressHUD
 
-class SpecificArticleViewController: UIViewController {
+class SpecificArticleViewController: UIViewController,UIWebViewDelegate {
 
     var article:Article?
     var url : String = ""
+    var counter : Int = 0
     
     @IBOutlet weak var myWebView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        SVProgressHUD.show()
+        myWebView.delegate = self as! UIWebViewDelegate;
+     
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         url = article!.url
         let urlToDisplay = URL(string: url)
         myWebView.loadRequest(URLRequest(url:urlToDisplay!))
-        SVProgressHUD.dismiss()
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +30,16 @@ class SpecificArticleViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        if counter == 0 {
+        SVProgressHUD.show()
+        counter = 1
+        }
+    }
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        SVProgressHUD.dismiss()
+    }
+   
 
     /*
     // MARK: - Navigation
