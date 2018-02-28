@@ -80,7 +80,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
             ModelFileStore.saveImage(image: image, name: user!){(url) in
                 self.imageUrl = url
                 let userimagedetail = UserDetails (insertsender: self.user!, insertimageurl: self.imageUrl!)
-                Model.instance.addUserDetails(insertImageDetails: userimagedetail)
+                Model.instance.addUserDetails(insertImageDetails: userimagedetail, completionBlock: { (err) in
+                    if (err != nil) {
+                        self.errorLbl.text = "Error Updating Image"
+                    }
+                })
                 self.reactivateBTNs()
                 SVProgressHUD.dismiss(withDelay: 1)
                 self.createalert(todo: "saveImage", titletext: "Image changed successfully!", messageText: "")

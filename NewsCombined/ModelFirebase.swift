@@ -21,74 +21,17 @@ import Firebase
 import FirebaseDatabase
 
 
-
-
-
 class ModelFirebase{
     
-    
     var results : String = ""
-    static var ref:DatabaseReference?=Database.database().reference()
+    static let ref:DatabaseReference? = Database.database().reference()
     
-    init(){
+    /*init(){
         if(FirebaseApp.app() == nil){
             FirebaseApp.configure()
         }
-    }
+    }*/
     
-    ///////////////////// CLUSTERS ///////////////////////////////
-
-    static func getAllClustersAndObserve(byCategory:String, lastUpdateDate:Date? , callback:@escaping ([Cluster])->Void){
-        let handler = {(snapshot:DataSnapshot) in
-            var clusters = [Cluster]()
-            for child in snapshot.children.allObjects{
-                if let childData = child as? DataSnapshot{
-                    if let json = childData.value as? Dictionary<String,Any>{
-                        let st = Cluster(fromJson: json)
-                        clusters.append(st)
-                    }
-                }
-            }
-            callback(clusters)
-        }
-        
-        let myRef = ref?.child("Clusters").child(byCategory)
-        if (lastUpdateDate != nil){
-            let fbQuery = myRef!.queryOrdered(byChild:"lastUpdate").queryStarting(atValue:lastUpdateDate!.toFirebase())
-            fbQuery.observe(.value, with: handler)
-        }else{
-            myRef!.observe(.value, with: handler)
-        }
-    }
-    
-    ///////////////////// ARTICLES ///////////////////////////////
-
-    static func getAllArticlesInClusterAndObserve(byCluster: Cluster, lastUpdateDate:Date? , callback:@escaping ([Article])->Void){
-        let handler = {(snapshot:DataSnapshot) in
-            var articles = [Article]()
-            for child in snapshot.children.allObjects{
-                if let childData = child as? DataSnapshot{
-                    if let json = childData.value as? Dictionary<String,Any>{
-                        let ar = Article(insertId: childData.key,fromJson: json)
-                        if ar.clusterKey == byCluster.category+"_"+byCluster.topic
-                        {
-                            articles.append(ar)
-                        }
-                    }
-                }
-            }
-            callback(articles)
-        }
-        
-        //USE QUERYORDERED IN GET ALL ARTICLES-VERY HEAVY!!!!!!!!!!!!
-        let myRef = ref?.child("Articles")
-        if (lastUpdateDate != nil){
-            let fbQuery = myRef!.queryOrdered(byChild:"lastUpdate").queryStarting(atValue:lastUpdateDate!.toFirebase())
-            fbQuery.observe(.value, with: handler)
-        }else{
-            myRef!.observe(.value, with: handler)
-        }
-    }
     
     ///////////////////// MESSAGES ///////////////////////////////
     
@@ -109,7 +52,6 @@ class ModelFirebase{
             callback(messages)
         }
         
-        //USE QUERYORDERED IN GET ALL MESSAGES-VERY HEAVY!!!!!!!!!!!!
         let myRef = ref?.child("Messages").child(((insertCluster.category) + "_" + (insertCluster.topic)))
         if (lastUpdateDate != nil){
             let fbQuery = myRef!.queryOrdered(byChild:"lastUpdate").queryStarting(atValue:lastUpdateDate!.toFirebase())
@@ -163,7 +105,7 @@ class ModelFirebase{
         }
         print (sender)
         let imageRef = ref?.child("UserDetails").childByAutoId()
-        var jsonofdetails = insertImageDetails.toJson()
+        let jsonofdetails = insertImageDetails.toJson()
         print (jsonofdetails)
         imageRef?.setValue(jsonofdetails){(error, dbref) in
             onCompletion(error, insertImageDetails)
@@ -257,8 +199,7 @@ class ModelFirebase{
         })
         
         
-    }// Auth.auth().signIn(withEmail: Email, password: Password) { (user, error) in
-    
+    }
     
     
     

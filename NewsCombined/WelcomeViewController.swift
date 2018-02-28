@@ -46,7 +46,7 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         
         
-        var username = Model.instance.GetUser()
+        let username = Model.instance.GetUser()
         if username != nil {
             frontLabel.text = "Hello " + username!
             registerBtn.isHidden = true

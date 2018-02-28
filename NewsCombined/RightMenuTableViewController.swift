@@ -35,7 +35,7 @@ class RightMenuTableViewController: UITableViewController {
     
     @objc func functionName() {
         
-        var name = Model.instance.GetUser()
+        let name = Model.instance.GetUser()
         if (name != nil) {
             userName.text = name
             

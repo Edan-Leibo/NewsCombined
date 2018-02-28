@@ -30,6 +30,8 @@
 		847638E3203CC2AA00EF0364 /* Date+firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847638E2203CC2AA00EF0364 /* Date+firebase.swift */; };
 		847638E5203CCEC700EF0364 /* LastUpdateTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847638E4203CCEC700EF0364 /* LastUpdateTable.swift */; };
 		847638E7203CDC1000EF0364 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847638E6203CDC1000EF0364 /* Model.swift */; };
+		847753D62046FA7E00A7D12E /* Cluster+firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847753D52046FA7E00A7D12E /* Cluster+firebase.swift */; };
+		847753D82047012F00A7D12E /* Article+firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847753D72047012F00A7D12E /* Article+firebase.swift */; };
 		8496F6A3200E63780062B32C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496F6A2200E63780062B32C /* ViewController.swift */; };
 		849AADFB203DCFAD0058547D /* Article+sql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AADFA203DCFAD0058547D /* Article+sql.swift */; };
 		84A4A9AE200F682800FA72F3 /* LeftMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4A9AD200F682800FA72F3 /* LeftMenuTableViewController.swift */; };
@@ -42,7 +44,6 @@
 		84C4521A203F845B005FBE8F /* FireBaseFileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C45219203F845B005FBE8F /* FireBaseFileStore.swift */; };
 		84C4521C203F846F005FBE8F /* ModelFileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4521B203F846F005FBE8F /* ModelFileStore.swift */; };
 		84E9125B2005140F007A87D9 /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9125A2005140F007A87D9 /* ModelFirebase.swift */; };
-		84F93F822012AE91000CF033 /* SViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F93F812012AE91000CF033 /* SViewController.swift */; };
 		A89EBBE254C326B220DD7C05 /* Pods_NewsCombined.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFB125442B07F31AA333E42 /* Pods_NewsCombined.framework */; };
 		F645CCD3200B31F200F45904 /* SpecificArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F645CCD2200B31F200F45904 /* SpecificArticleViewController.swift */; };
 		F645CCD5200B4C9300F45904 /* ArticlesInClusAndCatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F645CCD4200B4C9300F45904 /* ArticlesInClusAndCatViewController.swift */; };
@@ -77,6 +78,8 @@
 		847638E2203CC2AA00EF0364 /* Date+firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+firebase.swift"; sourceTree = "<group>"; };
 		847638E4203CCEC700EF0364 /* LastUpdateTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastUpdateTable.swift; sourceTree = "<group>"; };
 		847638E6203CDC1000EF0364 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		847753D52046FA7E00A7D12E /* Cluster+firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cluster+firebase.swift"; sourceTree = "<group>"; };
+		847753D72047012F00A7D12E /* Article+firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+firebase.swift"; sourceTree = "<group>"; };
 		8496F6A2200E63780062B32C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		849AADFA203DCFAD0058547D /* Article+sql.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+sql.swift"; sourceTree = "<group>"; };
 		84A4A9AD200F682800FA72F3 /* LeftMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuTableViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +92,6 @@
 		84C45219203F845B005FBE8F /* FireBaseFileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseFileStore.swift; sourceTree = "<group>"; };
 		84C4521B203F846F005FBE8F /* ModelFileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFileStore.swift; sourceTree = "<group>"; };
 		84E9125A2005140F007A87D9 /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
-		84F93F812012AE91000CF033 /* SViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SViewController.swift; sourceTree = "<group>"; };
 		8DFB125442B07F31AA333E42 /* Pods_NewsCombined.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsCombined.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE08285C871AD8A47D3BBDA4 /* Pods-NewsCombined.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsCombined.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewsCombined/Pods-NewsCombined.release.xcconfig"; sourceTree = "<group>"; };
 		F645CCD2200B31F200F45904 /* SpecificArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificArticleViewController.swift; sourceTree = "<group>"; };
@@ -184,7 +186,6 @@
 				846EB1ED200E513A00BD64F4 /* NewsCombined-Bridging-Header.h */,
 				63E28B2D1B9A337600FBF6E0 /* RegisterViewController.swift */,
 				63E28B2E1B9A337600FBF6E0 /* WelcomeViewController.swift */,
-				84F93F812012AE91000CF033 /* SViewController.swift */,
 				8448B61E20136E5700E5999A /* RightMenuTableViewController.swift */,
 			);
 			name = Controller;
@@ -216,6 +217,8 @@
 				849AADFA203DCFAD0058547D /* Article+sql.swift */,
 				845507B5203F461300A4DECE /* Message+sql.swift */,
 				8437F9A820402BA800354078 /* UserDetails.swift */,
+				847753D52046FA7E00A7D12E /* Cluster+firebase.swift */,
+				847753D72047012F00A7D12E /* Article+firebase.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -385,8 +388,8 @@
 				845507B6203F461300A4DECE /* Message+sql.swift in Sources */,
 				63E28B331B9A337600FBF6E0 /* WelcomeViewController.swift in Sources */,
 				84A4A9AE200F682800FA72F3 /* LeftMenuTableViewController.swift in Sources */,
+				847753D82047012F00A7D12E /* Article+firebase.swift in Sources */,
 				6321A9E21B94EBE70053D2E7 /* CustomCell.swift in Sources */,
-				84F93F822012AE91000CF033 /* SViewController.swift in Sources */,
 				8448B61B2013633700E5999A /* ProfileViewController.swift in Sources */,
 				63E28B321B9A337600FBF6E0 /* RegisterViewController.swift in Sources */,
 				846EB1F0200E587800BD64F4 /* SWRevealViewController.m in Sources */,
@@ -411,6 +414,7 @@
 				84C45218203F844A005FBE8F /* LocalFieleStore.swift in Sources */,
 				8496F6A3200E63780062B32C /* ViewController.swift in Sources */,
 				63E28B301B9A337600FBF6E0 /* MessagesViewController.swift in Sources */,
+				847753D62046FA7E00A7D12E /* Cluster+firebase.swift in Sources */,
 				84B10CD0200EAD19003D4CAB /* ArticleTableViewCell.swift in Sources */,
 				847638E7203CDC1000EF0364 /* Model.swift in Sources */,
 				8437F9A920402BA800354078 /* UserDetails.swift in Sources */,

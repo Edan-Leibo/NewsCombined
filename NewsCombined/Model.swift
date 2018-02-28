@@ -42,12 +42,8 @@ class ModelNotification{
 
 class Model{
     static let instance = Model()
-    
     lazy private var modelSql:ModelSql? = ModelSql()
-    
-    private init(){
-    }
-    
+    private var modelFirebase:ModelFirebase? = ModelFirebase()
     
     func getAllClustersAndObserve(category: String){
         
@@ -55,7 +51,7 @@ class Model{
         let lastUpdateDate = LastUpdateTable.getLastUpdateDate(database: modelSql?.database, table: Cluster.CL_TABLE)
         
         // get all updated records from firebase
-        ModelFirebase.getAllClustersAndObserve(byCategory: category, lastUpdateDate: lastUpdateDate, callback: { (clusters) in
+        Cluster.getAllClustersAndObserve(reference: ModelFirebase.ref, byCategory: category, lastUpdateDate: lastUpdateDate, callback: { (clusters) in
             //update the local db
             var lastUpdate:Date?
             for cl in clusters{
@@ -86,7 +82,7 @@ class Model{
         let lastUpdateDate = LastUpdateTable.getLastUpdateDate(database: modelSql?.database, table: Cluster.CL_TABLE)
         
         // get all updated records from firebase
-        ModelFirebase.getAllArticlesInClusterAndObserve(byCluster: cluster, lastUpdateDate: lastUpdateDate, callback: { (articles) in
+        Article.getAllArticlesInClusterAndObserve(reference: ModelFirebase.ref, byCluster: cluster, lastUpdateDate: lastUpdateDate, callback: { (articles) in
             
             //update the local db
             var lastUpdate:Date?
@@ -155,21 +151,21 @@ class Model{
             completionBlock(err)
         })
     }
-    func addUserDetails(insertImageDetails: UserDetails) {
+    
+    func addUserDetails(insertImageDetails: UserDetails, completionBlock: @escaping (Error?) -> Void) {
         ModelFirebase.addUserDetails(insertImageDetails: insertImageDetails, onCompletion: { (err, imgDetail) in
-           
+            completionBlock(err)
         })
     }
     
     
-     func getImgDetailsFromUser(insertUser:String, callback:@escaping (UserDetails?)->Void){
+    func getImgDetailsFromUser(insertUser:String, callback:@escaping (UserDetails?)->Void){
         ModelFirebase.getImgDetailsFromUser(user: insertUser) { (imgd) in
-        callback(imgd)
+            callback(imgd)
         }
-           
- 
-     }
-
+        
+    }
+    
     func deleteMessage(clusterId: String, insertMessage:Message, callback:@escaping (String?)->Void){
         Message.deleteMessageFromLocalDB(insertMessage: insertMessage, database: self.modelSql?.database)
         ModelFirebase.deleteMessage(ClusterId: clusterId, insertMessage: insertMessage) { (err) in
@@ -177,48 +173,37 @@ class Model{
                 callback ("Deleted")
             }
             else {
-               callback ("Error removing Message")
+                callback ("Error removing Message")
             }
         }
         
     }
-
+    
     
     
     
     
     ////////AUTH_FB/////////
     
-     func logoutFB() {
+    func logoutFB() {
         ModelFirebase.logoutFB()
-        
     }
     
     func GetUser() -> String? {
-        
         return ModelFirebase.getuser()
     }
-   
+    
     func RegisterUser(Email : String , Password : String, callback:@escaping (String)->Void){
-        
         ModelFirebase.RegisterUser(Email: Email, Password: Password) { (res) in
             callback(res)
         }
-        
-        
-        
     }
     
     func Login(Email : String , Password : String, callback:@escaping (String)->Void){
-        
         ModelFirebase.LogInUser(Email: Email, Password: Password) { (res) in
             callback(res)
         }
-        
-        
-        
     }
- 
 
 }
 
