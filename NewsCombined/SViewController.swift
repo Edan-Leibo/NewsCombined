@@ -14,7 +14,6 @@ class SViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print (clusterToHold?.clustertitle)
         // Do any additional setup after loading the view.
     }
 

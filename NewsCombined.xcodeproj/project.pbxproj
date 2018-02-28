@@ -19,7 +19,6 @@
 		63EBB3051D98004B004175E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EBB3041D98004B004175E5 /* LaunchScreen.storyboard */; };
 		78A443D12006824900C4CC31 /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A443D02006824900C4CC31 /* BaseNavigationViewController.swift */; };
 		78A443D3200682FC00C4CC31 /* ClustersPerCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A443D2200682FC00C4CC31 /* ClustersPerCategoryTableViewController.swift */; };
-		8407D46D200A19AD000B0277 /* BaseScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8407D46C200A19AD000B0277 /* BaseScreenViewController.swift */; };
 		8437F9A920402BA800354078 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437F9A820402BA800354078 /* UserDetails.swift */; };
 		8448B61B2013633700E5999A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448B61A2013633700E5999A /* ProfileViewController.swift */; };
 		8448B61F20136E5700E5999A /* RightMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448B61E20136E5700E5999A /* RightMenuTableViewController.swift */; };
@@ -65,7 +64,6 @@
 		70CAA3990DD77593AE80DD02 /* Pods-NewsCombined.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsCombined.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewsCombined/Pods-NewsCombined.debug.xcconfig"; sourceTree = "<group>"; };
 		78A443D02006824900C4CC31 /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
 		78A443D2200682FC00C4CC31 /* ClustersPerCategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClustersPerCategoryTableViewController.swift; sourceTree = "<group>"; };
-		8407D46C200A19AD000B0277 /* BaseScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScreenViewController.swift; sourceTree = "<group>"; };
 		8437F9A820402BA800354078 /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
 		8448B61A2013633700E5999A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8448B61E20136E5700E5999A /* RightMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightMenuTableViewController.swift; sourceTree = "<group>"; };
@@ -173,7 +171,6 @@
 				8448B61A2013633700E5999A /* ProfileViewController.swift */,
 				84A4A9AD200F682800FA72F3 /* LeftMenuTableViewController.swift */,
 				84A4A9AF200FA59300FA72F3 /* LeftMenuTableViewCell.swift */,
-				8407D46C200A19AD000B0277 /* BaseScreenViewController.swift */,
 				78A443D02006824900C4CC31 /* BaseNavigationViewController.swift */,
 				78A443D2200682FC00C4CC31 /* ClustersPerCategoryTableViewController.swift */,
 				F645CCD4200B4C9300F45904 /* ArticlesInClusAndCatViewController.swift */,
@@ -394,7 +391,6 @@
 				63E28B321B9A337600FBF6E0 /* RegisterViewController.swift in Sources */,
 				846EB1F0200E587800BD64F4 /* SWRevealViewController.m in Sources */,
 				84A4A9B0200FA59300FA72F3 /* LeftMenuTableViewCell.swift in Sources */,
-				8407D46D200A19AD000B0277 /* BaseScreenViewController.swift in Sources */,
 				63E28B311B9A337600FBF6E0 /* LogInViewController.swift in Sources */,
 				845021AF2013A113008F33D6 /* Message.swift in Sources */,
 				8448B61F20136E5700E5999A /* RightMenuTableViewController.swift in Sources */,

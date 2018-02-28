@@ -17,15 +17,14 @@ class SpecificArticleViewController: UIViewController {
     
     @IBOutlet weak var myWebView: UIWebView!
     override func viewDidLoad() {
-        SVProgressHUD.show()
 
         super.viewDidLoad()
-        
-    self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        SVProgressHUD.show()
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         url = article!.url
-        var urltodisplay = URL(string: url)
+        let urlToDisplay = URL(string: url)
         SVProgressHUD.dismiss()
-        myWebView.loadRequest(URLRequest(url:urltodisplay!))
+        myWebView.loadRequest(URLRequest(url:urlToDisplay!))
     }
 
     override func didReceiveMemoryWarning() {
