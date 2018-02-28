@@ -117,7 +117,7 @@ class Model{
         let lastUpdateDate = LastUpdateTable.getLastUpdateDate(database: modelSql?.database, table: Message.MSG_TABLE)
         
         // get all updated records from firebase
-        ModelFirebase.getAllMessagesAndObserve(insertCluster: cluster, lastUpdateDate: lastUpdateDate, callback: { (messages) in
+        Message.getAllMessagesAndObserve(reference: ModelFirebase.ref, insertCluster: cluster, lastUpdateDate: lastUpdateDate, callback: { (messages) in
             
             //update the local db
             var lastUpdate:Date?
@@ -146,7 +146,7 @@ class Model{
     }
     
     func addMessage(insertCluster: Cluster, insertMessageBody: String, completionBlock: @escaping (Error?) -> Void){
-        ModelFirebase.addMessage(insertCluster: insertCluster, insertMessageBody: insertMessageBody, onCompletion:{(err, msg) in
+        Message.addMessageToFirebase(reference: ModelFirebase.ref, insertCluster: insertCluster, insertMessageBody: insertMessageBody, onCompletion:{(err, msg) in
             msg.addMassageToLocalDb(database: self.modelSql?.database)
             completionBlock(err)
         })
@@ -168,7 +168,7 @@ class Model{
     
     func deleteMessage(clusterId: String, insertMessage:Message, callback:@escaping (String?)->Void){
         Message.deleteMessageFromLocalDB(insertMessage: insertMessage, database: self.modelSql?.database)
-        ModelFirebase.deleteMessage(ClusterId: clusterId, insertMessage: insertMessage) { (err) in
+        Message.deleteMessageFromFirebase(reference: ModelFirebase.ref, ClusterId: clusterId, insertMessage: insertMessage) { (err) in
             if (err == nil) {
                 callback ("Deleted")
             }

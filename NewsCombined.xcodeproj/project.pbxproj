@@ -43,6 +43,7 @@
 		84C45218203F844A005FBE8F /* LocalFieleStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C45217203F844A005FBE8F /* LocalFieleStore.swift */; };
 		84C4521A203F845B005FBE8F /* FireBaseFileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C45219203F845B005FBE8F /* FireBaseFileStore.swift */; };
 		84C4521C203F846F005FBE8F /* ModelFileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4521B203F846F005FBE8F /* ModelFileStore.swift */; };
+		84D2FDB120470708005768EA /* Message+firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2FDB020470708005768EA /* Message+firebase.swift */; };
 		84E9125B2005140F007A87D9 /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9125A2005140F007A87D9 /* ModelFirebase.swift */; };
 		A89EBBE254C326B220DD7C05 /* Pods_NewsCombined.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFB125442B07F31AA333E42 /* Pods_NewsCombined.framework */; };
 		F645CCD3200B31F200F45904 /* SpecificArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F645CCD2200B31F200F45904 /* SpecificArticleViewController.swift */; };
@@ -91,6 +92,7 @@
 		84C45217203F844A005FBE8F /* LocalFieleStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFieleStore.swift; sourceTree = "<group>"; };
 		84C45219203F845B005FBE8F /* FireBaseFileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseFileStore.swift; sourceTree = "<group>"; };
 		84C4521B203F846F005FBE8F /* ModelFileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFileStore.swift; sourceTree = "<group>"; };
+		84D2FDB020470708005768EA /* Message+firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Message+firebase.swift"; sourceTree = "<group>"; };
 		84E9125A2005140F007A87D9 /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
 		8DFB125442B07F31AA333E42 /* Pods_NewsCombined.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsCombined.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE08285C871AD8A47D3BBDA4 /* Pods-NewsCombined.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsCombined.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewsCombined/Pods-NewsCombined.release.xcconfig"; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				8437F9A820402BA800354078 /* UserDetails.swift */,
 				847753D52046FA7E00A7D12E /* Cluster+firebase.swift */,
 				847753D72047012F00A7D12E /* Article+firebase.swift */,
+				84D2FDB020470708005768EA /* Message+firebase.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				847638DE203CAC0000EF0364 /* Cluster+sql.swift in Sources */,
 				84A6A407200D0C5900EFF828 /* Cluster.swift in Sources */,
 				84A6A405200D0C4800EFF828 /* Article.swift in Sources */,
+				84D2FDB120470708005768EA /* Message+firebase.swift in Sources */,
 				849AADFB203DCFAD0058547D /* Article+sql.swift in Sources */,
 				847638DC203CABBD00EF0364 /* ModelSql.swift in Sources */,
 				847638E3203CC2AA00EF0364 /* Date+firebase.swift in Sources */,

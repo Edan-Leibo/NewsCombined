@@ -28,6 +28,7 @@ class Message {
             self.lastUpdate = Date.fromFirebase(ts)
         }
     }
+
     
     func toJson()->[String:Any]{
         var json = [String:Any]()
