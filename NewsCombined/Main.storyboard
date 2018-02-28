@@ -66,19 +66,18 @@
                                     <segue destination="qQg-wA-Esh" kind="push" id="VFY-hd-qYV"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewsCombinedLogo" translatesAutoresizingMaskIntoConstraints="NO" id="3iL-73-GNC">
-                                <rect key="frame" x="67" y="218" width="241" height="106"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Only Registered Users may comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXO-ov-8dK">
-                                <rect key="frame" x="42" y="120" width="314" height="21"/>
+                                <rect key="frame" x="42" y="120" width="346" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="cpF-JR-XUR"/>
-                                    <constraint firstAttribute="width" constant="314" id="eNA-U1-J3J"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="3iL-73-GNC">
+                                <rect key="frame" x="67" y="241" width="241" height="184"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.96719154792746109" green="0.96719154792746109" blue="0.96719154792746109" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -93,7 +92,6 @@
                             <constraint firstItem="uWY-w2-6La" firstAttribute="top" secondItem="3iL-73-GNC" secondAttribute="bottom" constant="253" id="S0L-UZ-1m9"/>
                             <constraint firstItem="bXO-ov-8dK" firstAttribute="top" secondItem="9g1-SA-C5Y" secondAttribute="top" constant="120" id="Vwi-Yd-6Gb"/>
                             <constraint firstItem="uWY-w2-6La" firstAttribute="leading" secondItem="9g1-SA-C5Y" secondAttribute="leading" id="X4I-Wn-xdH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bXO-ov-8dK" secondAttribute="trailing" constant="3" id="YHP-hg-sY0"/>
                             <constraint firstItem="rV4-Sa-2Rb" firstAttribute="leading" secondItem="9g1-SA-C5Y" secondAttribute="leading" id="d0O-ga-r05"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3iL-73-GNC" secondAttribute="trailing" constant="51" id="heM-Xk-H95"/>
                             <constraint firstItem="3iL-73-GNC" firstAttribute="leading" secondItem="9g1-SA-C5Y" secondAttribute="leadingMargin" constant="51" id="irv-Ht-vD7"/>
@@ -137,10 +135,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewsCombinedLogo" translatesAutoresizingMaskIntoConstraints="NO" id="PfL-jt-q3u">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" red="0.97716968911917101" green="0.97716968911917101" blue="0.97716968911917101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ffX-Mv-79o">
                                 <rect key="frame" x="0.0" y="64" width="375" height="284"/>
                                 <subviews>
@@ -198,13 +192,13 @@
                                     <constraint firstItem="M1R-HS-xgc" firstAttribute="leading" secondItem="ffX-Mv-79o" secondAttribute="leading" constant="16" id="zcJ-qI-zV5"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="cC2-Qn-KWq">
+                                <rect key="frame" x="67" y="337" width="241" height="168"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="PfL-jt-q3u" firstAttribute="leading" secondItem="15o-yi-McO" secondAttribute="leading" id="1IJ-ss-oVE"/>
-                            <constraint firstItem="uQv-zc-UpP" firstAttribute="top" secondItem="PfL-jt-q3u" secondAttribute="bottom" id="8vz-Tc-ydj"/>
-                            <constraint firstItem="PfL-jt-q3u" firstAttribute="top" secondItem="jB2-UX-7gJ" secondAttribute="bottom" id="CFC-YW-6Fr"/>
-                            <constraint firstAttribute="trailing" secondItem="PfL-jt-q3u" secondAttribute="trailing" id="SCF-4t-ZNc"/>
                             <constraint firstAttribute="trailing" secondItem="ffX-Mv-79o" secondAttribute="trailing" id="kgT-Qa-grC"/>
                             <constraint firstItem="ffX-Mv-79o" firstAttribute="leading" secondItem="15o-yi-McO" secondAttribute="leading" id="sbF-0K-BT9"/>
                             <constraint firstItem="ffX-Mv-79o" firstAttribute="top" secondItem="jB2-UX-7gJ" secondAttribute="bottom" id="vgU-zh-VhL"/>
@@ -233,10 +227,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewsCombinedLogo" translatesAutoresizingMaskIntoConstraints="NO" id="ns8-Hj-HXi">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.95927784974093266" green="0.95927784974093266" blue="0.95927784974093266" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cr0-Ts-jsg">
                                 <rect key="frame" x="0.0" y="64" width="375" height="282"/>
                                 <subviews>
@@ -283,16 +273,16 @@
                                     <constraint firstItem="OD6-NY-DlK" firstAttribute="top" secondItem="zuQ-XP-4Q7" secondAttribute="bottom" constant="8" id="zu2-Ha-mWK"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="U1v-RS-O7s">
+                                <rect key="frame" x="67" y="341" width="241" height="168"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Cr0-Ts-jsg" firstAttribute="top" secondItem="fxq-LK-1OE" secondAttribute="bottom" id="NbT-rd-KUc"/>
                             <constraint firstAttribute="trailing" secondItem="Cr0-Ts-jsg" secondAttribute="trailing" id="TPw-ya-U3Y"/>
-                            <constraint firstItem="G8E-r3-c8B" firstAttribute="top" secondItem="ns8-Hj-HXi" secondAttribute="bottom" id="WT2-Gx-Man"/>
                             <constraint firstItem="Cr0-Ts-jsg" firstAttribute="leading" secondItem="b1r-c3-eoq" secondAttribute="leading" id="erC-tY-VdK"/>
-                            <constraint firstAttribute="trailing" secondItem="ns8-Hj-HXi" secondAttribute="trailing" id="le5-9Z-DI3"/>
-                            <constraint firstItem="ns8-Hj-HXi" firstAttribute="leading" secondItem="b1r-c3-eoq" secondAttribute="leading" id="luA-TN-7hs"/>
-                            <constraint firstItem="ns8-Hj-HXi" firstAttribute="top" secondItem="b1r-c3-eoq" secondAttribute="top" id="ooS-RL-joJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Log In" id="GCy-uw-FP0"/>
@@ -511,9 +501,10 @@
                             <constraint firstItem="WC4-HW-RWf" firstAttribute="top" secondItem="bWD-cj-Nxh" secondAttribute="bottom" constant="475" id="3a4-kE-f1t"/>
                             <constraint firstItem="znb-kW-uzd" firstAttribute="leading" secondItem="Klw-AS-jMd" secondAttribute="leadingMargin" constant="108" id="6r5-n6-gIc"/>
                             <constraint firstItem="nIc-GP-Jpg" firstAttribute="top" secondItem="Nrh-gs-nGq" secondAttribute="bottom" constant="46" id="7V6-J2-sL8"/>
-                            <constraint firstItem="J9H-kW-OXf" firstAttribute="trailing" secondItem="rD2-hl-qzB" secondAttribute="trailing" id="8bc-eh-YYj"/>
-                            <constraint firstItem="J9H-kW-OXf" firstAttribute="leading" secondItem="NEX-CE-3oV" secondAttribute="leading" id="CSC-vM-tdK"/>
+                            <constraint firstAttribute="trailing" secondItem="J9H-kW-OXf" secondAttribute="trailing" id="CCX-Ad-5vN"/>
                             <constraint firstAttribute="trailing" secondItem="rD2-hl-qzB" secondAttribute="trailing" id="Hhz-lz-rk8"/>
+                            <constraint firstItem="J9H-kW-OXf" firstAttribute="top" secondItem="Klw-AS-jMd" secondAttribute="top" id="KaB-az-LkR"/>
+                            <constraint firstItem="WC4-HW-RWf" firstAttribute="top" secondItem="J9H-kW-OXf" secondAttribute="bottom" id="MFM-vT-jmv"/>
                             <constraint firstItem="NEX-CE-3oV" firstAttribute="leading" secondItem="Klw-AS-jMd" secondAttribute="leading" id="MYV-Nd-Lg7"/>
                             <constraint firstItem="bWD-cj-Nxh" firstAttribute="leading" secondItem="Klw-AS-jMd" secondAttribute="leadingMargin" constant="108" id="PfF-64-at6"/>
                             <constraint firstItem="bWD-cj-Nxh" firstAttribute="top" secondItem="Z7n-mY-d6H" secondAttribute="bottom" constant="52" id="Pyl-Xc-a5x"/>
@@ -523,8 +514,6 @@
                             <constraint firstItem="bWD-cj-Nxh" firstAttribute="leading" secondItem="Klw-AS-jMd" secondAttribute="leading" constant="124" id="Xrs-yT-nZ4"/>
                             <constraint firstItem="NEX-CE-3oV" firstAttribute="top" secondItem="bWD-cj-Nxh" secondAttribute="bottom" constant="385" id="bFS-lP-K6m"/>
                             <constraint firstItem="nIc-GP-Jpg" firstAttribute="trailing" secondItem="Klw-AS-jMd" secondAttribute="trailingMargin" id="bgc-YX-wsh"/>
-                            <constraint firstItem="J9H-kW-OXf" firstAttribute="bottom" secondItem="WC4-HW-RWf" secondAttribute="top" id="cjI-Gk-JLt"/>
-                            <constraint firstItem="J9H-kW-OXf" firstAttribute="top" secondItem="Klw-AS-jMd" secondAttribute="top" id="d02-gc-E3o"/>
                             <constraint firstItem="WC4-HW-RWf" firstAttribute="top" secondItem="rD2-hl-qzB" secondAttribute="bottom" id="dSi-FR-7AU"/>
                             <constraint firstItem="Nrh-gs-nGq" firstAttribute="leading" secondItem="Klw-AS-jMd" secondAttribute="leadingMargin" id="fqQ-TY-7U2"/>
                             <constraint firstItem="rD2-hl-qzB" firstAttribute="top" secondItem="NEX-CE-3oV" secondAttribute="bottom" id="heU-yQ-1rD"/>
@@ -533,6 +522,7 @@
                             <constraint firstItem="bWD-cj-Nxh" firstAttribute="top" secondItem="Klw-AS-jMd" secondAttribute="top" constant="72" id="myV-Jq-eaw"/>
                             <constraint firstItem="NEX-CE-3oV" firstAttribute="top" secondItem="znb-kW-uzd" secondAttribute="bottom" constant="158" id="nOF-bL-nZK"/>
                             <constraint firstItem="znb-kW-uzd" firstAttribute="top" secondItem="Nrh-gs-nGq" secondAttribute="bottom" constant="97" id="pB1-AJ-GYn"/>
+                            <constraint firstItem="J9H-kW-OXf" firstAttribute="leading" secondItem="Klw-AS-jMd" secondAttribute="leading" id="s0x-rn-Jpu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bWD-cj-Nxh" secondAttribute="trailing" constant="109" id="up8-oB-RSE"/>
                         </constraints>
                     </view>
@@ -816,9 +806,9 @@
     </scenes>
     <resources>
         <image name="IMAGEPREVIEW_00000" width="590" height="332"/>
-        <image name="NewsCombinedLogo" width="177" height="106"/>
         <image name="hamburgericon" width="50" height="50"/>
         <image name="icons8-notification-50" width="50" height="50"/>
+        <image name="logo" width="300" height="300"/>
         <image name="no-photo-male" width="400" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>

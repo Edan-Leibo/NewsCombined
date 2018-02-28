@@ -14,10 +14,6 @@ import SVProgressHUD
 
 class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat{
     
-    
-    
-    
-    
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var alertButton: UIBarButtonItem!
     @IBOutlet var messageTableView: UITableView!
@@ -134,12 +130,11 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
         cell.setCluster(cluster: clus)
         cell.delegate = self
         cell.commentsBTN.tag = indexPath.row
-        // cell.commentsBTN.addTarget(self, action: "btnTapped", for: .touchUpInside)
+        cell.avatarImageView.image = UIImage(named: "logo")
         cell.senderUsername.text = clusterArray[indexPath.row].clustertitle
-        //cell.clusterTitle.sizeToFit()
-        let urlKey = clusterArray[indexPath.row].clusterimgurl as! String
+        let urlKey = clusterArray[indexPath.row].clusterimgurl
         cell.avatarImageView.tag = indexPath.row
-        ModelFileStore.getImageNotInFirebase (urlStr: urlKey) { (data) in
+        ModelFileStore.getImageFromWeb (urlStr: urlKey) { (data) in
             if (cell.avatarImageView.tag == indexPath.row){
                 cell.avatarImageView.image = data
             }

@@ -135,7 +135,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     @IBAction func chooseImage(_ sender: Any) {
         
         let imagePickerController = UIImagePickerController()
-        imagePickerController.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        imagePickerController.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
         
         let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
         
@@ -166,7 +166,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        selectedImage = (info[UIImagePickerControllerOriginalImage] as! UIImage)
         imageView.image = selectedImage
         picker.dismiss(animated: true, completion: nil)
     }

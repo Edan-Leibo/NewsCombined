@@ -22,7 +22,6 @@
 		8407D46D200A19AD000B0277 /* BaseScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8407D46C200A19AD000B0277 /* BaseScreenViewController.swift */; };
 		8437F9A920402BA800354078 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8437F9A820402BA800354078 /* UserDetails.swift */; };
 		8448B61B2013633700E5999A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448B61A2013633700E5999A /* ProfileViewController.swift */; };
-		8448B61D2013675500E5999A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448B61C2013675500E5999A /* SettingsViewController.swift */; };
 		8448B61F20136E5700E5999A /* RightMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8448B61E20136E5700E5999A /* RightMenuTableViewController.swift */; };
 		845021AF2013A113008F33D6 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845021AE2013A113008F33D6 /* Message.swift */; };
 		845507B6203F461300A4DECE /* Message+sql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845507B5203F461300A4DECE /* Message+sql.swift */; };
@@ -69,7 +68,6 @@
 		8407D46C200A19AD000B0277 /* BaseScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScreenViewController.swift; sourceTree = "<group>"; };
 		8437F9A820402BA800354078 /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
 		8448B61A2013633700E5999A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		8448B61C2013675500E5999A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8448B61E20136E5700E5999A /* RightMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightMenuTableViewController.swift; sourceTree = "<group>"; };
 		845021AE2013A113008F33D6 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		845507B5203F461300A4DECE /* Message+sql.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Message+sql.swift"; sourceTree = "<group>"; };
@@ -173,7 +171,6 @@
 			children = (
 				8496F6A2200E63780062B32C /* ViewController.swift */,
 				8448B61A2013633700E5999A /* ProfileViewController.swift */,
-				8448B61C2013675500E5999A /* SettingsViewController.swift */,
 				84A4A9AD200F682800FA72F3 /* LeftMenuTableViewController.swift */,
 				84A4A9AF200FA59300FA72F3 /* LeftMenuTableViewCell.swift */,
 				8407D46C200A19AD000B0277 /* BaseScreenViewController.swift */,
@@ -395,7 +392,6 @@
 				84F93F822012AE91000CF033 /* SViewController.swift in Sources */,
 				8448B61B2013633700E5999A /* ProfileViewController.swift in Sources */,
 				63E28B321B9A337600FBF6E0 /* RegisterViewController.swift in Sources */,
-				8448B61D2013675500E5999A /* SettingsViewController.swift in Sources */,
 				846EB1F0200E587800BD64F4 /* SWRevealViewController.m in Sources */,
 				84A4A9B0200FA59300FA72F3 /* LeftMenuTableViewCell.swift in Sources */,
 				8407D46D200A19AD000B0277 /* BaseScreenViewController.swift in Sources */,

@@ -74,13 +74,12 @@ class ArticlesInClusAndCatViewController: UITableViewController {
         // Configure the cell...
         cell.commentsBTN.isHidden = true
         cell.senderUsername.text = allArticles[indexPath.row].title
-        //cell.article_title.sizeToFit()
-        //Get the image
-        //cell.logo.image = allArticles[indexPath.row].clusterimgurl
+        cell.avatarImageView.image = UIImage(named: "logo")
+
         
-        var urlKey = allArticles[indexPath.row].imageURL
+        let urlKey = allArticles[indexPath.row].imageURL
         cell.avatarImageView.tag = indexPath.row
-        ModelFileStore.getImageNotInFirebase (urlStr: urlKey) { (data) in
+        ModelFileStore.getImageFromWeb (urlStr: urlKey) { (data) in
             if (cell.avatarImageView.tag == indexPath.row){
                 cell.avatarImageView.image = data
             }
