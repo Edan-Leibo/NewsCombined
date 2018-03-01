@@ -35,10 +35,8 @@ class ModelFirebase{
         if (Auth.auth().currentUser != nil) {
             sender = (Auth.auth().currentUser?.email)!
         }
-        print (sender)
         let imageRef = ref?.child("UserDetails").childByAutoId()
         let jsonofdetails = insertImageDetails.toJson()
-        print (jsonofdetails)
         imageRef?.setValue(jsonofdetails){(error, dbref) in
             onCompletion(error, insertImageDetails)
         }

@@ -38,7 +38,6 @@ class CustomCell: UITableViewCell {
     @IBAction func btnPressed(_ sender: Any) {
         SVProgressHUD.show()
         let tosend = commentsBTN.tag
-        print(tosend)
         SVProgressHUD.dismiss(withDelay: 1)
         delegate?.didpressbutton(title: tosend)
     }
