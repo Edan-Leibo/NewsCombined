@@ -1,10 +1,11 @@
 //
 //  LeftMenuTableViewCell.swift
 //  NewsCombined
-//
-//  Created by admin on 17/01/2018.
-//  Copyright © 2018 London App Brewery. All rights reserved.
-//
+
+
+/*
+ The cell structure of the left menu of the SWreveal (categories)
+ */
 
 import UIKit
 

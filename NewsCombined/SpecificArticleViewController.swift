@@ -4,6 +4,10 @@
 //
 //
 
+/*
+ Class in charge of displaying a specific article choosen in the program in a web browser
+ */
+
 import UIKit
 import SVProgressHUD
 
@@ -29,6 +33,11 @@ class SpecificArticleViewController: UIViewController,UIWebViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    /*
+     Once page starts loading we want progresshud to show, seeing how the start
+     loading appears more than once we wanted it to stop after first time with the counter
+     */
     
     func webViewDidStartLoad(_ webView: UIWebView) {
         if counter == 0 {

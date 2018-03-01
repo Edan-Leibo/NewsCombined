@@ -2,12 +2,12 @@
 //  Article+sql.swift
 //  NewsCombined
 //
-//  Created by admin on 21/02/2018.
-//  Copyright © 2018 London App Brewery. All rights reserved.
-//
+
 
 import Foundation
-
+/*
+ The Article sql structure - inherits all Article functions and datamembers thanks to the extension - used to save Articles locally
+ */
 
 
 extension Article{
@@ -24,6 +24,10 @@ extension Article{
     static let ART_LAST_UPDATE = "ART_LAST_UPDATE"
     
     
+    
+    /*
+     The Article sql table structure for local save of article
+     */
     
     static func createTable(database:OpaquePointer?)->Bool{
         var errormsg: UnsafeMutablePointer<Int8>? = nil
@@ -45,6 +49,10 @@ extension Article{
         
         return true
     }
+    
+    /*
+    Addition of Article to local memory in the aformentioned structure
+     */
     
     func addArticleToLocalDb(database:OpaquePointer?){
         var sqlite3_stmt: OpaquePointer? = nil
@@ -94,6 +102,10 @@ extension Article{
         sqlite3_finalize(sqlite3_stmt)
     }
     
+    
+    /*
+     Get of all Articles from local memory in the aformentioned structure
+     */
     
     static func getAllArticlesFromLocalDb(insertCluster: Cluster, database:OpaquePointer?)->[Article]{
         var articles = [Article]()

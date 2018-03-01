@@ -1,20 +1,25 @@
 //
 //  ViewController.swift
-//  Flash Chat
-//
-//  Created by Angela Yu on 29/08/2015.
-//  Copyright (c) 2015 London App Brewery. All rights reserved.
-//
+
 
 import UIKit
 import Firebase
 
+
+/*
+ This viewcontroller is charge of handling the Messages page and everything about it
+ */
+
 class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
     
-    var clusterToHold : Cluster?
+    var clusterToHold : Cluster? //The main topic of chat
     var messagearray : [Message] = [Message]()
     var imageUrl:String?
     
+    
+    /*
+     visual outlets
+     */
     
     @IBOutlet var heightConstraint: NSLayoutConstraint!
     @IBOutlet var sendButton: UIButton!
@@ -27,34 +32,21 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
         super.viewDidLoad()
         
         messageTableView.backgroundView = UIImageView(image: UIImage(named: "Preview.jpg"))
-        //TODO: Set yourself as the delegate and datasource here:
         messageTableView.dataSource = self
         messageTableView.delegate = self
         
         
         
-        //TODO: Set yourself as the delegate of the text field here:
         messageTextfield.delegate = self
         
         
         //AFTER WE RISED THE KEYBOARD(103) WE NEED EVENT TO KNOW WE TAPPED OUTSIDE OF IT TO MAKE KEAYBAORD DISSAPPEAR!!!
         //TABLEviewTapped is created in 77!!!!
         let tapgesture = UITapGestureRecognizer(target: self, action: #selector(tableviewTapped))
-        
-        
         messageTableView.addGestureRecognizer(tapgesture)
-        
-        
-        
-        
-        
-        //TODO: Register your Cell.xib file here:
         messageTableView.register(UINib(nibName: "BlockCell", bundle: nil), forCellReuseIdentifier: "customCell")
         configureTableView()
-        //  tableView.backgroundView = UIImageView(image: UIImage(named: "Preview.jpg"))
-        
         retriveMessages()
-        
         messageTableView.separatorStyle = .none
         messageTableView.allowsMultipleSelectionDuringEditing = true
         
@@ -78,10 +70,7 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
     
-    /*
- Will Move this once Am able to delete locally too!!!!!
  
- */
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         if messagearray[indexPath.row].sender == Model.instance.GetUser()  {
@@ -102,6 +91,10 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }
     }
     
+    /*
+     Alert to tell user if chat is empty for cluster
+     */
+    
     func createalert(todo: String, titletext: String, messageText : String)
     {
         let alert = UIAlertController(title: titletext, message: messageText, preferredStyle: .alert)
@@ -116,7 +109,9 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     
     
-    //TODO: Declare cellForRowAtIndexPath here:
+    /*
+     Cell data integration
+     */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
         cell.backgroundColor = UIColor.clear
@@ -138,23 +133,15 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 
             }
         })
-        
-        
-        
-        
+       
         if cell.messageBody.text ==  Model.instance.GetUser() { //TO CHECK IF MESSAGE IS FROM USER OR SOMEBODY ELSE!!!
-            
-            
             cell.messageBackground.backgroundColor = UIColor.cyan
             
         }
         else {
-            
             cell.messageBackground.backgroundColor = UIColor.green
             
         }
-        
-        
         return cell
     }
     
@@ -210,7 +197,9 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }
     }
     
-    
+    /*
+     To activate send button in keybaord
+     */
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.sendButton.sendActions(for: .touchUpInside)
@@ -225,6 +214,9 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     
     
+    /*
+     Sends message and saves it both locally and cloud FB
+     */
     
     @IBAction func sendPressed(_ sender: AnyObject) {
         

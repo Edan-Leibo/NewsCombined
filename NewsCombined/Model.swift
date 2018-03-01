@@ -198,6 +198,9 @@ class Model{
         })
     }
     
+    /*
+     Gets the image from the imageurl datamember of user details and saves it locally
+     */
     
     func getImgDetailsFromUser(insertUser:String, callback:@escaping (UserDetails?)->Void){
         ModelFirebase.getImgDetailsFromUser(user: insertUser) { (imgd) in
@@ -205,6 +208,10 @@ class Model{
         }
         
     }
+    
+    /*
+    Deletes message both locally and cloud
+     */
     
     func deleteMessage(clusterId: String, insertMessage:Message, callback:@escaping (String?)->Void){
         Message.deleteMessageFromLocalDB(insertMessage: insertMessage, database: self.modelSql?.database)
@@ -224,6 +231,10 @@ class Model{
     
     
     ////////AUTH_FB/////////
+    
+    /*
+     All functions related to the authentication part of Firebase - all are self explenatory
+     */
     
     func logoutFB() {
         ModelFirebase.logoutFB()

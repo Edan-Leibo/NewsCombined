@@ -1,15 +1,22 @@
 //
 //  ProfileViewController.swift
 //  NewsCombined
-//
-//  Created by admin on 20/01/2018.
-//  Copyright © 2018 London App Brewery. All rights reserved.
-//ProfileViewController
+
+
+/*
+ This viewcontroller is in charge of the the personal profile page of the user
+ here, the user changes his profile picture and can log out of the program
+ */
 
 import UIKit
 import SVProgressHUD
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    
+    
+    /*
+     Buttons had to be deleted/stopped so we needed the IBoutlets as well as actions
+     */
     
     var user: String?
     var imageUrl:String?
@@ -37,18 +44,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
         userLabel.text = "Hello " + user!
         loadUserimage()
         
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     
     /*
-     Model.instance.addMessage(insertCluster: clusterToHold!, insertMessageBody: messageTextfield.text!) { (err) in
-     if err == nil{
-     print("ERROR WITH MESSAGES!!!!!")
-     }
-     }
-     
-     Model.instance.addImageDetails(insertImageDetails: userimagedetail,
+     Alert to inform of program execution like log out and image change
      */
     
     func createalert(todo: String, titletext: String, messageText : String)
@@ -63,7 +63,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
         self.present(alert, animated: true, completion: nil)
     }
     
-    
+    /*
+     Btn for log out
+     */
     
     @IBAction func logOutBtn(_ sender: Any) {
         Model.instance.logoutFB()
@@ -71,7 +73,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
         
     }
     
-    
+    /*
+     Btn for save image
+     */
 
     @IBAction func saveBTN(_ sender: Any) {
         SVProgressHUD.show()
@@ -99,7 +103,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
 
         }
     }
-    
+    /*
+     Save function takes a long time so we need to lock Btns to prevent multiple I/O's
+     */
     
     func deActivateBTNs(){
         backNewsiBtn.isEnabled = false
@@ -115,6 +121,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
         logOutBtn.isEnabled = true
         
     }
+    
+    /*
+     Loads the current image of user for display in viewcontroller
+     */
     
     func loadUserimage()
     {
@@ -134,8 +144,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
         
     }
     
-    
-    
+    /*
+     Loads the  image of selector
+     */
     @IBAction func chooseImage(_ sender: Any) {
         
         let imagePickerController = UIImagePickerController()
@@ -167,7 +178,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     }
     
     
-    
+    /*
+     Event of image selected from picker
+     */
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         selectedImage = (info[UIImagePickerControllerOriginalImage] as! UIImage)

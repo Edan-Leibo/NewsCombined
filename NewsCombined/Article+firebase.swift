@@ -1,16 +1,21 @@
 //
 //  Article+firebase.swift
 //  NewsCombined
-//
-//  Created by admin on 28/02/2018.
-//  Copyright © 2018 London App Brewery. All rights reserved.
-//
+
+
+/*
+ This class is the Article Firebase class and all its data members - in charge of handling all firebase related tasks
+ */
 
 import Foundation
 import Firebase
 import FirebaseDatabase
 
 extension Article{
+    
+    /*
+     Gets all Clusters from Firebase class
+     */
     static func getAllArticlesInClusterAndObserve(reference:DatabaseReference?, byCluster: Cluster, lastUpdateDate:Date? , callback:@escaping ([Article])->Void){
         let handler = {(snapshot:DataSnapshot) in
             var articles = [Article]()

@@ -3,20 +3,33 @@
 import Foundation
 import FirebaseDatabase
 
+
+/*
+ This class is the UserDetails and all its data members - each instance contains both the image of the user and the username mostly used in future references
+
+ */
+
 class UserDetails{
     
-    //var id : String
+
     var sender : String
     var imageurl : String
     var lastUpdate:Date?
     
     
-    init(/*insertid: String,*/insertsender: String, insertimageurl : String) {
-    //  self.id = insertid
+    /*
+     A simple constructor for the UserDetails class
+     */
+    
+    init(insertsender: String, insertimageurl : String) {
         self.sender = insertsender
         self.imageurl = insertimageurl
    
     }
+    
+    /*
+     A Json constructor for the Userdetails class
+     */
     
     init(json:Dictionary<String,Any>){
    //     id = json["id"] as! String
@@ -26,6 +39,10 @@ class UserDetails{
             self.lastUpdate = Date.fromFirebase(ts)
         }
     }
+    
+    /*
+     A Json exporter for the Userdetails class
+     */
     
     func toJson()->[String:Any]{
         var json = [String:Any]()

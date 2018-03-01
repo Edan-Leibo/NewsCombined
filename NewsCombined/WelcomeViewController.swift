@@ -1,8 +1,8 @@
 //
 //  WelcomeViewController.swift
-//  Flash Chat
+
 //
-//  This is the welcome view controller - the first thign the user sees
+//  This is the welcome view controller - the first thign the user sees when tries to connect to system
 //
 
 import UIKit
@@ -16,6 +16,10 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var registerBtn: UIButton!
     
     @IBOutlet weak var logInBtn: UIButton!
+    
+    /*
+     Alert to let user know log out was finished
+     */
     func createalert(todo: String, titletext: String, messageText : String)
     {
         let alert = UIAlertController(title: titletext, message: messageText, preferredStyle: .alert)
@@ -28,7 +32,10 @@ class WelcomeViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    
+    /*
+ 
+ Page varies between loged users and un logged users
+ */
     
     @IBOutlet weak var frontLabel: UILabel!
     

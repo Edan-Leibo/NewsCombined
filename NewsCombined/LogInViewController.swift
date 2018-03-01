@@ -1,7 +1,8 @@
 //
 //  LogInViewController.swift
-//  Flash Chat
-//
+
+
+
 //  This is the view controller where users login
 
 
@@ -25,6 +26,10 @@ class LogInViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    /*
+     Alert to tell user of sucsess
+     */
+    
     func createalert(todo: String, titletext: String, messageText : String)
     {
         let alert = UIAlertController(title: titletext, message: messageText, preferredStyle: .alert)
@@ -39,6 +44,9 @@ class LogInViewController: UIViewController {
     }
     
     
+    /*
+     Function to perform log in
+     */
    
     @IBAction func logInPressed(_ sender: AnyObject) {
         

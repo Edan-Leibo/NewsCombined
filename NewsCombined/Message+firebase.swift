@@ -1,10 +1,11 @@
 //
 //  Message+firebase.swift
 //  NewsCombined
-//
-//  Created by admin on 28/02/2018.
-//  Copyright © 2018 London App Brewery. All rights reserved.
-//
+
+
+/*
+ This class is the Message Firebase class and all its data members - in charge of handling all firebase related tasks
+ */
 
 import Foundation
 
@@ -14,7 +15,9 @@ import FirebaseDatabase
 
 extension Message
 {
-    
+    /*
+     Get all Messages from Firebase in relation to a specific cluster
+     */
     static func getAllMessagesAndObserve(reference:DatabaseReference?,insertCluster:Cluster, lastUpdateDate:Date?, callback:@escaping ([Message])->Void){
         let handler = {(snapshot:DataSnapshot) in
             var messages = [Message]()
@@ -44,7 +47,9 @@ extension Message
     
     
     
-    
+    /*
+    Adds a message to Firebase in relation to a specific cluster
+     */
     
     static func addMessageToFirebase(reference:DatabaseReference?,insertCluster : Cluster, insertMessageBody : String, onCompletion:@escaping (Error?, Message)->Void){
         var sender = "Guest"
@@ -60,7 +65,9 @@ extension Message
     }
     
     
-    
+    /*
+     Delete a Message from Firebase in relation to a specific cluster
+     */
     
     
     static func deleteMessageFromFirebase(reference:DatabaseReference?,ClusterId: String,insertMessage: Message, onCompletion:@escaping (Error?)->Void){

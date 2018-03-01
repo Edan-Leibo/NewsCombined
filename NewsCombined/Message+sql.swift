@@ -1,9 +1,12 @@
 //
 //  Message+sql.swift
 //  NewsCombined
-//
-//  Created by admin on 22/02/2018.
-//
+
+
+/*
+ The Message sql structure - inherits all Article functions and datamembers thanks to the extension - used to save Message locally
+ */
+
 
 import Foundation
 
@@ -15,6 +18,11 @@ extension Message{
     static let MSG_CATEGORY_TOPIC = "MSG_CATEGORY_TOPIC"
     static let MSG_LAST_UPDATE = "MSG_LAST_UPDATE"
     
+    
+    
+    /*
+     The Message sql table structure for local save of article
+     */
     
     static func createTable(database:OpaquePointer?)->Bool{
         var errormsg: UnsafeMutablePointer<Int8>? = nil
@@ -31,6 +39,10 @@ extension Message{
         
         return true
     }
+    
+    /*
+     Addition of Message to local memory in the aformentioned structure
+     */
     
     func addMassageToLocalDb(database:OpaquePointer?){
         var sqlite3_stmt: OpaquePointer? = nil
@@ -65,6 +77,10 @@ extension Message{
         sqlite3_finalize(sqlite3_stmt)
     }
     
+    /*
+     Get of all Articles from local memory in the aformentioned structure
+     */
+    
     static func getAllMassagesFromLocalDb(insertCluster:Cluster, database:OpaquePointer?)->[Message]{
         var messages = [Message]()
         var sqlite3_stmt: OpaquePointer? = nil
@@ -88,13 +104,11 @@ extension Message{
     }
     
     /*
-     DELETE FROM employees
-     WHERE last_name = 'Smith';
+    Deleting a message instance from the local SQL table of messages - with the provided message to delete
  */
     
     
     static func deleteMessageFromLocalDB(insertMessage:Message, database:OpaquePointer?){
-        //var messages = [Message]()
         
         var sqlite3_stmt: OpaquePointer? = nil
         if (sqlite3_prepare_v2(database,"DELETE FROM "+MSG_TABLE+" WHERE " + MSG_ID + " = '" + insertMessage.id + "';",-1,&sqlite3_stmt,nil) == SQLITE_OK){

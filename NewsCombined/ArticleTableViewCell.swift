@@ -2,9 +2,10 @@
 //  ArticleTableViewCell.swift
 //  NewsCombined
 //
-//  Created by admin on 16/01/2018.
-//  Copyright © 2018 London App Brewery. All rights reserved.
-//
+
+/*
+ The cell structure for article
+ */
 
 import UIKit
 

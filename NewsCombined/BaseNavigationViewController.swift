@@ -2,9 +2,11 @@
 //  CategoryListBaseViewController.swift
 //  NewsCombined
 //
-//  Created by Adam Yablonka on 10/01/2018.
-//  Copyright © 2018 London App Brewery. All rights reserved.
-//
+
+
+/*
+ This class is a requierment for the SWreveal to function and load (its the initial screen)
+ */
 
 import UIKit
 

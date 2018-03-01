@@ -2,23 +2,25 @@
 //  RightMenuTableViewController.swift
 //  NewsCombined
 //
-//  Created by admin on 20/01/2018.
-//  Copyright © 2018 London App Brewery. All rights reserved.
-//
+
 
 import UIKit
 import SVProgressHUD
 
+
+/*
+ This class is in charge of the right menu of the SWT - allows acsess to profile and welcome page
+ 
+ */
+
 class RightMenuTableViewController: UITableViewController {
   
     @IBOutlet weak var userName: UILabel!
-     var FBunit : ModelFirebase? = nil
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if FBunit == nil {
-            FBunit = ModelFirebase ()
-        }
+      
         NotificationCenter.default.addObserver(self, selector: #selector(RightMenuTableViewController.functionName), name:NSNotification.Name(rawValue: "NotificationID"), object: nil)
 
         // Uncomment the following line to preserve selection between presentations
@@ -32,6 +34,10 @@ class RightMenuTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    /*
+ Function not used saved for Final project
+ */
     
     @objc func functionName() {
         
@@ -48,17 +54,10 @@ class RightMenuTableViewController: UITableViewController {
     
     
     /*
-     let user = Model.instance.GetUser()
-     if (user != nil)
-     {
-     performSegue(withIdentifier: "goToMessages", sender: self)
-     }
-     else{
-     //goToWelcome
-     performSegue(withIdentifier: "goToWelcome", sender: self)
-     }
+ Main functionallity of viewcontroller - acsess to profile page and welcome page - varies between
+     logged and un logged users
  */
-    
+
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //print(indexPath.row)

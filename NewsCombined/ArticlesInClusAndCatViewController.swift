@@ -2,12 +2,16 @@
 //  ArticleTVC.swift
 //  NewsCombined
 //
-//  Created by Himani Patel on 1/14/18.
-//  Copyright © 2018 London App Brewery. All rights reserved.
-//
+
 
 import UIKit
 import SVProgressHUD
+
+
+
+/*
+ This viewcontroller is charge of handling the Articles page and everything about it
+ */
 
 class ArticlesInClusAndCatViewController: UITableViewController {
     
@@ -23,16 +27,8 @@ class ArticlesInClusAndCatViewController: UITableViewController {
         tableView.backgroundView = UIImageView(image: UIImage(named: "Preview.jpg"))
       SVProgressHUD.show()
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        //self.tableView.tableFooterView = UIView()
         messageTablieView.register(UINib(nibName: "BlockCell", bundle: nil), forCellReuseIdentifier: "customCell")
-        
         messageTablieView.separatorStyle = .none
-        
-        
-        //self.type = CATEGORIES[selected_Catedories]
-        
-        //self.tableView.tableFooterView = UIView()
-      
         ModelNotification.ArticleList.observe { (articleArr) in
             if let aritcleArray = articleArr{
                 if (!SVProgressHUD.isVisible()){
@@ -66,12 +62,14 @@ class ArticlesInClusAndCatViewController: UITableViewController {
         return allArticles.count
     }
     
+    /*
+     Section in charge of visually navigating between the side menus of right+left menu of SWreveal
+     */
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
         cell.backgroundColor = UIColor.clear
-        // Configure the cell...
         cell.commentsBTN.isHidden = true
         cell.senderUsername.text = allArticles[indexPath.row].title
         cell.avatarImageView.image = UIImage(named: "logo")
@@ -86,21 +84,18 @@ class ArticlesInClusAndCatViewController: UITableViewController {
         }
         
         cell.messageBody.text = allArticles[indexPath.row].description
-        //cell.article_description.sizeToFit()
         return cell
     }
     
+
     /*
-     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-     return 107
-     }*/
+     Goes to the article in the web browser using the URL in the article cell choosen
+     */
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         chosenRow = indexPath.row
-        //let vc = self.storyboard?.instantiateViewController(withIdentifier: "NewsVC") as! NewsVC
         performSegue(withIdentifier: "moveToSpecificArticleSegue", sender: self)
-        //self.navigationController?.pushViewController(vc, animated: true)
         
     }
     

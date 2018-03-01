@@ -2,15 +2,23 @@
 //  Cluster+firebase.swift
 //  NewsCombined
 //
-//  Created by admin on 28/02/2018.
-//  Copyright © 2018 London App Brewery. All rights reserved.
-//
+
+
+
+/*
+ This class is the Cluster Firebase class and all its data members - in charge of handling all firebase related tasks
+ */
 
 import Foundation
 import Firebase
 import FirebaseDatabase
 
 extension Cluster{
+    
+    /*
+     Gets all Clusters from Firebase class
+     */
+
     static func getAllClustersAndObserve(reference:DatabaseReference?, byCategory:String, lastUpdateDate:Date? , callback:@escaping ([Cluster])->Void){
         let handler = {(snapshot:DataSnapshot) in
             var clusters = [Cluster]()

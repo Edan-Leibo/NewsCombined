@@ -2,9 +2,11 @@
 //  LeftMenuTableViewController.swift
 //  NewsCombined
 //
-//  Created by admin on 17/01/2018.
-//  Copyright © 2018 London App Brewery. All rights reserved.
-//
+
+
+/*
+ This viewcontroller is in charge of the left menu of the SWReveal - in charge of picking category
+ */
 
 import UIKit
 
@@ -18,6 +20,10 @@ class LeftMenuTableViewController: UITableViewController, LeftMenuTableViewCellD
     var LeftMenuArray=[String]()
     var selectedRow:Int?
     
+    
+    /*
+     Each category is delegated to a cell - picking one will change the current viewcontroller of clusterspercategory
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         LeftMenuArray=["General News","Politics","Sport", "Business","Science", "Technology", "Entertainment", "Gaming"]
@@ -34,7 +40,7 @@ class LeftMenuTableViewController: UITableViewController, LeftMenuTableViewCellD
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
+   
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections

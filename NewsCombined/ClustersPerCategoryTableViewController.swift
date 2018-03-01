@@ -2,16 +2,16 @@
 //  CategoryTableViewController.swift
 //  NewsCombined
 //
-//  Created by Adam Yablonka on 10/01/2018.
-//  Copyright © 2018 London App Brewery. All rights reserved.
-//
+
 
 import UIKit
 import SVProgressHUD
 
 
 
-
+/*
+ This viewcontroller is charge of handling the Clusters page and everything about it
+ */
 class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat{
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -40,6 +40,11 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
         
         
     }
+    /*
+     After category is picked and the process is instantiated to load a new set of clusters by sending notification
+     to model
+     */
+    
     func refreshClusters(withChosenCategoty category: String){
         SVProgressHUD.show()
         navigationItem.title = category.capitalized
@@ -57,11 +62,11 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
         
     }
     
-    /*deinit{
-     if (observerId != nil){
-     ModelNotification.removeObserver(observer: observerId!)
-     }
-     }*/
+ 
+    /*
+ Function to enter the comments section of the cluster - if a user is logged in goes to chat, else goes to register page
+ Usses the protocol in the cell class
+     */
     
     func didpressbutton(title: Any) {
         chosenRow = title as! Int
@@ -75,6 +80,10 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
             performSegue(withIdentifier: "goToWelcome", sender: self)
         }
     }
+    
+    /*
+    Section in charge of visually navigating between the side menus of right+left menu of SWreveal
+     */
     
     func sideMenus(){
         if revealViewController() != nil {
@@ -97,10 +106,10 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+     
     }
     
-    // MARK: - Table view data source
+
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -111,17 +120,13 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
     }
     
     
+
+
+    
+    
     /*
- 
-     ModelFileStore.getImage(urlStr: self.imageUrl!) { (data) in
-     if (cell.avatarImageView.tag == indexPath.row){
-     cell.avatarImageView.image = data
-     }
-     }
- */
-    
-    
-    
+     Structuring of the cell, first load it with no image than with the user image should one exist
+     */
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
