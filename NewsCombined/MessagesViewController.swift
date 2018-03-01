@@ -212,6 +212,11 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.sendButton.sendActions(for: .touchUpInside)
+        return true
+    }
+    
     ///////////////////////////////////////////
     
     

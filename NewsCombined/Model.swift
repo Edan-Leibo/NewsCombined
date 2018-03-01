@@ -9,12 +9,22 @@
 import Foundation
 import UIKit
 
+
+/*
+ This is the notification unit, it is alerted thanks to the observe func' posts data to the observable thanks to the post func
+ */
+
+
 class ModelNotificationBase<T>{
     var name:String?
     
     init(name:String){
         self.name = name
     }
+    
+    /*
+     Can observe for article,cluster,message and Userdetails - we fill this in the viewcontroller demanding the data
+     */
     
     func observe(callback:@escaping (T?)->Void)->Any{
         return NotificationCenter.default.addObserver(forName: NSNotification.Name(name!), object: nil, queue: nil) { (data) in
@@ -23,11 +33,17 @@ class ModelNotificationBase<T>{
             }
         }
     }
-    
+    /*
+     Sends the data back to the viewcontroller demanding the data
+     */
     func post(data:T){
         NotificationCenter.default.post(name: NSNotification.Name(name!), object: self, userInfo: ["data":data])
     }
 }
+
+/*
+ The different options for the observables
+ */
 
 class ModelNotification{
     static let ClusterList = ModelNotificationBase<[Cluster]>(name: "ClusterListNotification")
@@ -40,10 +56,20 @@ class ModelNotification{
     }
 }
 
+/*
+ This class is the "heart of the program" instead of every view controller having a firebase import and communicates with the local memory the Model
+ does it for him with notifications,local memory instances, firebase instances etc' etc'
+ */
+
+
 class Model{
     static let instance = Model()
     lazy private var modelSql:ModelSql? = ModelSql()
     private var modelFirebase:ModelFirebase? = ModelFirebase()
+    
+    /*
+     Gets all the clusters - from firebase and locally and observes for changes while checking the last update
+     */
     
     func getAllClustersAndObserve(category: String){
         
@@ -76,6 +102,10 @@ class Model{
             ModelNotification.ClusterList.post(data: totalList)
         })
     }
+    
+    /*
+     Gets all the articles - from firebase and locally and observes for changes while checking the last update
+     */
     
     func getAllArticlesInClusterAndObserve(cluster: Cluster){
         // get last update date from SQL
@@ -110,7 +140,9 @@ class Model{
         })
     }
     
-    
+    /*
+     Gets all the messages - from firebase and locally and observes for changes while checking the last update
+     */
     
     func getAllMessagesAndObserve(cluster: Cluster){
         // get last update date from SQL
@@ -145,12 +177,20 @@ class Model{
         })
     }
     
+    /*
+     Adds amessage - to firebase and locally
+     */
+    
     func addMessage(insertCluster: Cluster, insertMessageBody: String, completionBlock: @escaping (Error?) -> Void){
         Message.addMessageToFirebase(reference: ModelFirebase.ref, insertCluster: insertCluster, insertMessageBody: insertMessageBody, onCompletion:{(err, msg) in
             msg.addMassageToLocalDb(database: self.modelSql?.database)
             completionBlock(err)
         })
     }
+    
+    /*
+     Adds a user member - to firebase only (wouldnt wanna take precious cache for something that doesnt have anything to do with the personal user)
+     */
     
     func addUserDetails(insertImageDetails: UserDetails, completionBlock: @escaping (Error?) -> Void) {
         ModelFirebase.addUserDetails(insertImageDetails: insertImageDetails, onCompletion: { (err, imgDetail) in

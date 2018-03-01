@@ -2,9 +2,10 @@
 //  Date+firebase.swift
 //  NewsCombined
 //
-//  Created by admin on 20/02/2018.
-//  Copyright © 2018 London App Brewery. All rights reserved.
-//
+
+/*
+ This class is for checking for updates in the firebase cloud
+ */
 
 
 import Foundation

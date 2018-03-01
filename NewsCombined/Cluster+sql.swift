@@ -2,9 +2,11 @@
 //  Cluster+sql.swift
 //  NewsCombined
 //
-//  Created by admin on 20/02/2018.
-//  Copyright © 2018 London App Brewery. All rights reserved.
-//
+
+/*
+ This class is the sql structure for the clusters stored locally
+ */
+
 
 import Foundation
 
@@ -15,6 +17,10 @@ extension Cluster{
     static let CL_IMAGE_URL = "CL_IMAGE_URL"
     static let CL_LAST_UPDATE = "CL_LAST_UPDATE"
     
+    
+    /*
+     This function is the sql structure for the clusters stored locally, including check for the last update
+     */
     
     static func createTable(database:OpaquePointer?)->Bool{
         var errormsg: UnsafeMutablePointer<Int8>? = nil
@@ -31,6 +37,10 @@ extension Cluster{
         
         return true
     }
+    
+    /*
+     This function is for adding clusters stored locally,
+     */
     
     func addClusterToLocalDb(database:OpaquePointer?){
         var sqlite3_stmt: OpaquePointer? = nil
@@ -64,20 +74,19 @@ extension Cluster{
         sqlite3_finalize(sqlite3_stmt)
     }
     
+    /*
+     This function is for getting clusters stored locally, with the clause of row 84 - Give me the clusters where the category is the insertCategory
+     */
+    
     static func getAllClustersFromLocalDb(insertCategory: String, database:OpaquePointer?)->[Cluster]{
         var clusters = [Cluster]()
         var sqlite3_stmt: OpaquePointer? = nil
-        
         if (sqlite3_prepare_v2(database,"SELECT * from " + CL_TABLE + " WHERE "+Cluster.CL_ID + " LIKE '" + insertCategory+"%';",-1,&sqlite3_stmt,nil) == SQLITE_OK){
             while(sqlite3_step(sqlite3_stmt) == SQLITE_ROW){
                 let id =  String(validatingUTF8:sqlite3_column_text(sqlite3_stmt,0))
                 let title =  String(validatingUTF8:sqlite3_column_text(sqlite3_stmt,1))
                 let imageUrl =  String(validatingUTF8:sqlite3_column_text(sqlite3_stmt,2))
                 let update =  Double(sqlite3_column_double(sqlite3_stmt,3))
-                //print("read from filter st: \(stId) \(name) \(imageUrl)")
-                //if (imageUrl != nil && imageUrl == ""){
-                //    imageUrl = nil
-                //}
                 let idArr = id?.components(separatedBy: "_")
                 
                 let cluster = Cluster(insertcategory: idArr![0], inserttopic: idArr![1], insertclusterimg: imageUrl!, insertclustertitle: title!)
