@@ -12,13 +12,13 @@ import Firebase
 
 class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
     
-    var clusterToHold : Cluster? //The main topic of chat
+    var clusterToHold : Cluster? //The cluster which is the topic of the chat
     var messagearray : [Message] = [Message]()
     var imageUrl:String?
     
     
     /*
-     visual outlets
+      Outlets
      */
     
     @IBOutlet var heightConstraint: NSLayoutConstraint!
@@ -61,12 +61,10 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         if messagearray[indexPath.row].sender == Model.instance.GetUser() {
             return true
-            
         }
         else {
             return false
         }
-        
     }
     
     
@@ -81,11 +79,9 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
             {
                 //self.messagearray.remove(at: indexPath.row)
                 //self.messageTableView.reloadData()
-                
                 }
             else {
                 print("Failed to Delete")
-                
                 }
             })
         }
@@ -146,9 +142,6 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
     }
     
     
-    
-    
-    
     //TODO: Declare numberOfRowsInSection here:
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messagearray.count
@@ -171,12 +164,8 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     
     ///////////////////////////////////////////
-    
     //MARK:- TextField Delegate Methods
-    
-    
-    
-    
+ 
     //TODO: Declare textFieldDidBeginEditing here:
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
@@ -210,10 +199,7 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     
     //MARK: - Send & Recieve from Firebase
-    
-    
-    
-    
+
     /*
      Sends message and saves it both locally and cloud FB
      */
@@ -252,8 +238,5 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
         
         
     }
-    
-    
-    
-    
+
 }

@@ -14,7 +14,6 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet var emailTextfield: UITextField!
     @IBOutlet var passwordTextfield: UITextField!
-    
     @IBOutlet weak var errorTextLabelRegister: UILabel!
     
     override func viewDidLoad() {
@@ -44,11 +43,9 @@ class RegisterViewController: UIViewController {
     }
     
     /*
-     Function to perform Register
+     Action that perform Registeration
      */
     @IBAction func registerPressed(_ sender: AnyObject) {
-        
-
         Model.instance.RegisterUser(Email: emailTextfield.text!, Password: passwordTextfield.text!,callback: { (data) in
             if (data == "Email/Password Error Use An Email With A 6 letter Password")
             {

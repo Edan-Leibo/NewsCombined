@@ -33,9 +33,8 @@ class WelcomeViewController: UIViewController {
     }
     
     /*
- 
- Page varies between loged users and un logged users
- */
+     Page varies between loged users and un logged users
+     */
     
     @IBOutlet weak var frontLabel: UILabel!
     

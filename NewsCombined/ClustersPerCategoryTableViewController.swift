@@ -35,11 +35,9 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
         messageTableView.register(UINib(nibName: "BlockCell", bundle: nil), forCellReuseIdentifier: "customCell")
         configureTableView()
         tableView.backgroundView = UIImageView(image: UIImage(named: "Preview.jpg"))
-
         messageTableView.separatorStyle = .none
-        
-        
     }
+    
     /*
      After category is picked and the process is instantiated to load a new set of clusters by sending notification
      to model
@@ -62,10 +60,10 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
         
     }
     
- 
+    
     /*
- Function to enter the comments section of the cluster - if a user is logged in goes to chat, else goes to register page
- Usses the protocol in the cell class
+     Enters the comments section of the cluster - if a user is logged in goes to chat, else goes to register page
+     Usses the protocol in the cell class
      */
     
     func didpressbutton(title: Any) {
@@ -82,12 +80,11 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
     }
     
     /*
-    Section in charge of visually navigating between the side menus of right+left menu of SWreveal
+     Section in charge of visually navigating between the side menus of right+left menu of SWreveal
      */
     
     func sideMenus(){
         if revealViewController() != nil {
-            
             menuButton.target = revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             revealViewController().rearViewRevealWidth = 275
@@ -106,10 +103,10 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-     
+        
     }
     
-
+    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -120,14 +117,13 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
     }
     
     
-
-
+    
+    
     
     
     /*
-     Structuring of the cell, first load it with no image than with the user image should one exist
+     Structures of the cell, first load it with no image than with the user image should one exist
      */
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
         cell.backgroundColor = UIColor.clear
@@ -144,25 +140,18 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
                 cell.avatarImageView.image = data
             }
         }
-        
         cell.messageBody.isHidden = true
         cell.commentsBTN.setTitle("Comments", for: .normal)
-        
-        
-        
-        
-        
-        
-        //cellHeight = cell.newsDescription.frame.size.height + cell.newsDescription.frame.origin.y + 50
-        
         return cell
     }
+    
     /*
      override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
      
      return cellHeight
      }
      */
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         chosenRow=indexPath.row
         performSegue(withIdentifier: "moveToSpecificClusterSegue", sender: self)
@@ -219,9 +208,5 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
             let vc = segue.destination as! MessagesViewController
             vc.clusterToHold = clusterArray[chosenRow]
         }
-        
-        
-        
-        
     }
 }

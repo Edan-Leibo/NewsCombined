@@ -14,7 +14,6 @@ class LogInViewController: UIViewController {
     //Textfields 
     @IBOutlet var emailTextfield: UITextField!
     @IBOutlet var passwordTextfield: UITextField!
-    
     @IBOutlet weak var errorTextLabelLogIn: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,12 +60,5 @@ class LogInViewController: UIViewController {
                 
             }
         })
-        
-        
-        
-        
-        
-        
-        
     }
 }  

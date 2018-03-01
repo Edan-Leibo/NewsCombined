@@ -18,14 +18,13 @@ class ArticlesInClusAndCatViewController: UITableViewController {
     var chosenRow: Int?
     var chosenCluster : Cluster?
     var allArticles : [Article] = [Article]()
-    //   var cellHeight : CGFloat = 0
     
     @IBOutlet var messageTablieView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundView = UIImageView(image: UIImage(named: "Preview.jpg"))
-      SVProgressHUD.show()
+        SVProgressHUD.show()
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         messageTablieView.register(UINib(nibName: "BlockCell", bundle: nil), forCellReuseIdentifier: "customCell")
         messageTablieView.separatorStyle = .none
@@ -39,10 +38,7 @@ class ArticlesInClusAndCatViewController: UITableViewController {
                 SVProgressHUD.dismiss(withDelay: 1)
             }
         }
-
-                
         Model.instance.getAllArticlesInClusterAndObserve(cluster: chosenCluster!)
-
     }
     
     override func didReceiveMemoryWarning() {
@@ -65,7 +61,6 @@ class ArticlesInClusAndCatViewController: UITableViewController {
     /*
      Section in charge of visually navigating between the side menus of right+left menu of SWreveal
      */
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomCell
@@ -73,7 +68,7 @@ class ArticlesInClusAndCatViewController: UITableViewController {
         cell.commentsBTN.isHidden = true
         cell.senderUsername.text = allArticles[indexPath.row].title
         cell.avatarImageView.image = UIImage(named: "logo")
-
+        
         
         let urlKey = allArticles[indexPath.row].imageURL
         cell.avatarImageView.tag = indexPath.row
@@ -87,11 +82,10 @@ class ArticlesInClusAndCatViewController: UITableViewController {
         return cell
     }
     
-
+    
     /*
      Goes to the article in the web browser using the URL in the article cell choosen
      */
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         chosenRow = indexPath.row
@@ -155,7 +149,5 @@ class ArticlesInClusAndCatViewController: UITableViewController {
         messageTablieView.estimatedRowHeight = 120
         
     }
-    
-    
 }
 

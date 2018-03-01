@@ -13,7 +13,6 @@ import SVProgressHUD
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
-    
     /*
      Buttons had to be deleted/stopped so we needed the IBoutlets as well as actions
      */
@@ -25,12 +24,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     @IBOutlet weak var saveBTN: UIButton!
     @IBOutlet weak var chooseImage: UIButton!
     @IBOutlet weak var logOutBtn: UIButton!
-    
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBOutlet weak var errorLbl: UILabel!
-    
     @IBAction func backNewsiBtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
         
@@ -39,7 +35,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         user = Model.instance.GetUser()
         userLabel.text = "Hello " + user!
         loadUserimage()
@@ -64,19 +59,16 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     }
     
     /*
-     Btn for log out
+     Action for logging out the user
      */
-    
     @IBAction func logOutBtn(_ sender: Any) {
         Model.instance.logoutFB()
         createalert(todo: "LogOut", titletext: "You have been successfully logged out!", messageText: "Returning to news page")
-        
     }
     
     /*
-     Btn for save image
+       Action for saving user image
      */
-
     @IBAction func saveBTN(_ sender: Any) {
         SVProgressHUD.show()
         self.deActivateBTNs()
@@ -92,21 +84,20 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
                 self.reactivateBTNs()
                 SVProgressHUD.dismiss(withDelay: 1)
                 self.createalert(todo: "saveImage", titletext: "Image changed successfully!", messageText: "")
-
             }
-            
         }
         else{
             errorLbl.text = "No New Photo Selected"
             self.reactivateBTNs()
             SVProgressHUD.dismiss(withDelay: 1)
-
+            
         }
     }
-    /*
-     Save function takes a long time so we need to lock Btns to prevent multiple I/O's
-     */
     
+    
+    /*
+     Save function takes a long time so we need to lock the buttons to prevent multiple I/O's
+     */
     func deActivateBTNs(){
         backNewsiBtn.isEnabled = false
         saveBTN.isEnabled = false
@@ -114,6 +105,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
         logOutBtn.isEnabled = false
         
     }
+    
+    /*
+     Reactivates the buttons after the save process ended
+     */
     func reactivateBTNs(){
         backNewsiBtn.isEnabled = true
         saveBTN.isEnabled = true
@@ -125,7 +120,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     /*
      Loads the current image of user for display in viewcontroller
      */
-    
     func loadUserimage()
     {
         Model.instance.getImgDetailsFromUser(insertUser: user!, callback: { (imgd) in
@@ -134,24 +128,17 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
                 ModelFileStore.getImage(urlStr: self.imageUrl!) { (data) in
                     self.imageView.image = data
                 }
-                
-                
-            }
-            else{
-                
             }
         })
         
     }
     
     /*
-     Loads the  image of selector
+     Action for loading the image with ImagePicker
      */
     @IBAction func chooseImage(_ sender: Any) {
-        
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
-        
         let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action:UIAlertAction) in
@@ -164,24 +151,19 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
             }
         }))
         
-        
-        
         actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action:UIAlertAction) in
             imagePickerController.sourceType = .photoLibrary
             self.present(imagePickerController, animated: true, completion: nil)
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
         self.present(actionSheet,animated: true, completion: nil)
-        
     }
     
     
     /*
-     Event of image selected from picker
+         Event handler of image selected from picker
      */
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         selectedImage = (info[UIImagePickerControllerOriginalImage] as! UIImage)
         imageView.image = selectedImage
