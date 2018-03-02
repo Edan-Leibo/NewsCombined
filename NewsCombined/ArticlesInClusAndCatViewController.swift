@@ -23,8 +23,8 @@ class ArticlesInClusAndCatViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.backgroundView = UIImageView(image: UIImage(named: "IMAGEPREVIEW_00000.jpg"))
         SVProgressHUD.show()
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "IMAGEPREVIEW_00000.jpg"))
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         messageTablieView.register(UINib(nibName: "BlockCell", bundle: nil), forCellReuseIdentifier: "customCell")
         messageTablieView.separatorStyle = .none
