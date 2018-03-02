@@ -35,12 +35,14 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate,U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         user = Model.instance.GetUser()
         userLabel.text = "Hello " + user!
         loadUserimage()
         
     }
     
+ 
     
     /*
      Alert to inform of program execution like log out and image change

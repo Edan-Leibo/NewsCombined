@@ -13,6 +13,7 @@ import SVProgressHUD
 
 class SpecificArticleViewController: UIViewController,UIWebViewDelegate {
 
+    @IBOutlet weak var backgroundImage: UIImageView!
     var article:Article?
     var url : String = ""
     var counter : Int = 0
@@ -20,6 +21,7 @@ class SpecificArticleViewController: UIViewController,UIWebViewDelegate {
     @IBOutlet weak var myWebView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        backgroundImage.image = UIImage (named: "IMAGEPREVIEW_00000.jpg")
         myWebView.delegate = self as UIWebViewDelegate
      
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
@@ -40,12 +42,14 @@ class SpecificArticleViewController: UIViewController,UIWebViewDelegate {
      */
     
     func webViewDidStartLoad(_ webView: UIWebView) {
+        
         if counter == 0 {
         SVProgressHUD.show()
         counter = 1
         }
     }
     func webViewDidFinishLoad(_ webView: UIWebView) {
+        backgroundImage.isHidden = true
         SVProgressHUD.dismiss()
     }
    

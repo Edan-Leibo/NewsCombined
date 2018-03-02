@@ -415,6 +415,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMAGEPREVIEW_00000" translatesAutoresizingMaskIntoConstraints="NO" id="aXa-nd-6fd">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no-photo-male" translatesAutoresizingMaskIntoConstraints="NO" id="bWD-cj-Nxh">
                                 <rect key="frame" x="82" y="94" width="211" height="298"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -478,15 +481,23 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gFt-5O-7ry">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="aXa-nd-6fd" firstAttribute="top" secondItem="Z7n-mY-d6H" secondAttribute="bottom" id="0r1-uj-YNC"/>
+                            <constraint firstAttribute="trailing" secondItem="aXa-nd-6fd" secondAttribute="trailing" id="6Np-po-dr7"/>
                             <constraint firstItem="LeL-5s-UVo" firstAttribute="top" secondItem="bWD-cj-Nxh" secondAttribute="bottom" constant="25" id="CyG-IW-gN4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bWD-cj-Nxh" secondAttribute="trailing" constant="66" id="Mqh-Ez-cLU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LeL-5s-UVo" secondAttribute="trailing" constant="27" id="QyZ-70-1cw"/>
+                            <constraint firstItem="WC4-HW-RWf" firstAttribute="top" secondItem="aXa-nd-6fd" secondAttribute="bottom" id="TE8-a5-Biq"/>
                             <constraint firstItem="WC4-HW-RWf" firstAttribute="top" secondItem="LeL-5s-UVo" secondAttribute="bottom" constant="25" id="ZS1-u5-OT7"/>
                             <constraint firstItem="LeL-5s-UVo" firstAttribute="leading" secondItem="Klw-AS-jMd" secondAttribute="leadingMargin" constant="27" id="c3W-YJ-Cjo"/>
                             <constraint firstItem="bWD-cj-Nxh" firstAttribute="leading" secondItem="Klw-AS-jMd" secondAttribute="leadingMargin" constant="66" id="cL0-Es-8ye"/>
+                            <constraint firstItem="aXa-nd-6fd" firstAttribute="leading" secondItem="Klw-AS-jMd" secondAttribute="leading" id="sVf-rT-aBk"/>
                             <constraint firstItem="bWD-cj-Nxh" firstAttribute="top" secondItem="Z7n-mY-d6H" secondAttribute="bottom" constant="30" id="vRo-Ja-sMe"/>
                         </constraints>
                     </view>
@@ -574,12 +585,19 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SaH-5H-bqG">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="UsI-HR-PRw" firstAttribute="top" secondItem="Mb9-Mx-lxB" secondAttribute="bottom" id="BIN-sf-apl"/>
+                            <constraint firstAttribute="trailing" secondItem="SaH-5H-bqG" secondAttribute="trailing" id="Ccy-4m-Sf5"/>
                             <constraint firstAttribute="trailing" secondItem="UsI-HR-PRw" secondAttribute="trailing" id="J1c-LA-io4"/>
                             <constraint firstItem="Ggq-pP-3Oe" firstAttribute="top" secondItem="UsI-HR-PRw" secondAttribute="bottom" id="KS6-pF-bhZ"/>
+                            <constraint firstItem="SaH-5H-bqG" firstAttribute="leading" secondItem="4D3-Xz-8Cw" secondAttribute="leading" id="RYz-IU-9hX"/>
+                            <constraint firstItem="SaH-5H-bqG" firstAttribute="top" secondItem="Mb9-Mx-lxB" secondAttribute="bottom" id="YNI-3h-lgy"/>
+                            <constraint firstItem="Ggq-pP-3Oe" firstAttribute="top" secondItem="SaH-5H-bqG" secondAttribute="bottom" id="cjL-xc-Xss"/>
                             <constraint firstItem="UsI-HR-PRw" firstAttribute="leading" secondItem="4D3-Xz-8Cw" secondAttribute="leading" id="k9B-fq-nr0"/>
                         </constraints>
                     </view>
@@ -588,12 +606,13 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="backgroundImage" destination="SaH-5H-bqG" id="JPD-C5-DmR"/>
                         <outlet property="myWebView" destination="UsI-HR-PRw" id="HMQ-rp-2HS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8NG-yl-Mvd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4388" y="-196"/>
+            <point key="canvasLocation" x="4387.5" y="-196.5"/>
         </scene>
         <!--Articles In Clus And Cat View Controller-->
         <scene sceneID="7Aa-u1-Ekn">
@@ -769,6 +788,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="IMAGEPREVIEW_00000" width="590" height="332"/>
         <image name="hamburgericon" width="50" height="50"/>
         <image name="icons8-notification-50" width="50" height="50"/>
         <image name="logo" width="300" height="300"/>

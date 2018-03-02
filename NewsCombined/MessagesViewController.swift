@@ -31,7 +31,7 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        messageTableView.backgroundView = UIImageView(image: UIImage(named: "Preview.jpg"))
+        messageTableView.backgroundView = UIImageView(image: UIImage(named: "IMAGEPREVIEW_00000.jpg"))
         messageTableView.dataSource = self
         messageTableView.delegate = self
         
@@ -130,13 +130,14 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
             }
         })
        
+        cell.messageBody.textColor = UIColor(hue: 0.3361, saturation: 0, brightness: 0.99, alpha: 1.0) /* #fcfcfc */
+        cell.senderUsername.textColor = UIColor(hue: 0.3361, saturation: 0, brightness: 0.99, alpha: 1.0) /* #fcfcfc */
+        
         if cell.messageBody.text ==  Model.instance.GetUser() { //TO CHECK IF MESSAGE IS FROM USER OR SOMEBODY ELSE!!!
-            cell.messageBackground.backgroundColor = UIColor.cyan
-            
+            cell.messageBackground.backgroundColor = UIColor(hue: 0.7611, saturation: 0, brightness: 0.51, alpha: 1.0) /* #828282 */
         }
         else {
-            cell.messageBackground.backgroundColor = UIColor.green
-            
+            cell.messageBackground.backgroundColor = UIColor(hue: 0.55, saturation: 1, brightness: 0.72, alpha: 1.0) /* #0080b7 */
         }
         return cell
     }
