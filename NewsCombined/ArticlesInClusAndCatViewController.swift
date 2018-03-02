@@ -23,12 +23,12 @@ class ArticlesInClusAndCatViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.backgroundView = UIImageView(image: UIImage(named: "Preview.jpg"))
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "IMAGEPREVIEW_00000.jpg"))
         SVProgressHUD.show()
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         messageTablieView.register(UINib(nibName: "BlockCell", bundle: nil), forCellReuseIdentifier: "customCell")
         messageTablieView.separatorStyle = .none
-        ModelNotification.ArticleList.observe { (articleArr) in
+        let _ = ModelNotification.ArticleList.observe { (articleArr) in
             if let aritcleArray = articleArr{
                 if (!SVProgressHUD.isVisible()){
                     SVProgressHUD.show()

@@ -30,11 +30,11 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         //old: model=NewsFirebase.instance
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "IMAGEPREVIEW_00000.jpg"))
         refreshClusters(withChosenCategoty: currentCategory)
         sideMenus()
         messageTableView.register(UINib(nibName: "BlockCell", bundle: nil), forCellReuseIdentifier: "customCell")
         configureTableView()
-        tableView.backgroundView = UIImageView(image: UIImage(named: "Preview.jpg"))
         messageTableView.separatorStyle = .none
     }
     
@@ -46,7 +46,7 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
     func refreshClusters(withChosenCategoty category: String){
         SVProgressHUD.show()
         navigationItem.title = category.capitalized
-        ModelNotification.ClusterList.observe { (clusters) in
+        let _ = ModelNotification.ClusterList.observe { (clusters) in
             if clusters != nil{
                 if (!SVProgressHUD.isVisible()){
                     SVProgressHUD.show()

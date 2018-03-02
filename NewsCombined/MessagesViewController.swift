@@ -225,7 +225,7 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
     {
         Model.instance.getAllMessagesAndObserve(cluster: clusterToHold!)
         ////////////////////////////
-        ModelNotification.MessageList.observe { (list) in
+        let _ = ModelNotification.MessageList.observe { (list) in
             if let messagessARR = list{
                 self.messagearray = messagessARR
                 self.configureTableView() //AFTER SENDING NEW MESSAGE WE NEED TO RESIZE SCREEN

@@ -20,7 +20,7 @@ class SpecificArticleViewController: UIViewController,UIWebViewDelegate {
     @IBOutlet weak var myWebView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        myWebView.delegate = self as! UIWebViewDelegate;
+        myWebView.delegate = self as UIWebViewDelegate
      
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         url = article!.url

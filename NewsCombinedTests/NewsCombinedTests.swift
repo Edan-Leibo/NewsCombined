@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import Firebase
 
 @testable import NewsCombined
 
@@ -29,7 +28,7 @@ class NewsCombinedTests: XCTestCase {
         let expect = expectation(description: "Getting all clusters from firebase and local db")
         
         // 2. Exercise the asynchronous code
-        ModelNotification.ClusterList.observe { (clusters) in
+        let _ = ModelNotification.ClusterList.observe { (clusters) in
             if clusters != nil{
                 XCTAssertTrue(true)
                 expect.fulfill()
@@ -53,7 +52,7 @@ class NewsCombinedTests: XCTestCase {
         let expect = expectation(description: "Getting all Articles from firebase and local db")
         
         // 2. Exercise the asynchronous code
-        ModelNotification.ArticleList.observe { (articles) in
+        let _ = ModelNotification.ArticleList.observe { (articles) in
             if articles != nil{
                 if let count = articles?.count{
                     XCTAssert(count > 0)
@@ -79,7 +78,7 @@ class NewsCombinedTests: XCTestCase {
         let expect = expectation(description: "Getting all Messages from firebase and local db")
         
         // 2. Exercise the asynchronous code
-        ModelNotification.MessageList.observe { (messages) in
+        let _ = ModelNotification.MessageList.observe { (messages) in
             if messages != nil{
                 XCTAssertTrue(true)
                 expect.fulfill()
