@@ -84,7 +84,7 @@ extension Message{
     static func getAllMassagesFromLocalDb(insertCluster:Cluster, database:OpaquePointer?)->[Message]{
         var messages = [Message]()
         var sqlite3_stmt: OpaquePointer? = nil
-        if (sqlite3_prepare_v2(database,"SELECT * from "+MSG_TABLE+" WHERE " + MSG_CATEGORY_TOPIC + " = '" + insertCluster.category+"_"+insertCluster.topic+"';",-1,&sqlite3_stmt,nil) == SQLITE_OK){
+        if (sqlite3_prepare_v2(database,"SELECT * from "+MSG_TABLE+" WHERE " + MSG_CATEGORY_TOPIC + " = '" + insertCluster.topic+"';",-1,&sqlite3_stmt,nil) == SQLITE_OK){
             while(sqlite3_step(sqlite3_stmt) == SQLITE_ROW){
                 let id =  String(validatingUTF8:sqlite3_column_text(sqlite3_stmt,0))
                 let sender =  String(validatingUTF8:sqlite3_column_text(sqlite3_stmt,1))

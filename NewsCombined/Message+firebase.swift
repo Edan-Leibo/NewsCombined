@@ -25,7 +25,7 @@ extension Message
                 if let childData = child as? DataSnapshot{
                     if let json = childData.value as? Dictionary<String,Any>{
                         let message = Message(json: json)
-                        if message.categoryTopic == insertCluster.category+"_"+insertCluster.topic
+                        if message.categoryTopic == insertCluster.topic
                         {
                             messages.append(message)
                         }
@@ -35,7 +35,7 @@ extension Message
             callback(messages)
         }
         
-        let myRef = reference?.child("Messages").child(((insertCluster.category) + "_" + (insertCluster.topic)))
+        let myRef = reference?.child("Messages").child(insertCluster.topic)
         if (lastUpdateDate != nil){
             let fbQuery = myRef!.queryOrdered(byChild:"lastUpdate").queryStarting(atValue:lastUpdateDate!.toFirebase())
             fbQuery.observe(.value, with: handler)
@@ -56,7 +56,7 @@ extension Message
         if (Auth.auth().currentUser != nil) {
             sender = (Auth.auth().currentUser?.email)!
         }
-        let categoryTopic = ((insertCluster.category) + "_" + (insertCluster.topic))
+        let categoryTopic =  insertCluster.topic
         let messagesRef = reference?.child("Messages").child(categoryTopic).childByAutoId()
         let message = Message(insertId: (messagesRef?.key)!, insertSender: sender, insertBody: insertMessageBody, InsertCategotyTopic: categoryTopic)
         messagesRef?.setValue(message.toJson()){(error, dbref) in

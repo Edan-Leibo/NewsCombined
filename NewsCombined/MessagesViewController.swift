@@ -72,9 +72,9 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         if messagearray[indexPath.row].sender == Model.instance.GetUser()  {
-        let ClusterId = (clusterToHold?.category)! + "_" + (clusterToHold?.topic)!
+        let ClusterId = clusterToHold?.topic
         let messageToDelete = messagearray [indexPath.row]
-            Model.instance.deleteMessage(clusterId: ClusterId, insertMessage: messageToDelete, callback: { (res) in
+            Model.instance.deleteMessage(clusterId: ClusterId!, insertMessage: messageToDelete, callback: { (res) in
             if (res == "Deleted")
             {
                 //self.messagearray.remove(at: indexPath.row)
