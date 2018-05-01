@@ -226,6 +226,12 @@ class Model{
         
     }
     
+    func getMsgCounters(topicArray: [String], callback:@escaping ([MessagesCounter])->Void){
+        MessagesCounter.getMessagesCounter(topicArray: topicArray) { (msCounter) in
+            callback(msCounter!)
+        }
+    }
+    
     
     
     

@@ -55,7 +55,6 @@ class Cluster {
         json["clusterimgurl"] = clusterimgurl
         json["clustertitle"] = clustertitle
         json["lastUpdate"] = ServerValue.timestamp()
-
         return json
     }
     

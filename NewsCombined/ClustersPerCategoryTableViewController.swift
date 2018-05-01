@@ -1,4 +1,4 @@
-//
+	//
 //  CategoryTableViewController.swift
 //  NewsCombined
 //
@@ -6,7 +6,7 @@
 
 import UIKit
 import SVProgressHUD
-
+import Firebase
 
 
 /*
@@ -20,6 +20,8 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
     
     var observerId:Any?
     var type : String?
+    var messagesCountArray : [MessagesCounter] = [MessagesCounter]()
+    var topicArray : [String] = [String]()
     var clusterArray : [Cluster] = [Cluster]()
     // var Clustertosend : Cluster?
     var chosenRow:Int=0
@@ -52,6 +54,19 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
                     SVProgressHUD.show()
                 }
                 self.clusterArray = clusters!
+                for clus in self.clusterArray {
+                   var topicToAdd = clus.topic
+                    self.topicArray.append(topicToAdd)
+                }
+               
+                Model.instance.getMsgCounters(topicArray: self.topicArray, callback: { (msCounter) in
+                    if msCounter != nil{
+                    print(msCounter)
+                    self.messagesCountArray = msCounter
+                        self.tableView.reloadData()
+
+                    }
+                })
                 self.tableView.reloadData()
                 SVProgressHUD.dismiss(withDelay: 1)
             }
@@ -141,7 +156,15 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
             }
         }
         cell.messageBody.isHidden = true
-        cell.commentsBTN.setTitle("Comments", for: .normal)
+        var topicNum = clusterArray[indexPath.row].topic
+        var numOfComments = "0 Comments"
+        for msgCount in messagesCountArray{
+            if msgCount.topic == topicNum{
+                numOfComments = msgCount.numOfComments + " Comments"
+            }
+        }
+        
+        cell.commentsBTN.setTitle(numOfComments, for: .normal)
         return cell
     }
     

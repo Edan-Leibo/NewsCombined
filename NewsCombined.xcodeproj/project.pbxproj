@@ -34,6 +34,7 @@
 		847753D62046FA7E00A7D12E /* Cluster+firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847753D52046FA7E00A7D12E /* Cluster+firebase.swift */; };
 		847753D82047012F00A7D12E /* Article+firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847753D72047012F00A7D12E /* Article+firebase.swift */; };
 		8496F6A3200E63780062B32C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8496F6A2200E63780062B32C /* ViewController.swift */; };
+		84974D3A20987E0200398BF2 /* MessagesCounter+firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84974D3920987E0200398BF2 /* MessagesCounter+firebase.swift */; };
 		849AADFB203DCFAD0058547D /* Article+sql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849AADFA203DCFAD0058547D /* Article+sql.swift */; };
 		84A4A9AE200F682800FA72F3 /* LeftMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4A9AD200F682800FA72F3 /* LeftMenuTableViewController.swift */; };
 		84A4A9B0200FA59300FA72F3 /* LeftMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A4A9AF200FA59300FA72F3 /* LeftMenuTableViewCell.swift */; };
@@ -46,6 +47,7 @@
 		84C4521C203F846F005FBE8F /* ModelFileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4521B203F846F005FBE8F /* ModelFileStore.swift */; };
 		84D2FDB120470708005768EA /* Message+firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2FDB020470708005768EA /* Message+firebase.swift */; };
 		84E9125B2005140F007A87D9 /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E9125A2005140F007A87D9 /* ModelFirebase.swift */; };
+		84F7954720979D20004E7895 /* MessagesCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7954620979D20004E7895 /* MessagesCounter.swift */; };
 		85736C7F2FE198B55E724426 /* Pods_NewsCombinedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97334A9DCE6F8A2025F07EB1 /* Pods_NewsCombinedTests.framework */; };
 		A89EBBE254C326B220DD7C05 /* Pods_NewsCombined.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFB125442B07F31AA333E42 /* Pods_NewsCombined.framework */; };
 		F645CCD3200B31F200F45904 /* SpecificArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F645CCD2200B31F200F45904 /* SpecificArticleViewController.swift */; };
@@ -98,6 +100,7 @@
 		847753D52046FA7E00A7D12E /* Cluster+firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cluster+firebase.swift"; sourceTree = "<group>"; };
 		847753D72047012F00A7D12E /* Article+firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+firebase.swift"; sourceTree = "<group>"; };
 		8496F6A2200E63780062B32C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84974D3920987E0200398BF2 /* MessagesCounter+firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessagesCounter+firebase.swift"; sourceTree = "<group>"; };
 		849AADFA203DCFAD0058547D /* Article+sql.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+sql.swift"; sourceTree = "<group>"; };
 		84A4A9AD200F682800FA72F3 /* LeftMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuTableViewController.swift; sourceTree = "<group>"; };
 		84A4A9AF200FA59300FA72F3 /* LeftMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -110,6 +113,7 @@
 		84C4521B203F846F005FBE8F /* ModelFileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFileStore.swift; sourceTree = "<group>"; };
 		84D2FDB020470708005768EA /* Message+firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Message+firebase.swift"; sourceTree = "<group>"; };
 		84E9125A2005140F007A87D9 /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
+		84F7954620979D20004E7895 /* MessagesCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesCounter.swift; sourceTree = "<group>"; };
 		8DFB125442B07F31AA333E42 /* Pods_NewsCombined.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsCombined.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97334A9DCE6F8A2025F07EB1 /* Pods_NewsCombinedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsCombinedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F940531450A9E39991EC549 /* Pods-NewsCombinedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsCombinedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewsCombinedTests/Pods-NewsCombinedTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -251,6 +255,8 @@
 				847753D52046FA7E00A7D12E /* Cluster+firebase.swift */,
 				847753D72047012F00A7D12E /* Article+firebase.swift */,
 				84D2FDB020470708005768EA /* Message+firebase.swift */,
+				84F7954620979D20004E7895 /* MessagesCounter.swift */,
+				84974D3920987E0200398BF2 /* MessagesCounter+firebase.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -537,6 +543,7 @@
 				845021AF2013A113008F33D6 /* Message.swift in Sources */,
 				8448B61F20136E5700E5999A /* RightMenuTableViewController.swift in Sources */,
 				847638E5203CCEC700EF0364 /* LastUpdateTable.swift in Sources */,
+				84974D3A20987E0200398BF2 /* MessagesCounter+firebase.swift in Sources */,
 				F645CCD3200B31F200F45904 /* SpecificArticleViewController.swift in Sources */,
 				84E9125B2005140F007A87D9 /* ModelFirebase.swift in Sources */,
 				78A443D12006824900C4CC31 /* BaseNavigationViewController.swift in Sources */,
@@ -552,6 +559,7 @@
 				78A443D3200682FC00C4CC31 /* ClustersPerCategoryTableViewController.swift in Sources */,
 				63E28B2F1B9A337600FBF6E0 /* AppDelegate.swift in Sources */,
 				84C45218203F844A005FBE8F /* LocalFieleStore.swift in Sources */,
+				84F7954720979D20004E7895 /* MessagesCounter.swift in Sources */,
 				8496F6A3200E63780062B32C /* ViewController.swift in Sources */,
 				63E28B301B9A337600FBF6E0 /* MessagesViewController.swift in Sources */,
 				847753D62046FA7E00A7D12E /* Cluster+firebase.swift in Sources */,
