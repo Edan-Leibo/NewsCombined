@@ -62,7 +62,7 @@ class ClustersPerCategoryTableViewController: UITableViewController, cellDelegat
                 Model.instance.getMsgCounters(topicArray: self.topicArray, callback: { (msCounter) in
                     if msCounter != nil{
                     print(msCounter)
-                    self.messagesCountArray = msCounter
+                        self.messagesCountArray = msCounter!
                         self.tableView.reloadData()
 
                     }

@@ -215,6 +215,8 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 print("ERROR WITH MESSAGES!!!!!")
             }
         }
+        
+        
         self.messageTextfield.isEnabled = true
         self.messageTextfield.text = ""
         self.sendButton.isEnabled = true

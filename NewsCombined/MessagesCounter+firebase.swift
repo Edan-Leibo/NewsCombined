@@ -39,7 +39,12 @@ extension MessagesCounter{
                 var counterArray = [MessagesCounter]()
                 for msCounterJson in values{
                     let messageCount = MessagesCounter(json: msCounterJson.value)
-                    counterArray.append(messageCount)
+                    for topic in topicArray{
+                        if topic==messageCount.topic{ counterArray.append(messageCount)
+                        }
+                        
+                    }
+                    
                 }
                 callback(counterArray)
             }else{
@@ -47,4 +52,44 @@ extension MessagesCounter{
             }
         })
     }
+    
+    /*
+    static func getSpecificMessagesCounterAndUpdate(topic: String,callback:@escaping (MessagesCounter?)->Void){
+        var ref = Database.database().reference()
+        let myRef = ref.child("MessagesCounter")
+        myRef.observe(.value, with: { (snapshot) in
+            if let values = snapshot.value as? [String:[String:Any]]{
+                var counter = MessagesCounter()
+                for msCounterJson in values{
+                    let messageCount = MessagesCounter(json: msCounterJson.value)
+                    if messageCount.topic == topic {
+                        counter = messageCount
+                    }
+                }
+                callback(counter)
+            }else{
+                callback(nil)
+            }
+        })
+    }
+ */
+    
+    func getMessageCounter(bytopic:String, callback: @escaping (MessagesCounter?)->Void){
+         var ref = Database.database().reference()
+        let myRef = ref.child("MessagesCounter").child(bytopic)
+        myRef.observeSingleEvent(of: .value, with: { (snapshot ) in
+            if let val = snapshot.value as? [String:Any]{
+                let msgCounter = MessagesCounter (json: val)
+                callback(msgCounter)
+            }else{
+                callback(nil)
+            }
+        })
+    }
+    
 }
+
+    
+    
+    
+

@@ -58,10 +58,12 @@ extension Message
         }
         let categoryTopic =  insertCluster.topic
         let messagesRef = reference?.child("Messages").child(categoryTopic).childByAutoId()
+        let messageCounterRef = reference?.child("Messages").child(categoryTopic).childByAutoId()
         let message = Message(insertId: (messagesRef?.key)!, insertSender: sender, insertBody: insertMessageBody, InsertCategotyTopic: categoryTopic)
         messagesRef?.setValue(message.toJson()){(error, dbref) in
             onCompletion(error, message)
         }
+        
     }
     
     
