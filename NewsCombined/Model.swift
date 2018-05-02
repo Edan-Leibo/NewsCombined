@@ -240,7 +240,24 @@ class Model{
         }
     }
     
+    func getSpecificMessageCounter(topic: String, callback:@escaping (MessagesCounter?)->Void){
+        MessagesCounter.getSpecificMessageCounter(bytopic: topic) { (msCounter) in
+            if (msCounter != nil) {
+                callback(msCounter!)
+                
+            }
+            else {
+                callback(nil)
+                
+            }
+            
+        }
+    }
     
+    func updateAfterAdditionOrDeletion (messageCounter:MessagesCounter, newOrAdditionOrSubtraction:String){
+        messageCounter.updateAfterAdditionOrDeletion(messageCounter: messageCounter, newOrAdditionOrSubtraction: newOrAdditionOrSubtraction)
+        
+    }
     
     
     

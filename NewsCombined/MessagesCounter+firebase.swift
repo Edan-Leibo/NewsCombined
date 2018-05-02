@@ -74,7 +74,7 @@ extension MessagesCounter{
     }
  */
     
-    func getMessageCounter(bytopic:String, callback: @escaping (MessagesCounter?)->Void){
+    static func getSpecificMessageCounter(bytopic:String, callback: @escaping (MessagesCounter?)->Void){
          var ref = Database.database().reference()
         let myRef = ref.child("MessagesCounter").child(bytopic)
         myRef.observeSingleEvent(of: .value, with: { (snapshot ) in
@@ -86,10 +86,40 @@ extension MessagesCounter{
             }
         })
     }
+   
+    
+    
+    func updateAfterAdditionOrDeletion (messageCounter:MessagesCounter, newOrAdditionOrSubtraction:String)
+    {
+        
+        var ref = Database.database().reference()
+        let myRef = ref.child("MessagesCounter").child(messageCounter.topic)
+        if (newOrAdditionOrSubtraction == "New"){
+        myRef.setValue(messageCounter.toJson())
+            
+        }
+        if(newOrAdditionOrSubtraction == "Add"){
+            let oldnumber:Int? = Int(messageCounter.numOfComments)
+            var newnumber = oldnumber!+1
+            var numberToAdd = String(newnumber)
+            messageCounter.numOfComments = numberToAdd
+            myRef.setValue(messageCounter.toJson())
+        }
+        
+        //NOT GOOD
+        if(newOrAdditionOrSubtraction == "Subtract"){
+            let oldnumber:Int? = Int(messageCounter.numOfComments)
+            var newnumber = oldnumber!-1
+            var numberToAdd = String(newnumber)
+            messageCounter.numOfComments = numberToAdd
+            myRef.setValue(messageCounter.toJson())
+        
+    }
+    
+    
     
 }
 
-    
-    
+}
     
 

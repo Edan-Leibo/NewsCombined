@@ -77,8 +77,14 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
             Model.instance.deleteMessage(clusterId: ClusterId!, insertMessage: messageToDelete, callback: { (res) in
             if (res == "Deleted")
             {
-                //self.messagearray.remove(at: indexPath.row)
-                //self.messageTableView.reloadData()
+                Model.instance.getSpecificMessageCounter(topic: messageToDelete.categoryTopic, callback: { (msC) in
+                if msC != nil {
+                    print("Got Specific MSC " + (msC?.topic)!)
+                    Model.instance.updateAfterAdditionOrDeletion(messageCounter: msC!, newOrAdditionOrSubtraction: "Subtract")
+                }
+               
+            })
+                
                 }
             else {
                 print("Failed to Delete")
@@ -212,9 +218,22 @@ class MessagesViewController: UIViewController,UITableViewDelegate,UITableViewDa
         sendButton.isEnabled = false
         Model.instance.addMessage(insertCluster: clusterToHold!, insertMessageBody: messageTextfield.text!) { (err) in
             if err == nil{
-                print("ERROR WITH MESSAGES!!!!!")
+                Model.instance.getSpecificMessageCounter(topic: self.clusterToHold!.topic, callback: { (msC) in
+                    if msC != nil {
+                        print("Got Specific MSC " + (msC?.topic)!)
+                        Model.instance.updateAfterAdditionOrDeletion(messageCounter: msC!, newOrAdditionOrSubtraction: "Add")
+                    }
+                    else{
+                        Model.instance.updateAfterAdditionOrDeletion(messageCounter: msC!, newOrAdditionOrSubtraction: "New")
+
+                    }
+                })
+            }
+            else{
+                 print("ERROR WITH MESSAGES!!!!!")
             }
         }
+      
         
         
         self.messageTextfield.isEnabled = true
