@@ -41,6 +41,11 @@ Clicking the "back" button on each screen, returns the user to the previous scre
 
 ## :hammer: App Architecture :construction_worker: ##
 
+The NewsCombined app is based on MVC architecture. It containes a unit, developed according to an Observer pattern, which is responsible for syncronizing the local SQLite database with the remote databse located in Firebase. This unis exists in the Model layer and contains a component with the sole purpose of recieving notifications, regarding CRUD operations, from the database.
+
+In order to improve the preformance of the system, upon the arrival of such notifications, the system checks the timestamp of the data and updates the local SQLite based database. As a result, the system we've created has substantially low traffic, and is able to operate without network connection (the app would simply retrieve the data stored in the local database at the that moment).
+
+Additionaly, we provided the system with unit tests which examine the internal modules.
 
 **_Developed by Edan Leibovitz :man: & Adam Yablonka :man:_**
 
